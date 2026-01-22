@@ -8,14 +8,14 @@
 |-------|-------|
 | **Milestone** | v1 |
 | **Current Phase** | 2 |
-| **Phase Status** | In Progress |
+| **Phase Status** | Complete |
 | **Blockers** | None |
 
 ## Progress
 
 ```
 Phase 1: ████████████████████ 100% (3/3 plans)
-Phase 2: ██████████░░░░░░░░░░  50% (1/2 plans)
+Phase 2: ████████████████████ 100% (2/2 plans)
 Phase 3: ░░░░░░░░░░░░░░░░░░░░   0% (0/? plans)
 Phase 4: ░░░░░░░░░░░░░░░░░░░░   0% (0/? plans)
 Phase 5: ░░░░░░░░░░░░░░░░░░░░   0% (0/? plans)
@@ -34,15 +34,15 @@ All 6 requirements verified:
 - BRAND-05: No Oxygenna/template content
 - CONTENT-01: Site config updated
 
-### Current Phase: 2 - Navigation & Homepage
-**Goal:** Restructure site navigation and create compelling homepage with "Priming vs Proving" framework
+#### Phase 2: Navigation & Homepage
+**Completed:** 2026-01-22
 
-**Requirements:**
-- [ ] CONTENT-02: Restructure navigation around three pillars
-- [x] CONTENT-03: Rewrite homepage with Scientific Forest messaging
+All requirements verified:
+- CONTENT-02: Navigation restructured (About Us, How We Work, Portfolio, Blog)
+- CONTENT-03: Homepage rewritten with Scientific Forest messaging
 
 **Plans:**
-- 02-01-PLAN.md: Navigation restructure (pending)
+- 02-01-PLAN.md: Navigation restructure (complete)
 - 02-02-PLAN.md: Homepage content (complete)
 
 ### Upcoming Phases
@@ -67,18 +67,22 @@ All 6 requirements verified:
 - Replaced logo and favicon with PromptMarketing placeholders
 - Verified all 6 requirements pass
 
-### 2026-01-22 - Phase 2 Plan 02 Complete
-- Rewrote homepage with PromptMarketing "Scientific Forest" messaging
-- Hero: "Operationalizing Machine Trust" with "Relevance Engineering" subtitle
-- Features: Three service pillars (Prompt Intelligence, Relevance Engineering, Agentic Commerce)
-- Onboarding: 4-step GEO journey (Audit, Design, Build, Measure)
-- All CTAs: "Get Started" pointing to /contact
-- Voice: Scientific, precise, no guru language
+### 2026-01-22 - Phase 2 Complete
+- Plan 02-01: Restructured navigation for consultancy positioning
+  - Main nav: About Us, How We Work, Portfolio, Blog
+  - CTA: "Get Started" linking to /contact
+  - Footer: Company/Resources/Connect columns
+- Plan 02-02: Rewrote homepage with PromptMarketing "Scientific Forest" messaging
+  - Hero: "Operationalizing Machine Trust" with "Relevance Engineering" subtitle
+  - Features: Three service pillars (Prompt Intelligence, Relevance Engineering, Agentic Commerce)
+  - Onboarding: 4-step GEO journey (Audit, Design, Build, Measure)
+  - Voice: Scientific, precise, no guru language
 
 ## Decisions Made
 
 | Decision | Context | Date |
 |----------|---------|------|
+| Consultancy navigation structure | About Us, How We Work, Portfolio, Blog (no dropdowns) | 2026-01-22 |
 | Three-pillar structure | Features organized as Diagnostic/Architecture/Transaction | 2026-01-22 |
 | Forest green onboarding colors | Steps use #2d5016 to #4a8024 gradient with #b8860b gold accent | 2026-01-22 |
 | /contact as primary CTA target | All "Get Started" buttons point to /contact | 2026-01-22 |
@@ -101,10 +105,10 @@ All 6 requirements verified:
 - Concerns: `.planning/codebase/CONCERNS.md`
 
 **Last Session:** 2026-01-22
-**Stopped at:** Completed 02-02-PLAN.md
+**Stopped at:** Completed Phase 2
 **Resume file:** None
 
-**Next Action:** Execute 02-01-PLAN.md (Navigation restructure) to complete Phase 2
+**Next Action:** Plan Phase 3 (Content & Pages)
 
 ---
 
