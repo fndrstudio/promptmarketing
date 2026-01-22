@@ -1,98 +1,98 @@
 {
-	"subtitle": "How it works",
-	"title": "A thoughtful flow from idea to action.",
+	"subtitle": "How We Work",
+	"title": "From diagnostic to deployment.",
 	"nav": [
-		{ "id": "step-1", "index": "1", "label": "01. Start the Chat", "color": "#FFEAD0" },
-		{ "id": "step-2", "index": "2", "label": "02. View Insights", "color": "#F7F2FC" },
-		{ "id": "step-3", "index": "3", "label": "03. Set Your Style", "color": "#EDF8FF" },
-		{ "id": "step-4", "index": "4", "label": "04. Accept Payments", "color": "#FEF0F0" }
+		{ "id": "step-1", "index": "1", "label": "01. Audit", "color": "#2d5016" },
+		{ "id": "step-2", "index": "2", "label": "02. Design", "color": "#3d6b1e" },
+		{ "id": "step-3", "index": "3", "label": "03. Build", "color": "#4a8024" },
+		{ "id": "step-4", "index": "4", "label": "04. Measure", "color": "#b8860b" }
 	],
 	"steps": [
 		{
 			"id": "step-1",
 			"index": "01",
-			"title": "Your setup starts with a simple conversation",
+			"title": "We map your position in the latent space",
 			"subtitle": "step 01",
-			"color": "#FFEAD0",
+			"color": "#2d5016",
 			"body": [
-				"No long forms, no onboarding maze — just start with a quick conversation. As soon as you arrive, the AI greets you and begins a casual, intelligent chat to understand your goals, habits, and what you’re here to build. It’s like talking to a clever co-founder who’s actually listening. ",
-				"Whether you're brainstorming ideas, organizing thoughts, or setting up a project, the system uses your responses to shape a workspace that feels instantly familiar. It’s a first step that’s simple, fast, and surprisingly fun."
+				"The engagement begins with a comprehensive audit. We analyze how AI models currently perceive your brand—examining entity associations, selection rates, and semantic gaps.",
+				"You'll receive a detailed report showing exactly where you stand versus competitors, with quantified visibility scores and specific opportunities for improvement."
 			],
-			"cta": { "label": "More about getting started", "href": "/features" },
+			"cta": { "label": "Learn about our audit", "href": "/contact" },
 			"media": {
 				"front": {
 					"src": "/steps/steps/step_01_front.webp",
-					"alt": "step 1"
+					"alt": "GEO Readiness Audit"
 				},
 				"back": {
 					"src": "/steps/steps/step_01_back.webp",
-					"alt": "step 1"
+					"alt": "GEO Readiness Audit"
 				}
 			}
 		},
 		{
 			"id": "step-2",
 			"index": "02",
-			"title": "Get insights without asking for them",
+			"title": "We architect your machine-readable foundation",
 			"subtitle": "step 02",
-			"color": "#F7F2FC",
+			"color": "#3d6b1e",
 			"body": [
-				"Once you're in, the system quietly starts paying attention — but in a good way. It tracks patterns in how you work, what you focus on, and where you spend your time. The result? ",
-				"Useful, real-time insights without any effort on your part. You’ll start seeing trends, highlights, and even gentle nudges that help you understand what’s working and what’s getting in the way. It’s analytics, but without the overwhelm — just the right amount of clarity to keep you in flow."
+				"Based on audit findings, we design a technical architecture that addresses your specific gaps. Schema.org markup, entity optimization, content structure—everything AI needs to understand you correctly.",
+				"Every recommendation is tied to measurable outcomes. No vague 'best practices'—just engineered solutions for your identified problems."
 			],
-			"cta": { "label": "Read about insights", "href": "/features" },
+			"cta": { "label": "See our approach", "href": "/relevance-engineering" },
 			"media": {
 				"front": {
 					"src": "/steps/steps/step_02_front.webp",
-					"alt": "step 2"
+					"alt": "Architecture Design"
 				},
 				"back": {
 					"src": "/steps/steps/step_02_back.webp",
-					"alt": "step 2"
+					"alt": "Architecture Design"
 				}
 			}
 		},
 		{
 			"id": "step-3",
 			"index": "03",
-			"title": "Learns what you like (and what you don’t)",
+			"title": "We build and deploy the infrastructure",
 			"subtitle": "step 03",
-			"color": "#EDF8FF",
+			"color": "#4a8024",
 			"body": [
-				"No long forms, no onboarding maze — just start with a quick conversation. As soon as you arrive, the AI greets you and begins a casual, intelligent chat to understand your goals, habits, and what you’re here to build. It’s like talking to a clever co-founder who’s actually listening. ",
-				"Whether you're brainstorming ideas, organizing thoughts, or setting up a project, the system uses your responses to shape a workspace that feels instantly familiar. It’s a first step that’s simple, fast, and surprisingly fun."
+				"Our team implements the technical changes—whether that's structured data, content optimization, or knowledge graph integration. We work alongside your development team or handle it entirely.",
+				"Everything is documented, validated, and tested against real AI model responses before going live."
 			],
-			"cta": { "label": "More about styles", "href": "/features" },
+			"cta": { "label": "Our implementation process", "href": "/contact" },
 			"media": {
 				"front": {
 					"src": "/steps/steps/step_03_front.webp",
-					"alt": "step 3"
+					"alt": "Implementation"
 				},
 				"back": {
 					"src": "/steps/steps/step_03_back.webp",
-					"alt": "step 3"
+					"alt": "Implementation"
 				}
 			}
 		},
 		{
 			"id": "step-4",
 			"index": "04",
-			"title": "Get paid without the paperwork",
+			"title": "We track Selection Rate improvement",
 			"subtitle": "step 04",
-			"color": "#FEF0F0",
+			"color": "#b8860b",
 			"body": [
-				"When you’re ready to share your work — whether it’s a product, a service, or something entirely new — the system has everything in place. ",
-				"Built-in payment tools make it easy to accept payments, send invoices, or offer subscriptions without needing extra tools or plugins. It’s secure, fast, and frictionless. You focus on delivering value — we’ll handle the rest."
+				"Post-implementation, we monitor how AI models respond to your optimized presence. Selection Rate, entity accuracy, recommendation frequency—all measured and reported.",
+				"This isn't a one-time project. As AI models evolve, we ensure your relevance engineering evolves with them."
 			],
-			"cta": { "label": "Accept payments", "href": "/features" },
+			"cta": { "label": "Get Started", "href": "/contact" },
 			"media": {
 				"front": {
 					"src": "/steps/steps/step_02_front.webp",
-					"alt": "step 4"
+					"alt": "Measurement"
 				},
 				"back": {
 					"src": "/steps/steps/step_02_back.webp",
-					"alt": "step 4"
+					"alt": "Measurement"
 				}
 			}
 		}
