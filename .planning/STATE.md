@@ -8,14 +8,22 @@
 |-------|-------|
 | **Milestone** | v1 |
 | **Current Phase** | 2 |
-| **Phase Status** | Not Started |
+| **Phase Status** | In Progress |
 | **Blockers** | None |
 
 ## Progress
 
+```
+Phase 1: ████████████████████ 100% (3/3 plans)
+Phase 2: ██████████░░░░░░░░░░  50% (1/2 plans)
+Phase 3: ░░░░░░░░░░░░░░░░░░░░   0% (0/? plans)
+Phase 4: ░░░░░░░░░░░░░░░░░░░░   0% (0/? plans)
+Phase 5: ░░░░░░░░░░░░░░░░░░░░   0% (0/? plans)
+```
+
 ### Completed Phases
 
-#### Phase 1: Foundation & Branding ✓
+#### Phase 1: Foundation & Branding
 **Completed:** 2026-01-22
 
 All 6 requirements verified:
@@ -31,12 +39,13 @@ All 6 requirements verified:
 
 **Requirements:**
 - [ ] CONTENT-02: Restructure navigation around three pillars
-- [ ] CONTENT-03: Rewrite homepage with Scientific Forest messaging
+- [x] CONTENT-03: Rewrite homepage with Scientific Forest messaging
 
-**Plans:** Not yet created
+**Plans:**
+- 02-01-PLAN.md: Navigation restructure (pending)
+- 02-02-PLAN.md: Homepage content (complete)
 
 ### Upcoming Phases
-- Phase 2: Navigation & Homepage (CONTENT-02, CONTENT-03)
 - Phase 3: Content & Pages (CONTENT-04, CONTENT-05)
 - Phase 4: Technical SEO & Machine Readability (SEO-01, SEO-02, SEO-03)
 - Phase 5: Sanity CMS Integration (CMS-01, CMS-02, CMS-03, CMS-04)
@@ -58,6 +67,22 @@ All 6 requirements verified:
 - Replaced logo and favicon with PromptMarketing placeholders
 - Verified all 6 requirements pass
 
+### 2026-01-22 - Phase 2 Plan 02 Complete
+- Rewrote homepage with PromptMarketing "Scientific Forest" messaging
+- Hero: "Operationalizing Machine Trust" with "Relevance Engineering" subtitle
+- Features: Three service pillars (Prompt Intelligence, Relevance Engineering, Agentic Commerce)
+- Onboarding: 4-step GEO journey (Audit, Design, Build, Measure)
+- All CTAs: "Get Started" pointing to /contact
+- Voice: Scientific, precise, no guru language
+
+## Decisions Made
+
+| Decision | Context | Date |
+|----------|---------|------|
+| Three-pillar structure | Features organized as Diagnostic/Architecture/Transaction | 2026-01-22 |
+| Forest green onboarding colors | Steps use #2d5016 to #4a8024 gradient with #b8860b gold accent | 2026-01-22 |
+| /contact as primary CTA target | All "Get Started" buttons point to /contact | 2026-01-22 |
+
 ## Quick Reference
 
 **Key Files:**
@@ -75,7 +100,11 @@ All 6 requirements verified:
 - Integrations: `.planning/codebase/INTEGRATIONS.md`
 - Concerns: `.planning/codebase/CONCERNS.md`
 
-**Next Action:** Run `/gsd:plan-phase 2` to plan Phase 2 (Navigation & Homepage)
+**Last Session:** 2026-01-22
+**Stopped at:** Completed 02-02-PLAN.md
+**Resume file:** None
+
+**Next Action:** Execute 02-01-PLAN.md (Navigation restructure) to complete Phase 2
 
 ---
 
