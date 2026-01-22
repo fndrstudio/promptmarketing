@@ -8,7 +8,7 @@
 |-------|-------|
 | **Milestone** | v1 |
 | **Current Phase** | 1 |
-| **Phase Status** | Not Started |
+| **Phase Status** | Planned |
 | **Blockers** | None |
 
 ## Progress
@@ -27,7 +27,17 @@ None yet.
 - [ ] BRAND-05: Remove all Oxygenna/template promotional content
 - [ ] CONTENT-01: Update site config (title, description, URLs)
 
-**Plans:** Not yet created
+**Plans:** 3 plans created (ready to execute)
+
+| Plan | Wave | Requirements | Status |
+|------|------|--------------|--------|
+| PLAN-1: Config & Branding Text | 1 | CONTENT-01, BRAND-01 | Ready |
+| PLAN-2: Visual Identity (Colors & Fonts) | 1 | BRAND-02, BRAND-03 | Ready |
+| PLAN-3: Assets & Template Cleanup | 2 | BRAND-04, BRAND-05 | Ready |
+
+**Wave Execution:**
+- Wave 1: PLAN-1, PLAN-2 (parallel - no dependencies)
+- Wave 2: PLAN-3 (can run after Wave 1)
 
 ### Upcoming Phases
 - Phase 2: Navigation & Homepage (CONTENT-02, CONTENT-03)
@@ -61,7 +71,7 @@ None yet.
 - Integrations: `.planning/codebase/INTEGRATIONS.md`
 - Concerns: `.planning/codebase/CONCERNS.md`
 
-**Next Action:** Run `/gsd:plan-phase` to create execution plan for Phase 1
+**Next Action:** Run `/gsd:execute-phase` to execute Phase 1 plans
 
 ---
 
