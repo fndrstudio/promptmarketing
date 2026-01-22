@@ -7,37 +7,33 @@
 | Field | Value |
 |-------|-------|
 | **Milestone** | v1 |
-| **Current Phase** | 1 |
-| **Phase Status** | Planned |
+| **Current Phase** | 2 |
+| **Phase Status** | Not Started |
 | **Blockers** | None |
 
 ## Progress
 
 ### Completed Phases
-None yet.
 
-### Current Phase: 1 - Foundation & Branding
-**Goal:** Establish PromptMarketing visual identity and remove all template branding
+#### Phase 1: Foundation & Branding ✓
+**Completed:** 2026-01-22
+
+All 6 requirements verified:
+- BRAND-01: Zero Mizu Light references
+- BRAND-02: Forest green color palette
+- BRAND-03: Serif headings + sans-serif body fonts
+- BRAND-04: Logo and favicon replaced
+- BRAND-05: No Oxygenna/template content
+- CONTENT-01: Site config updated
+
+### Current Phase: 2 - Navigation & Homepage
+**Goal:** Restructure site navigation and create compelling homepage with "Priming vs Proving" framework
 
 **Requirements:**
-- [ ] BRAND-01: Replace all "Mizu Light" text with "PromptMarketing"
-- [ ] BRAND-02: Update color palette (forest green primary, lighter secondary, gold accent)
-- [ ] BRAND-03: Replace fonts (tight serif H1, rounded sans-serif body)
-- [ ] BRAND-04: Update logo and favicon
-- [ ] BRAND-05: Remove all Oxygenna/template promotional content
-- [ ] CONTENT-01: Update site config (title, description, URLs)
+- [ ] CONTENT-02: Restructure navigation around three pillars
+- [ ] CONTENT-03: Rewrite homepage with Scientific Forest messaging
 
-**Plans:** 3 plans created (ready to execute)
-
-| Plan | Wave | Requirements | Status |
-|------|------|--------------|--------|
-| PLAN-1: Config & Branding Text | 1 | CONTENT-01, BRAND-01 | Ready |
-| PLAN-2: Visual Identity (Colors & Fonts) | 1 | BRAND-02, BRAND-03 | Ready |
-| PLAN-3: Assets & Template Cleanup | 2 | BRAND-04, BRAND-05 | Ready |
-
-**Wave Execution:**
-- Wave 1: PLAN-1, PLAN-2 (parallel - no dependencies)
-- Wave 2: PLAN-3 (can run after Wave 1)
+**Plans:** Not yet created
 
 ### Upcoming Phases
 - Phase 2: Navigation & Homepage (CONTENT-02, CONTENT-03)
@@ -53,6 +49,14 @@ None yet.
 - Defined 17 requirements across 4 categories (Branding, Content, SEO, CMS)
 - Created 5-phase roadmap with 100% requirement coverage
 - Configuration: YOLO mode, Standard depth, Parallel execution enabled
+
+### 2026-01-22 - Phase 1 Complete
+- Executed all 3 plans in 2 waves
+- Updated site config and replaced all Mizu branding
+- Implemented forest green color palette with gold accents
+- Added Playfair Display (headings) and Nunito (body) fonts
+- Replaced logo and favicon with PromptMarketing placeholders
+- Verified all 6 requirements pass
 
 ## Quick Reference
 
@@ -71,7 +75,7 @@ None yet.
 - Integrations: `.planning/codebase/INTEGRATIONS.md`
 - Concerns: `.planning/codebase/CONCERNS.md`
 
-**Next Action:** Run `/gsd:execute-phase` to execute Phase 1 plans
+**Next Action:** Run `/gsd:plan-phase 2` to plan Phase 2 (Navigation & Homepage)
 
 ---
 

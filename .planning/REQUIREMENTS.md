@@ -9,15 +9,15 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Branding & Visual Identity
 
-- [ ] **BRAND-01**: Replace all "Mizu Light" text with "PromptMarketing" across site
-- [ ] **BRAND-02**: Update color palette to forest green primary, lighter forest green secondary, gold accent
-- [ ] **BRAND-03**: Replace fonts with tight serif for H1/headings, modern rounded sans-serif for body
-- [ ] **BRAND-04**: Update logo and favicon with PromptMarketing mark
-- [ ] **BRAND-05**: Remove all Oxygenna/template promotional content and links
+- [x] **BRAND-01**: Replace all "Mizu Light" text with "PromptMarketing" across site
+- [x] **BRAND-02**: Update color palette to forest green primary, lighter forest green secondary, gold accent
+- [x] **BRAND-03**: Replace fonts with tight serif for H1/headings, modern rounded sans-serif for body
+- [x] **BRAND-04**: Update logo and favicon with PromptMarketing mark
+- [x] **BRAND-05**: Remove all Oxygenna/template promotional content and links
 
 ### Content & Pages
 
-- [ ] **CONTENT-01**: Update site config (title, description, URLs) in `src/config/config.ts`
+- [x] **CONTENT-01**: Update site config (title, description, URLs) in `src/config/config.ts`
 - [ ] **CONTENT-02**: Restructure navigation around three pillars: Prompt Intelligence, Relevance Engineering, Agentic Commerce
 - [ ] **CONTENT-03**: Rewrite homepage with "Scientific Forest" messaging and "Priming vs Proving" framework
 - [ ] **CONTENT-04**: Update all page copy to reflect PromptMarketing voice (scientific, radically honest, Dutch pragmatism)
@@ -60,12 +60,12 @@ Which phases cover which requirements. Updated by create-roadmap.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| BRAND-01 | 1 | Pending |
-| BRAND-02 | 1 | Pending |
-| BRAND-03 | 1 | Pending |
-| BRAND-04 | 1 | Pending |
-| BRAND-05 | 1 | Pending |
-| CONTENT-01 | 1 | Pending |
+| BRAND-01 | 1 | Complete |
+| BRAND-02 | 1 | Complete |
+| BRAND-03 | 1 | Complete |
+| BRAND-04 | 1 | Complete |
+| BRAND-05 | 1 | Complete |
+| CONTENT-01 | 1 | Complete |
 | CONTENT-02 | 2 | Pending |
 | CONTENT-03 | 2 | Pending |
 | CONTENT-04 | 3 | Pending |
