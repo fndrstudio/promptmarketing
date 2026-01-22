@@ -60,29 +60,29 @@ Which phases cover which requirements. Updated by create-roadmap.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| BRAND-01 | TBD | Pending |
-| BRAND-02 | TBD | Pending |
-| BRAND-03 | TBD | Pending |
-| BRAND-04 | TBD | Pending |
-| BRAND-05 | TBD | Pending |
-| CONTENT-01 | TBD | Pending |
-| CONTENT-02 | TBD | Pending |
-| CONTENT-03 | TBD | Pending |
-| CONTENT-04 | TBD | Pending |
-| CONTENT-05 | TBD | Pending |
-| SEO-01 | TBD | Pending |
-| SEO-02 | TBD | Pending |
-| SEO-03 | TBD | Pending |
-| CMS-01 | TBD | Pending |
-| CMS-02 | TBD | Pending |
-| CMS-03 | TBD | Pending |
-| CMS-04 | TBD | Pending |
+| BRAND-01 | 1 | Pending |
+| BRAND-02 | 1 | Pending |
+| BRAND-03 | 1 | Pending |
+| BRAND-04 | 1 | Pending |
+| BRAND-05 | 1 | Pending |
+| CONTENT-01 | 1 | Pending |
+| CONTENT-02 | 2 | Pending |
+| CONTENT-03 | 2 | Pending |
+| CONTENT-04 | 3 | Pending |
+| CONTENT-05 | 3 | Pending |
+| SEO-01 | 4 | Pending |
+| SEO-02 | 4 | Pending |
+| SEO-03 | 4 | Pending |
+| CMS-01 | 5 | Pending |
+| CMS-02 | 5 | Pending |
+| CMS-03 | 5 | Pending |
+| CMS-04 | 5 | Pending |
 
 **Coverage:**
 - v1 requirements: 17 total
-- Mapped to phases: 0 (pending roadmap creation)
-- Unmapped: 17 ⚠️
+- Mapped to phases: 17 ✓
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-01-22*
-*Last updated: 2026-01-22 after initial definition*
+*Last updated: 2026-01-22 after roadmap creation*
