@@ -5,34 +5,29 @@
 		"alt": "PromptMarketing logo"
 	},
 	"footerAbout": {
-		"aboutText": "PromptMarketing — operationalizing machine trust through Relevance Engineering."
+		"aboutText": "PromptMarketing operationalizes Relevance Engineering to ensure brands are understood, trusted, and selected by AI systems."
 	},
 	"footerColumns": [
 		{
-			"title": "Your Launchpad",
+			"title": "Company",
 			"links": [
-				{ "label": "Home", "href": "/" },
-				{ "label": "Features", "href": "/features" },
-				{ "label": "Get Started", "href": "/get-started" },
-				{ "label": "Pricing", "href": "/pricing" }
-			]
-		},
-		{
-			"title": "Meet the Crew",
-			"links": [
-				{ "label": "About", "href": "/about" },
-				{ "label": "Blog", "href": "/blog" },
+				{ "label": "About Us", "href": "/about" },
+				{ "label": "How We Work", "href": "/how-we-work" },
+				{ "label": "Portfolio", "href": "/portfolio" },
 				{ "label": "Contact", "href": "/contact" }
 			]
 		},
 		{
-			"title": "Let's Connect",
+			"title": "Resources",
 			"links": [
-				{ "label": "Twitter / X", "href": "https://x.com/yourhandle" },
-				{ "label": "LinkedIn", "href": "https://www.linkedin.com/company/yourcompany" },
-				{ "label": "GitHub", "href": "https://github.com/yourorg" },
-				{ "label": "LinkedIn", "href": "https://www.linkedin.com/in/yourprofile" },
-				{ "label": "Threads", "href": "https://www.threads.net/@yourhandle" }
+				{ "label": "Blog", "href": "/blog" }
+			]
+		},
+		{
+			"title": "Connect",
+			"links": [
+				{ "label": "LinkedIn", "href": "https://www.linkedin.com/company/promptmarketing" },
+				{ "label": "Twitter / X", "href": "https://x.com/promptmarketing" }
 			]
 		}
 	],
