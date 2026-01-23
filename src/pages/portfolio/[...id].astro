@@ -1,0 +1,28 @@
+---
+// Case Study Single Page
+// ------------
+// Description: Individual case study detail page.
+
+// Components
+// - Layout
+import Layout from '../../layouts/CaseStudyLayout.astro'
+
+// Data
+import { getCollection, render } from 'astro:content'
+export async function getStaticPaths() {
+	const allCaseStudies = await getCollection('portfolio')
+	return allCaseStudies.map((entry) => {
+		const caseStudyId = entry.id
+		return {
+			params: { id: caseStudyId },
+			props: { entry }
+		}
+	})
+}
+const { entry } = Astro.props
+const { Content } = await render(entry)
+---
+
+<Layout frontmatter={entry.data}>
+	<Content />
+</Layout>
