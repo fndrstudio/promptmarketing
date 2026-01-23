@@ -1,6 +1,6 @@
 # Project State: PromptMarketing Website
 
-**Last Updated:** 2026-01-22
+**Last Updated:** 2026-01-23
 
 ## Current Status
 
@@ -8,7 +8,7 @@
 |-------|-------|
 | **Milestone** | v1 |
 | **Current Phase** | 3 |
-| **Phase Status** | Planned |
+| **Phase Status** | In Progress |
 | **Blockers** | None |
 
 ## Progress
@@ -16,7 +16,7 @@
 ```
 Phase 1: ████████████████████ 100% (3/3 plans)
 Phase 2: ████████████████████ 100% (2/2 plans)
-Phase 3: ░░░░░░░░░░░░░░░░░░░░   0% (0/2 plans)
+Phase 3: ██████████░░░░░░░░░░  50% (2/4 plans)
 Phase 4: ░░░░░░░░░░░░░░░░░░░░   0% (0/? plans)
 Phase 5: ░░░░░░░░░░░░░░░░░░░░   0% (0/? plans)
 ```
@@ -46,15 +46,17 @@ All requirements verified:
 - 02-02-PLAN.md: Homepage content (complete)
 
 ### Current Phase: Phase 3 - Content & Pages
-**Status:** Planned (2 plans ready)
+**Status:** Planned (4 plans ready)
 **Requirements:** CONTENT-04, CONTENT-05
 
 **Plans:**
-- 03-01-PLAN.md: Page content voice update (features, pricing, contact, FAQ)
+- 03-01-PLAN.md: Features → How We Work + Delete Pricing (complete)
 - 03-02-PLAN.md: Create About page (Amsterdam Clubhouse, Gang of Super Specialists)
+- 03-03-PLAN.md: Create Portfolio page (blog-style case studies collection)
+- 03-04-PLAN.md: Homepage 4-Pillar Update + Footer Cleanup (complete)
 
 **Wave Structure:**
-- Wave 1: Both plans can run in parallel (no dependencies)
+- Wave 1: All 4 plans can run in parallel (no dependencies)
 
 ### Upcoming Phases
 - Phase 4: Technical SEO & Machine Readability (SEO-01, SEO-02, SEO-03)
@@ -93,9 +95,10 @@ All requirements verified:
 | Decision | Context | Date |
 |----------|---------|------|
 | Consultancy navigation structure | About Us, How We Work, Portfolio, Blog (no dropdowns) | 2026-01-22 |
-| Three-pillar structure | Features organized as Diagnostic/Architecture/Transaction | 2026-01-22 |
+| Four-pillar structure | Features organized as Intelligence/Optimization/Commerce/Advertising | 2026-01-23 |
 | Forest green onboarding colors | Steps use #2d5016 to #4a8024 gradient with #b8860b gold accent | 2026-01-22 |
 | /contact as primary CTA target | All "Get Started" buttons point to /contact | 2026-01-22 |
+| Remove SaaS pricing page | Consultancy doesn't need tiered pricing - contact handles inquiries | 2026-01-23 |
 
 ## Quick Reference
 
@@ -115,10 +118,10 @@ All requirements verified:
 - Concerns: `.planning/codebase/CONCERNS.md`
 
 **Last Session:** 2026-01-23
-**Stopped at:** Phase 3 planned
+**Stopped at:** Completed 03-01-PLAN.md
 **Resume file:** None
 
-**Next Action:** Execute Phase 3 plans (run /gsd:execute-phase 3)
+**Next Action:** Execute remaining Phase 3 plans (03-02, 03-03)
 
 ---
 
