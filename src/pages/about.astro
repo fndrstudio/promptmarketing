@@ -1,0 +1,154 @@
+---
+// About Page
+// ------------
+// Description: The About page introduces PromptMarketing's team, philosophy, and approach.
+
+// Components
+// - Layout
+import Layout from '../layouts/Layout.astro'
+
+// - Blocks
+import Hero from '../components/blocks/hero/SimpleHeroPrimary.astro'
+import CTA from '../components/blocks/cta/CTAPrimary.astro'
+
+// Content
+// - SEO
+const SEO = {
+	title: 'PromptMarketing | About Us',
+	description:
+		'Meet the Gang of Super Specialists building the future of AI visibility. Based in Amsterdam, working globally on Generative Engine Optimization.'
+}
+// - Hero data
+const heroData = {
+	title: 'A Gang of Super Specialists',
+	subtitle: 'About Us',
+	text: "We're a collective of deep experts who believe the AI-mediated market rewards precision over promotion. No generalists. No gurus. Just people who know their craft."
+}
+// - CTA data
+const ctaData = {
+	title: 'Interested in Working With Us?',
+	text: "We take on a limited number of engagements to ensure depth over breadth. If you're serious about AI visibility, let's talk.",
+	buttonLink: '/contact',
+	buttonText: 'Start a Conversation'
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Hero title={heroData.title} subtitle={heroData.subtitle} text={heroData.text} />
+
+	<!-- Philosophy Section -->
+	<section class="py-16 lg:py-24">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto">
+				<h2 class="text-3xl lg:text-4xl font-serif text-primary mb-8">Why We Exist</h2>
+				<div class="prose prose-xl dark:prose-invert">
+					<p class="text-xl leading-relaxed mb-6">
+						The shift from search to synthesis is happening now. When people ask AI for recommendations,
+						the model doesn't return a list of links—it makes choices. It synthesizes, summarizes, and
+						selects. If your brand isn't part of that synthesis, you're invisible.
+					</p>
+					<p class="text-xl leading-relaxed mb-6">
+						Most marketing agencies haven't noticed. They're still optimizing for algorithms that
+						rank pages, not models that understand meaning. We built PromptMarketing because
+						someone needs to bridge that gap—with rigor, not hype.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Approach Section -->
+	<section class="py-16 lg:py-24 bg-neutral-50 dark:bg-neutral-900">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto">
+				<h2 class="text-3xl lg:text-4xl font-serif text-primary mb-8">How We Work</h2>
+				<div class="prose prose-xl dark:prose-invert">
+					<p class="text-xl leading-relaxed mb-6">
+						<strong>Engineers, not gurus.</strong> We don't sell certainty in an uncertain domain.
+						AI systems are probabilistic—anyone claiming guaranteed results is either lying or
+						doesn't understand the technology. We offer rigorous methodology, transparent
+						measurement, and honest assessment of what's achievable.
+					</p>
+					<p class="text-xl leading-relaxed mb-6">
+						<strong>Specialists, not generalists.</strong> Every person on our team has deep
+						expertise in a specific discipline: semantic architecture, knowledge graphs,
+						technical SEO, AI systems. We collaborate on projects, each contributing what
+						they know best. No mediocre middle.
+					</p>
+					<p class="text-xl leading-relaxed mb-6">
+						<strong>Dutch pragmatism.</strong> We're based in Amsterdam, and we bring that
+						directness to everything we do. No inflated promises. No buzzword theater.
+						Just clear thinking about hard problems.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Clubhouse Section -->
+	<section class="py-16 lg:py-24">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto">
+				<h2 class="text-3xl lg:text-4xl font-serif text-primary mb-8">The Amsterdam Clubhouse</h2>
+				<div class="prose prose-xl dark:prose-invert">
+					<p class="text-xl leading-relaxed mb-6">
+						Our base of operations is a workspace in Amsterdam where specialists converge
+						to solve problems that don't have playbooks yet. Part research lab, part
+						strategy room—a place where new ideas get stress-tested before they reach clients.
+					</p>
+					<p class="text-xl leading-relaxed mb-6">
+						The Clubhouse model means we can assemble exactly the right team for each
+						engagement. Your project might need a Schema.org architect, a knowledge graph
+						specialist, and an AI systems expert—we pull in precisely those people, no padding.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Values Section -->
+	<section class="py-16 lg:py-24 bg-neutral-50 dark:bg-neutral-900">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto">
+				<h2 class="text-3xl lg:text-4xl font-serif text-primary mb-8">What We Believe</h2>
+				<div class="grid md:grid-cols-2 gap-8">
+					<div>
+						<h3 class="text-xl font-semibold text-primary mb-3">Measurement Over Opinion</h3>
+						<p class="text-lg text-neutral-600 dark:text-neutral-400">
+							If we can't measure it, we don't claim it. Every recommendation we make
+							is backed by observable data, not gut feeling.
+						</p>
+					</div>
+					<div>
+						<h3 class="text-xl font-semibold text-primary mb-3">Transparency By Default</h3>
+						<p class="text-lg text-neutral-600 dark:text-neutral-400">
+							We show our work. Clients see the methodology, the data, the reasoning.
+							No black boxes, no proprietary mystery.
+						</p>
+					</div>
+					<div>
+						<h3 class="text-xl font-semibold text-primary mb-3">Long-Term Thinking</h3>
+						<p class="text-lg text-neutral-600 dark:text-neutral-400">
+							Quick wins that create technical debt aren't wins. We build architecture
+							that serves brands for years, not quarters.
+						</p>
+					</div>
+					<div>
+						<h3 class="text-xl font-semibold text-primary mb-3">Honest Limitations</h3>
+						<p class="text-lg text-neutral-600 dark:text-neutral-400">
+							We'll tell you when something is outside our expertise or when your
+							expectations exceed what's possible. Trust requires honesty.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<CTA
+		title={ctaData.title}
+		text={ctaData.text}
+		buttonLink={ctaData.buttonLink}
+		buttonText={ctaData.buttonText}
+	/>
+</Layout>
