@@ -1,36 +1,31 @@
 [
 	{
-		"title": "The Diagnostic",
-		"subtitle": "Prompt Intelligence",
+		"title": "Intelligence",
+		"subtitle": "Understand Your Position",
 		"features": [
 			{
 				"title": "Latent Space Mapping",
-				"description": "We analyze how AI models perceive your brand by examining the semantic associations in their training data. No guesswork—just observable patterns.",
+				"description": "Analyze how AI models perceive your brand by examining semantic associations in their training data. No guesswork—just observable patterns.",
 				"icon": "chart-bar"
 			},
 			{
-				"title": "Visibility Scoring",
-				"description": "Quantify your brand's Selection Rate—how often AI chooses you over competitors when answering user queries about your category.",
+				"title": "AI Selection Rate",
+				"description": "Quantify how often AI systems choose your brand when answering queries in your category. The metric that matters in the generative era.",
 				"icon": "trending-up"
 			},
 			{
-				"title": "Primary Bias Detection",
-				"description": "Identify the assumptions AI systems make about your brand. Are they accurate? Outdated? We find the gaps between identity and perception.",
-				"icon": "light-bulb"
-			},
-			{
-				"title": "Competitive Intelligence",
+				"title": "Competitive Visibility",
 				"description": "See where you stand relative to competitors in the AI's knowledge layer. Understand who gets recommended—and why.",
 				"icon": "document-chart-bar"
 			}
 		]
 	},
 	{
-		"title": "The Architecture",
-		"subtitle": "Relevance Engineering",
+		"title": "Optimization",
+		"subtitle": "Engineer Machine Trust",
 		"features": [
 			{
-				"title": "Schema.org Implementation",
+				"title": "Schema.org Architecture",
 				"description": "Structured data is the language AI understands. We build machine-readable architecture that makes your content parseable and trustworthy.",
 				"icon": "code-bracket"
 			},
@@ -41,39 +36,50 @@
 			},
 			{
 				"title": "Content Authority Signals",
-				"description": "Establish topical authority through semantic consistency. We align your content with how AI models structure domain expertise.",
+				"description": "Establish topical authority through semantic consistency. Align your content with how AI models structure domain expertise.",
 				"icon": "document-text"
-			},
-			{
-				"title": "Technical GEO Foundation",
-				"description": "From SXO to GEO: we ensure your technical infrastructure supports AI discoverability and semantic interpretation.",
-				"icon": "server-stack"
 			}
 		]
 	},
 	{
-		"title": "The Transaction",
-		"subtitle": "Agentic Commerce",
+		"title": "Commerce",
+		"subtitle": "Prepare for Autonomous Transactions",
 		"features": [
 			{
 				"title": "AI Agent Compatibility",
-				"description": "Prepare for the autonomous economy. We optimize your data for ACP, MCP, and UCP protocols—the handshakes AI agents use to transact.",
+				"description": "Prepare for the autonomous economy. Optimize your data for ACP, MCP, and UCP protocols—the handshakes AI agents use to transact.",
 				"icon": "arrows-right-left"
 			},
 			{
 				"title": "Data Provenance",
-				"description": "Verifiable, trustworthy data is the currency of AI commerce. We establish clear provenance chains that agents can validate.",
+				"description": "Verifiable, trustworthy data is the currency of AI commerce. Establish clear provenance chains that agents can validate.",
 				"icon": "lock-closed"
 			},
 			{
 				"title": "Choosability Optimization",
-				"description": "When an AI agent needs to select a vendor, you want to be chosen. We engineer the signals that make you the reliable choice.",
+				"description": "When an AI agent needs to select a vendor, you want to be chosen. Engineer the signals that make you the reliable choice.",
 				"icon": "check-circle"
+			}
+		]
+	},
+	{
+		"title": "Advertising",
+		"subtitle": "Amplify AI Presence",
+		"features": [
+			{
+				"title": "AI-Native Campaigns",
+				"description": "Advertising strategies designed for AI-mediated discovery. Reach audiences through the channels AI systems prioritize.",
+				"icon": "megaphone"
 			},
 			{
-				"title": "Protocol-Ready Infrastructure",
-				"description": "Future-proof your digital presence for the agent economy. Our architecture prepares you for transaction protocols that don't exist yet.",
-				"icon": "arrow-path"
+				"title": "Prompt-Optimized Creative",
+				"description": "Content that performs in AI contexts. From search to synthesis, ensure your messaging translates to AI recommendations.",
+				"icon": "sparkles"
+			},
+			{
+				"title": "Performance Measurement",
+				"description": "Track what matters: AI mention rate, recommendation frequency, selection conversion. Metrics for the generative era.",
+				"icon": "chart-pie"
 			}
 		]
 	}
