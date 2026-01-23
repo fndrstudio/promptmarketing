@@ -17,8 +17,9 @@ import BlogCard from '../../../components/ui/cards/BlogCard.astro'
 // - Props
 type Props = {
 	data: any
+	basePath?: string
 }
-const { data: sortedBlogPosts } = Astro.props
+const { data: sortedBlogPosts, basePath = '/blog' } = Astro.props
 ---
 
 <Section>
@@ -30,7 +31,7 @@ const { data: sortedBlogPosts } = Astro.props
 						<BlogCard
 							title={post.data.title}
 							image={index < 2 && post.data.thumbnail ? post.data.thumbnail : ''}
-							link={`/blog/${post.id}`}
+							link={`${basePath}/${post.id}`}
 							date={new Date(post.data.pubDate).toLocaleDateString('en-US', {
 								year: 'numeric',
 								month: 'long',
