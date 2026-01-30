@@ -87,7 +87,7 @@ Updated `index.astro` messaging per Layout document:
 | Hero subtitle | "Relevance Engineering" | "Prompt Marketing" |
 | Hero button | "Get Started" | "Get a Strategy Audit" |
 | Brand title | "Trusted by forward-thinking brands" | "Trusted by innovative brands" |
-| CTA title | "Ready to become machine-readable?" | "Ready to Dominate the New Search?" |
+| CTA title | "Ready to become machine-readable?" | "Ready to Dominate the New Search Era?" |
 | CTA text | Latent space mapping pitch | GEO Readiness Audit pitch |
 | CTA button | "Get Started" | "Let's Talk" |
 

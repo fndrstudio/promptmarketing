@@ -5,7 +5,7 @@
 		"features": [
 			{
 				"title": "Latent Space Mapping",
-				"description": "Analyze how AI models perceive your brand by examining semantic associations in their training data. No guesswork—just observable patterns.",
+				"description": "Analyze how AI models perceive your brand by examining semantic associations in their training data. No guesswork, just observable patterns.",
 				"icon": "chart-bar"
 			},
 			{
@@ -15,7 +15,7 @@
 			},
 			{
 				"title": "Competitive Visibility",
-				"description": "See where you stand relative to competitors in the AI's knowledge layer. Understand who gets recommended—and why.",
+				"description": "See where you stand relative to competitors in the AI's knowledge layer. Understand who gets recommended, and why.",
 				"icon": "document-chart-bar"
 			}
 		]
@@ -47,7 +47,7 @@
 		"features": [
 			{
 				"title": "AI Agent Compatibility",
-				"description": "Prepare for the autonomous economy. Optimize your data for ACP, MCP, and UCP protocols—the handshakes AI agents use to transact.",
+				"description": "Prepare for the autonomous economy. Optimize your data for ACP, MCP, and UCP protocols, the handshakes AI agents use to transact.",
 				"icon": "arrows-right-left"
 			},
 			{

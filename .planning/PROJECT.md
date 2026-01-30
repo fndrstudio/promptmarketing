@@ -2,11 +2,11 @@
 
 ## What This Is
 
-A marketing website for PromptMarketing, an executing consultancy that helps brands become machine-readable and trusted by AI systems through "Relevance Engineering" (GEO). Built on an Astro template, customized with a "Scientific Forest" aesthetic—dark forest green palette with gold accents, tight serif headlines, and modern sans-serif body text.
+A marketing website for PromptMarketing, an executing consultancy that helps brands become machine-readable and trusted by AI systems through "Relevance Engineering" (GEO). Built on an Astro template, customized with a "Scientific Forest" aesthetic, dark forest green palette with gold accents, tight serif headlines, and modern sans-serif body text.
 
 ## Core Value
 
-**The site must function as proof-of-concept for Relevance Engineering**—it should look like it was built to be understood by AI, with perfect Schema.org implementation and machine-readable architecture.
+**The site must function as proof-of-concept for Relevance Engineering**, it should look like it was built to be understood by AI, with perfect Schema.org implementation and machine-readable architecture.
 
 ## Requirements
 
@@ -14,15 +14,15 @@ A marketing website for PromptMarketing, an executing consultancy that helps bra
 
 <!-- Existing capabilities from the Mizu Light template -->
 
-- ✓ Astro 5 static site with 100/100 PageSpeed — existing
-- ✓ Responsive design (mobile, tablet, desktop) — existing
-- ✓ Light/dark mode support — existing
-- ✓ SEO component with meta tags and Open Graph — existing
-- ✓ Blog with Markdown content collections — existing
-- ✓ Modular block-based page composition — existing
-- ✓ Google Analytics integration ready — existing
-- ✓ Sitemap generation — existing
-- ✓ Netlify deployment configured — existing
+- ✓ Astro 5 static site with 100/100 PageSpeed ,  existing
+- ✓ Responsive design (mobile, tablet, desktop) ,  existing
+- ✓ Light/dark mode support ,  existing
+- ✓ SEO component with meta tags and Open Graph ,  existing
+- ✓ Blog with Markdown content collections ,  existing
+- ✓ Modular block-based page composition ,  existing
+- ✓ Google Analytics integration ready ,  existing
+- ✓ Sitemap generation ,  existing
+- ✓ Netlify deployment configured ,  existing
 
 ### Active
 
@@ -55,11 +55,11 @@ A marketing website for PromptMarketing, an executing consultancy that helps bra
 
 ### Out of Scope
 
-- Custom animations beyond existing template (Lottie, parallax) — keep what works, don't add complexity
-- Multi-language support — English only for v1
-- E-commerce functionality — this is a lead-gen site, not transactional
-- Custom dashboard/login areas — static marketing site only
-- PromptWatch API integration — future enhancement, not v1
+- Custom animations beyond existing template (Lottie, parallax) ,  keep what works, don't add complexity
+- Multi-language support ,  English only for v1
+- E-commerce functionality ,  this is a lead-gen site, not transactional
+- Custom dashboard/login areas ,  static marketing site only
+- PromptWatch API integration ,  future enhancement, not v1
 
 ## Context
 
@@ -73,7 +73,7 @@ A marketing website for PromptMarketing, an executing consultancy that helps bra
 - Dark, technical, expensive-feeling aesthetic
 - Serif typography for strategic narrative (authority)
 - Sans-serif for technical content (precision)
-- No "SaaS blue" — differentiated positioning
+- No "SaaS blue" ,  differentiated positioning
 
 **Client:** PromptMarketing
 - Amsterdam-based "Clubhouse" office
@@ -98,10 +98,10 @@ A marketing website for PromptMarketing, an executing consultancy that helps bra
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Gold accent instead of Electric Lime | More premium/authoritative feel aligned with "expensive, engineered" positioning | — Pending |
-| Sanity CMS for blog only | Client needs self-service for blog; static pages don't change frequently | — Pending |
-| Keep existing template animations | Avoid scope creep; template animations work well | — Pending |
-| Dark mode as primary | "Scientific Forest" aesthetic requires dark base | — Pending |
+| Gold accent instead of Electric Lime | More premium/authoritative feel aligned with "expensive, engineered" positioning | ,  Pending |
+| Sanity CMS for blog only | Client needs self-service for blog; static pages don't change frequently | ,  Pending |
+| Keep existing template animations | Avoid scope creep; template animations work well | ,  Pending |
+| Dark mode as primary | "Scientific Forest" aesthetic requires dark base | ,  Pending |
 
 ---
 *Last updated: 2026-01-22 after initialization*

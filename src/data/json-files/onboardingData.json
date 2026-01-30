@@ -2,10 +2,30 @@
 	"subtitle": "How We Work",
 	"title": "From diagnostic to deployment.",
 	"nav": [
-		{ "id": "step-1", "index": "1", "label": "01. Audit", "color": "#2d5016" },
-		{ "id": "step-2", "index": "2", "label": "02. Design", "color": "#3d6b1e" },
-		{ "id": "step-3", "index": "3", "label": "03. Build", "color": "#4a8024" },
-		{ "id": "step-4", "index": "4", "label": "04. Measure", "color": "#b8860b" }
+		{
+			"id": "step-1",
+			"index": "1",
+			"label": "01. Audit",
+			"color": "#2d5016"
+		},
+		{
+			"id": "step-2",
+			"index": "2",
+			"label": "02. Design",
+			"color": "#3d6b1e"
+		},
+		{
+			"id": "step-3",
+			"index": "3",
+			"label": "03. Build",
+			"color": "#4a8024"
+		},
+		{
+			"id": "step-4",
+			"index": "4",
+			"label": "04. Measure",
+			"color": "#b8860b"
+		}
 	],
 	"steps": [
 		{
@@ -15,10 +35,13 @@
 			"subtitle": "step 01",
 			"color": "#2d5016",
 			"body": [
-				"The engagement begins with a comprehensive audit. We analyze how AI models currently perceive your brand—examining entity associations, selection rates, and semantic gaps.",
+				"The engagement begins with a comprehensive audit. We analyze how AI models currently perceive your brand, examining entity associations, selection rates, and semantic gaps.",
 				"You'll receive a detailed report showing exactly where you stand versus competitors, with quantified visibility scores and specific opportunities for improvement."
 			],
-			"cta": { "label": "Learn about our audit", "href": "/contact" },
+			"cta": {
+				"label": "Learn about our audit",
+				"href": "/contact"
+			},
 			"media": {
 				"front": {
 					"src": "/steps/steps/step_01_front.webp",
@@ -37,10 +60,13 @@
 			"subtitle": "step 02",
 			"color": "#3d6b1e",
 			"body": [
-				"Based on audit findings, we design a technical architecture that addresses your specific gaps. Schema.org markup, entity optimization, content structure—everything AI needs to understand you correctly.",
-				"Every recommendation is tied to measurable outcomes. No vague 'best practices'—just engineered solutions for your identified problems."
+				"Based on audit findings, we design a technical architecture that addresses your specific gaps. Schema.org markup, entity optimization, content structure, everything AI needs to understand you correctly.",
+				"Every recommendation is tied to measurable outcomes. No vague 'best practices', just engineered solutions for your identified problems."
 			],
-			"cta": { "label": "See our approach", "href": "/relevance-engineering" },
+			"cta": {
+				"label": "See our approach",
+				"href": "/relevance-engineering"
+			},
 			"media": {
 				"front": {
 					"src": "/steps/steps/step_02_front.webp",
@@ -59,10 +85,13 @@
 			"subtitle": "step 03",
 			"color": "#4a8024",
 			"body": [
-				"Our team implements the technical changes—whether that's structured data, content optimization, or knowledge graph integration. We work alongside your development team or handle it entirely.",
+				"Our team implements the technical changes, whether that's structured data, content optimization, or knowledge graph integration. We work alongside your development team or handle it entirely.",
 				"Everything is documented, validated, and tested against real AI model responses before going live."
 			],
-			"cta": { "label": "Our implementation process", "href": "/contact" },
+			"cta": {
+				"label": "Our implementation process",
+				"href": "/contact"
+			},
 			"media": {
 				"front": {
 					"src": "/steps/steps/step_03_front.webp",
@@ -81,10 +110,13 @@
 			"subtitle": "step 04",
 			"color": "#b8860b",
 			"body": [
-				"Post-implementation, we monitor how AI models respond to your optimized presence. Selection Rate, entity accuracy, recommendation frequency—all measured and reported.",
+				"Post-implementation, we monitor how AI models respond to your optimized presence. Selection Rate, entity accuracy, recommendation frequency, all measured and reported.",
 				"This isn't a one-time project. As AI models evolve, we ensure your relevance engineering evolves with them."
 			],
-			"cta": { "label": "Get Started", "href": "/contact" },
+			"cta": {
+				"label": "Get Started",
+				"href": "/contact"
+			},
 			"media": {
 				"front": {
 					"src": "/steps/steps/step_02_front.webp",

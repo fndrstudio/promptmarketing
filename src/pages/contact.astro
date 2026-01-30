@@ -5,7 +5,7 @@ import Layout from '../layouts/Layout.astro'
 
 // - Blocks
 import Hero from '../components/blocks/hero/SimpleHeroBasic.astro'
-import ContactInfo from '../components/blocks/contact/ContactInfoCards.astro'
+import ContactForm from '../components/blocks/contact/ContactForm.astro'
 import Brand from '../components/blocks/brand/Marquee.astro'
 import Faq from '../components/blocks/faq/StickyFaq.astro'
 import CTA from '../components/blocks/cta/CTAPrimary.astro'
@@ -15,17 +15,17 @@ import CTA from '../components/blocks/cta/CTAPrimary.astro'
 const SEO = {
 	title: 'PromptMarketing | Contact',
 	description:
-		'Start a conversation about AI visibility. Book a consultation to discuss your brand\'s position in the AI-mediated market.'
+		"Start a conversation about AI visibility. Book a consultation to discuss your brand's position in the AI-mediated market."
 }
 // - Hero data
 const heroData = {
 	title: 'Start With a Conversation',
 	subtitle: 'Get in Touch',
-	text: 'Whether you\'re curious about your AI visibility, ready for an audit, or want to discuss a specific challenge—we\'re here to help you understand your options.',
+	text: "Whether you're curious about your AI visibility, ready for an audit, or want to discuss a specific challenge, we're here to help you understand your options."
 }
 // - Contact data
 const contactData = {
-	title: 'Choose support, sales, or requests and let’s get started.'
+	title: 'Fill out the form below and let’s get started.'
 }
 // - Brand data
 const brandData = {
@@ -39,19 +39,15 @@ const faqData = {
 // - CTA data
 const ctaData = {
 	title: 'Want to Join the Team?',
-	text: 'We\'re always looking for specialists who think differently about the intersection of AI, marketing, and technical architecture. If that sounds like you, reach out.',
+	text: "We're always looking for specialists who think differently about the intersection of AI, marketing, and technical architecture. If that sounds like you, reach out.",
 	buttonLink: '/contact',
 	buttonText: 'Send Your Profile'
 }
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
-	<Hero
-		title={heroData.title}
-		subtitle={heroData.subtitle}
-		text={heroData.text}
-	/>
-	<ContactInfo title={contactData.title} />
+	<Hero title={heroData.title} subtitle={heroData.subtitle} text={heroData.text} />
+	<ContactForm title={contactData.title} />
 	<Brand title={brandData.title} />
 	<Faq subtitle={faqData.subtitle} title={faqData.title} />
 	<CTA

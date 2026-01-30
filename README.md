@@ -16,7 +16,7 @@ Mizu Light is a product launch template designed for modern SaaS companies, digi
 
 - **Pre-Built Pages:** Get started quickly with a full set of professionally designed pages, ready to launch right out of the box.
 - **Optimized 100/100 PageSpeed:** Mizu Light is built for speed, delivering lightning-fast load times and perfect scores on Google PageSpeed.
-- **Flexible Modular Blocks:** Every page is made from reusable, flexible blocks—easily add, rearrange, or expand content using our ever-growing library.
+- **Flexible Modular Blocks:** Every page is made from reusable, flexible blocks, easily add, rearrange, or expand content using our ever-growing library.
 - **Reusable UI Components:** Keep your design consistent and save time with a complete set of customizable, reusable components.
 - **Built with Astro v5 & Tailwind CSS v4:** Harness the latest frameworks for blazing-fast development and modern, utility-first styling.
 - **Light & Dark Mode:** Let users switch seamlessly between light and dark themes for a fully customizable experience.

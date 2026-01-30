@@ -1,7 +1,7 @@
 # Requirements: PromptMarketing Website
 
 **Defined:** 2026-01-22
-**Core Value:** The site must function as proof-of-concept for Relevance Engineering—it should look like it was built to be understood by AI, with perfect Schema.org implementation and machine-readable architecture.
+**Core Value:** The site must function as proof-of-concept for Relevance Engineering, it should look like it was built to be understood by AI, with perfect Schema.org implementation and machine-readable architecture.
 
 ## v1 Requirements
 
@@ -40,7 +40,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 Deferred to future release. Tracked but not in current roadmap.
 
-(None — all requirements included in v1)
+(None ,  all requirements included in v1)
 
 ## Out of Scope
 

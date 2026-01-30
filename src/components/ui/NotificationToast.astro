@@ -15,7 +15,7 @@ type Props = {
 }
 
 const {
-	title = "Ready to become machine-readable?",
+	title = 'Ready to become machine-readable?',
 	message = `<a href="/contact">Contact us</a> to learn how Relevance Engineering can help your brand become AI-ready.`
 } = Astro.props
 ---
@@ -28,7 +28,12 @@ const {
 			<h4 class="toast__title">{title}</h4>
 			<p class="toast__text" set:html={message} />
 		</div>
-		<button type="button" class="toast__close" aria-label="Dismiss notification" data-toast-close>
+		<button
+			type="button"
+			class="toast__close"
+			aria-label="Dismiss notification"
+			data-toast-close
+		>
 			<Icon name="x-mark" class="size-5" />
 		</button>
 	</div>
@@ -103,7 +108,7 @@ const {
 		@apply relative z-10 flex flex-col gap-1;
 	}
 	.toast__bg-color {
-		@apply absolute inset-0 z-0 bg-linear-[135deg,#F97316_0%,#EA580C_35%,#F97316_70%,#F46F16_100%] opacity-90;
+		@apply absolute inset-0 z-0 bg-linear-[135deg,#065c0f_0%,#04400a_35%,#065c0f_70%,#10701a_100%] opacity-90;
 	}
 	.toast__bg-image {
 		@apply absolute inset-0 z-0 bg-[url('/bgs/dot-gray-light.svg')] bg-size-[18px] bg-fixed opacity-30;

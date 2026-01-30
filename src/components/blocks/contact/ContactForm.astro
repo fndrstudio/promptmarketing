@@ -1,0 +1,106 @@
+---
+// Contact Form Component
+// ----------------------
+// Description: A contact form with Name, Email, Company, Phone, and Message fields.
+// Properties:
+// - title: Optional title for the form section (e.g., "Get in touch")
+
+// Components
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+import Button from '../../ui/Button.astro'
+import DecorationBorder from '../../ui/DecorationBorder.astro'
+
+// Props
+interface Props {
+	title?: string
+}
+const { title = '' } = Astro.props
+---
+
+<Section>
+	<Row decorationBorder="top left " gapY="0" style="transparent">
+		<Col
+			span="12"
+			classes="px-8 py-12 relative bg-[url('/bgs/dot-gray-light.svg')] bg-size-[18px] bg-fixed dark:bg-[url('/bgs/dot-gray-dark.svg')] dark:bg-size-[18px] dark:bg-fixed"
+		>
+			<h2 class="h5 mb-12 text-center leading-0">{title}</h2>
+			<DecorationBorder type="bottom" style="dashed" />
+
+			<div class="md:px-12">
+				<form method="POST" action="/contact-success" class="mx-auto max-w-4xl">
+					<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+						<!-- Row 1: Name (Full Width) -->
+						<div class="col-span-1 md:col-span-2">
+							<label for="name" class="mb-1 block"
+								>Name <span class="text-primary-500">*</span></label
+							>
+							<input
+								type="text"
+								id="name"
+								name="name"
+								placeholder="Name"
+								required
+								class="mb-0! bg-white dark:bg-neutral-900"
+							/>
+						</div>
+
+						<!-- Row 2: Email (Full Width) -->
+						<div class="col-span-1 md:col-span-2">
+							<label for="email" class="mb-1 block"
+								>Email <span class="text-primary-500">*</span></label
+							>
+							<input
+								type="email"
+								id="email"
+								name="email"
+								placeholder="Email"
+								required
+								class="mb-0! bg-white dark:bg-neutral-900"
+							/>
+						</div>
+
+						<!-- Row 3: Company & Phone (Split) -->
+						<div class="col-span-1">
+							<label for="company" class="mb-1 block">Company</label>
+							<input
+								type="text"
+								id="company"
+								name="company"
+								placeholder="Company"
+								class="mb-0! bg-white dark:bg-neutral-900"
+							/>
+						</div>
+						<div class="col-span-1">
+							<label for="phone" class="mb-1 block">Phone</label>
+							<input
+								type="tel"
+								id="phone"
+								name="phone"
+								placeholder="Phone"
+								class="mb-0! bg-white dark:bg-neutral-900"
+							/>
+						</div>
+
+						<!-- Row 4: Message (Full Width) -->
+						<div class="col-span-1 md:col-span-2">
+							<label for="message" class="mb-1 block">Message</label>
+							<textarea
+								id="message"
+								name="message"
+								rows="4"
+								placeholder="How can we help?"
+								class="mb-0! bg-white dark:bg-neutral-900"></textarea>
+						</div>
+
+						<!-- Submit Button -->
+						<div class="col-span-1 mt-2 text-left md:col-span-2">
+							<button type="submit">Submit Request</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</Col>
+	</Row>
+</Section>

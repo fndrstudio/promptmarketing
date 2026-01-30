@@ -41,7 +41,7 @@ We will structure the site around the three pillars from the **Executive Summary
 ### **Pillar 3: Agentic Commerce (The Transaction)**
 
 * **Visual Equivalent:** API documentation aesthetics and "Protocol Handshake" icons.  
-* **Function:** Optimizing for the next economic paradigm—being reliably selected by autonomous AI agents (ACP/UCP/MCP protocols).  
+* **Function:** Optimizing for the next economic paradigm, being reliably selected by autonomous AI agents (ACP/UCP/MCP protocols).  
 * **Key Design Element:** Clean, fast, and transactional. Focus on "Data Provenance" and "Choosability."
 
 ## ---
@@ -52,7 +52,7 @@ We will structure the site around the three pillars from the **Executive Summary
 | :---- | :---- | :---- | :---- |
 | **Hero Section** | **The Engineering Reality** | "We make AI love you." | "Operationalizing Machine Trust." |
 | **Social Proof** | **The Data Vault** | Logos of big companies. | Live **Visibility Scores** from the PromptWatch API. |
-| **About Us** | **The Arena** | Headshots of people smiling. | Photos of the **Clubhouse**—actual logic on whiteboards. |
+| **About Us** | **The Arena** | Headshots of people smiling. | Photos of the **Clubhouse**, actual logic on whiteboards. |
 | **Lead Gen** | **The Audit** | "Get a free consultation." | "Request a GEO Readiness Audit." |
 
 ### **Operational Mandate for the Developer**

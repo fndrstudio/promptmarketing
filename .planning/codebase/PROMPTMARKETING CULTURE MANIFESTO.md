@@ -34,7 +34,7 @@ We are an international team of adults. We do not police hours or inputs.
 We believe that people excel when they do what they are naturally good at.
 
 * **Strengths over Weaknesses.** We do not manage your weak points; we exploit your strengths. We want you to become the absolute best version of yourself.  
-* **The "Super Specialist."** We don't want mediocre generalists. We empower you to go deep into your niche—whether that is Technical SEO, Content Strategy, or AI Automation—and own it completely.  
+* **The "Super Specialist."** We don't want mediocre generalists. We empower you to go deep into your niche, whether that is Technical SEO, Content Strategy, or AI Automation, and own it completely.  
 * **Continuous Growth.** Personal self-development is crucial. We support your journey to master your craft.
 
 ### **5\. EVERYONE IS IN THE ARENA**

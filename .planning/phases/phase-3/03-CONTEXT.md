@@ -1,7 +1,7 @@
 # Phase 3: Content & Pages - Context
 
 **Gathered:** 2026-01-23
-**Status:** Ready for planning (plans need revision)
+**Status:** Planning complete (4 plans created)
 
 <vision>
 ## How This Should Work
@@ -57,24 +57,32 @@ The site should have a clean, functional structure that matches the Layout docum
 </specifics>
 
 <notes>
-## Additional Context
+## Plans Created
 
-The current Phase 3 plans (03-01, 03-02) were created before this discussion and need revision:
+Phase 3 now has 4 plans covering all requirements:
 
-**03-01-PLAN.md issues:**
-- Based on 3 pillars, should be 4 pillars
-- Updates pricing.astro which should be deleted instead
-- Doesn't handle the features → how-we-work rename
+**03-01-PLAN.md: Features → How We Work + Delete Pricing**
+- Rename features.astro to how-we-work.astro
+- Delete pricing.astro (SaaS model doesn't fit)
+- Update contact.astro content voice
 
-**03-02-PLAN.md:**
-- About page creation is still valid
-- May need minor adjustments for Layout doc structure
+**03-02-PLAN.md: Create About Page**
+- Amsterdam Clubhouse section
+- Gang of Super Specialists positioning
+- Values and philosophy content
 
-**New work needed:**
-- Portfolio page creation (blog-style collection)
-- Footer link cleanup (conditions removal, privacy redirect)
-- Homepage content update for 4-pillar structure
-- featuresData.json update for 4 pillars
+**03-03-PLAN.md: Create Portfolio Page**
+- Blog-style content collection for case studies
+- Portfolio listing and detail pages
+- Placeholder case study content
+
+**03-04-PLAN.md: Homepage 4-Pillar Update + Footer Cleanup**
+- Update featuresData.json to 4 pillars (Intelligence, Optimization, Commerce, Advertising)
+- Clean footer legal links (remove Conditions, point Privacy to /terms)
+- Update hero/CTA messaging per Layout doc
+
+**Wave Structure:**
+- Wave 1: All 4 plans can run in parallel (no dependencies)
 
 </notes>
 
