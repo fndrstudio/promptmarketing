@@ -1,0 +1,229 @@
+---
+// Components
+// - Layout
+import Layout from '../layouts/Layout.astro'
+import Row from '../components/ui/Row.astro'
+import Col from '../components/ui/Col.astro'
+// - Blocks
+import Hero from '../components/blocks/hero/SimpleHeroNeutral.astro'
+import SectionSticky from '../components/blocks/basic/StickySidebarTransparent.astro'
+// - UI
+import Header from '../components/ui/Header.astro'
+
+// Content
+// - SEO
+const SEO = {
+	title: 'PromptMarketing | Privacy Policy',
+	description:
+		'Learn how PromptMarketing collects, uses, and protects your personal information when you use our services.'
+}
+// - Hero
+const heroData = {
+	title: 'Your Privacy Matters to Us',
+	subtitle: 'Privacy Policy',
+	text: 'This Privacy Policy explains how PromptMarketing collects, uses, and protects your personal information. We are committed to transparency and safeguarding your data.'
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Hero
+		title={heroData.title}
+		subtitle={heroData.subtitle}
+		text={heroData.text}
+		textClasses="max-w-xl!"
+	/>
+	<SectionSticky>
+		<Header
+			title="Information We Collect"
+			subtitle="Data Collection"
+			headingLevel="h2"
+			titleClasses="bg-white dark:bg-neutral-950"
+			slot="sidebar"
+		/>
+		<Row decorationBorder="top bottom" decorationBorderStyle="dashed" style="transparent">
+			<Col span="12" style="transparent">
+				<div class="text-basic bg-white p-8 dark:bg-neutral-950 [&_h3]:text-xl!">
+					<h3>Personal Information</h3>
+					<p>
+						When you contact us or use our services, we may collect personal information
+						such as your name, email address, company name, and phone number. This
+						information is provided voluntarily when you fill out forms on our website
+						or communicate with us directly.
+					</p>
+					<p>
+						We only collect information that is necessary to provide our services and
+						communicate with you effectively. We do not collect sensitive personal
+						information unless explicitly required for a specific service engagement.
+					</p>
+					<h3>Usage Data</h3>
+					<p>
+						We may automatically collect certain information when you visit our website,
+						including your IP address, browser type, operating system, referring URLs,
+						and pages viewed. This data helps us understand how visitors use our site
+						and improve the user experience.
+					</p>
+					<p>
+						We use analytics tools to gather aggregate, anonymized data about website
+						traffic and usage patterns. This information does not personally identify
+						you and is used solely for analytical purposes.
+					</p>
+					<h3>Cookies and Tracking</h3>
+					<p>
+						Our website may use cookies and similar tracking technologies to enhance
+						your browsing experience. Cookies are small files stored on your device
+						that help us remember your preferences and understand how you interact
+						with our site.
+					</p>
+					<p>
+						You can control cookie settings through your browser preferences. Disabling
+						cookies may affect certain functionality of our website, but you will still
+						be able to access most features.
+					</p>
+				</div>
+			</Col>
+		</Row>
+	</SectionSticky>
+	<SectionSticky>
+		<Header
+			title="How We Use Your Information"
+			subtitle="Data Usage"
+			headingLevel="h2"
+			titleClasses="bg-white dark:bg-neutral-950"
+			slot="sidebar"
+		/>
+		<Row decorationBorder="top bottom" decorationBorderStyle="dashed" style="transparent">
+			<Col span="12" style="transparent">
+				<div class="text-basic bg-white p-8 dark:bg-neutral-950 [&_h3]:text-xl!">
+					<h3>Service Delivery</h3>
+					<p>
+						We use the information you provide to deliver our Relevance Engineering
+						services, respond to your inquiries, and communicate about projects and
+						engagements. Your contact information enables us to provide updates and
+						deliverables related to our work together.
+					</p>
+					<p>
+						We may also use your information to send relevant communications about our
+						services, industry insights, or updates that may be of interest to you.
+						You can opt out of marketing communications at any time.
+					</p>
+					<h3>Improvement and Analytics</h3>
+					<p>
+						We analyze usage data to improve our website, services, and overall user
+						experience. This includes understanding which content is most valuable,
+						identifying technical issues, and optimizing site performance.
+					</p>
+					<p>
+						Aggregated and anonymized data may be used for research and analytical
+						purposes to better understand market trends and improve our service
+						offerings.
+					</p>
+					<h3>Legal Compliance</h3>
+					<p>
+						We may use or disclose your information when required by law, to protect
+						our rights, or to comply with legal processes. This includes responding
+						to lawful requests from public authorities or meeting national security
+						requirements.
+					</p>
+				</div>
+			</Col>
+		</Row>
+	</SectionSticky>
+	<SectionSticky>
+		<Header
+			title="Data Protection and Your Rights"
+			subtitle="Security & Rights"
+			headingLevel="h2"
+			titleClasses="bg-white dark:bg-neutral-950"
+			slot="sidebar"
+		/>
+		<Row decorationBorder="top bottom" decorationBorderStyle="dashed" style="transparent">
+			<Col span="12" style="transparent">
+				<div class="text-basic bg-white p-8 dark:bg-neutral-950 [&_h3]:text-xl!">
+					<h3>Data Security</h3>
+					<p>
+						We implement appropriate technical and organizational measures to protect
+						your personal information against unauthorized access, alteration,
+						disclosure, or destruction. However, no method of transmission over the
+						internet is completely secure.
+					</p>
+					<p>
+						We regularly review our security practices and update them as necessary
+						to ensure the ongoing protection of your data. Our team is trained on
+						data protection best practices and confidentiality requirements.
+					</p>
+					<h3>Your Rights</h3>
+					<p>
+						Depending on your location, you may have certain rights regarding your
+						personal information, including the right to access, correct, delete, or
+						restrict the processing of your data. You may also have the right to data
+						portability and to withdraw consent where processing is based on consent.
+					</p>
+					<p>
+						To exercise any of these rights or to ask questions about how we handle
+						your data, please contact us using the information provided on our
+						contact page. We will respond to your request within the timeframe
+						required by applicable law.
+					</p>
+					<h3>Data Retention</h3>
+					<p>
+						We retain your personal information only for as long as necessary to
+						fulfill the purposes for which it was collected, including to satisfy
+						legal, accounting, or reporting requirements. When data is no longer
+						needed, we securely delete or anonymize it.
+					</p>
+					<p>
+						For client engagements, we may retain project-related information for a
+						reasonable period after the engagement ends to support any follow-up
+						questions or future collaborations.
+					</p>
+				</div>
+			</Col>
+		</Row>
+	</SectionSticky>
+	<SectionSticky>
+		<Header
+			title="Third Parties and Updates"
+			subtitle="Sharing & Changes"
+			headingLevel="h2"
+			titleClasses="bg-white dark:bg-neutral-950"
+			slot="sidebar"
+		/>
+		<Row decorationBorder="top bottom" decorationBorderStyle="dashed" style="transparent">
+			<Col span="12" style="transparent">
+				<div class="text-basic bg-white p-8 dark:bg-neutral-950 [&_h3]:text-xl!">
+					<h3>Third-Party Services</h3>
+					<p>
+						We may share your information with trusted third-party service providers
+						who assist us in operating our website and delivering our services. These
+						providers are contractually obligated to protect your data and use it only
+						for the purposes we specify.
+					</p>
+					<p>
+						We do not sell, rent, or trade your personal information to third parties
+						for marketing purposes. Any data sharing is limited to what is necessary
+						for legitimate business operations.
+					</p>
+					<h3>Policy Updates</h3>
+					<p>
+						We may update this Privacy Policy from time to time to reflect changes in
+						our practices or applicable laws. When we make significant changes, we
+						will notify you by posting the updated policy on our website with a new
+						effective date.
+					</p>
+					<p>
+						We encourage you to review this policy periodically to stay informed about
+						how we protect your information. Your continued use of our services after
+						any changes indicates your acceptance of the updated policy.
+					</p>
+					<h3>Contact Us</h3>
+					<p>
+						If you have any questions, concerns, or requests regarding this Privacy
+						Policy or our data practices, please contact us through our website's
+						contact form. We are committed to addressing your privacy concerns
+						promptly and thoroughly.
+					</p>
+				</div>
+			</Col>
+		</Row>
+	</SectionSticky>
+</Layout>

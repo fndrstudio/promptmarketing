@@ -29,7 +29,7 @@ const { title = '' } = Astro.props
 			<DecorationBorder type="bottom" style="dashed" />
 
 			<div class="md:px-12">
-				<form method="POST" action="/contact-success" class="mx-auto max-w-4xl">
+				<form id="contact-form" class="mx-auto max-w-4xl">
 					<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
 						<!-- Row 1: Name (Full Width) -->
 						<div class="col-span-1 md:col-span-2">
@@ -96,7 +96,15 @@ const { title = '' } = Astro.props
 
 						<!-- Submit Button -->
 						<div class="col-span-1 mt-2 text-left md:col-span-2">
-							<button type="submit">Submit Request</button>
+							<button type="submit" id="submit-btn" class="relative">
+								<span id="btn-text">Submit Request</span>
+								<span id="btn-success" class="hidden items-center gap-2">
+									<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+									</svg>
+									Sent!
+								</span>
+							</button>
 						</div>
 					</div>
 				</form>
@@ -104,3 +112,62 @@ const { title = '' } = Astro.props
 		</Col>
 	</Row>
 </Section>
+
+<script>
+	const form = document.getElementById('contact-form') as HTMLFormElement
+	const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement
+	const btnText = document.getElementById('btn-text') as HTMLSpanElement
+	const btnSuccess = document.getElementById('btn-success') as HTMLSpanElement
+
+	form?.addEventListener('submit', async (e) => {
+		e.preventDefault()
+
+		// Disable button during submission
+		submitBtn.disabled = true
+		btnText.textContent = 'Sending...'
+
+		const formData = new FormData(form)
+
+		try {
+			// Submit to Netlify Forms
+			const response = await fetch('/', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+				body: new URLSearchParams(formData as any).toString()
+			})
+
+			if (response.ok) {
+				// Show success state
+				btnText.classList.add('hidden')
+				btnSuccess.classList.remove('hidden')
+				btnSuccess.classList.add('flex')
+				submitBtn.classList.add('bg-green-600', 'hover:bg-green-600', 'border-green-600')
+
+				// Reset form
+				form.reset()
+
+				// Revert button after 3 seconds
+				setTimeout(() => {
+					btnText.classList.remove('hidden')
+					btnText.textContent = 'Submit Request'
+					btnSuccess.classList.add('hidden')
+					btnSuccess.classList.remove('flex')
+					submitBtn.classList.remove('bg-green-600', 'hover:bg-green-600', 'border-green-600')
+					submitBtn.disabled = false
+				}, 3000)
+			} else {
+				throw new Error('Submission failed')
+			}
+		} catch (error) {
+			// Show error state
+			btnText.textContent = 'Error - Try Again'
+			submitBtn.classList.add('bg-red-600', 'hover:bg-red-600', 'border-red-600')
+
+			setTimeout(() => {
+				btnText.textContent = 'Submit Request'
+				submitBtn.classList.remove('bg-red-600', 'hover:bg-red-600', 'border-red-600')
+				submitBtn.disabled = false
+			}, 3000)
+		}
+	})
+</script>

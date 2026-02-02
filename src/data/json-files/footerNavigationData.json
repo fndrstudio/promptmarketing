@@ -35,7 +35,7 @@
 		"text": "© 2026 PromptMarketing. All rights reserved.",
 		"legal": [
 			{ "label": "Terms", "href": "/terms" },
-			{ "label": "Privacy", "href": "/terms" }
+			{ "label": "Privacy", "href": "/privacy" }
 		]
 	}
 }
