@@ -35,15 +35,15 @@ const { logo, footerAbout, footerColumns, copyright } = await getFooterNavigatio
 								<img
 									src={logo.src}
 									alt={logo.alt}
-									width="426"
-									height="426"
+									width="120"
+									height="120"
 									class="block dark:hidden"
 								/>
 								<img
 									src={logo.srcDark}
 									alt={logo.alt}
-									width="426"
-									height="426"
+									width="120"
+									height="120"
 									class="hidden dark:block"
 								/>
 							</a>
@@ -88,11 +88,12 @@ const { logo, footerAbout, footerColumns, copyright } = await getFooterNavigatio
 						<!-- Newsletter Column -->
 						<div class="footer__col">
 							<h3 class="footer__col-title h4">Newsletter</h3>
-							<p>Stay up to date on the newest something something</p>
+							<p>Get AI search insights delivered to your inbox</p>
 							<form class="mt-4">
 								<input
 									type="email"
 									placeholder="Enter your email"
+									aria-label="Email address for newsletter"
 									class="focus:border-primary-500 mb-2 w-full rounded-full border border-neutral-200 px-4 py-2 text-sm focus:outline-none dark:border-neutral-700 dark:bg-neutral-900"
 								/>
 								<button
@@ -144,10 +145,10 @@ const { logo, footerAbout, footerColumns, copyright } = await getFooterNavigatio
 	}
 
 	.footer__logo {
-		@apply flex h-full w-full items-center justify-center border-b border-neutral-200 bg-white lg:border-r dark:border-neutral-700 dark:bg-neutral-950 [&_img]:max-w-48 lg:[&_img]:max-w-full;
+		@apply flex h-full w-full items-center justify-center border-b border-neutral-200 bg-white lg:border-r dark:border-neutral-700 dark:bg-neutral-950 [&_img]:max-w-24 lg:[&_img]:max-w-32;
 	}
 	.footer__content {
-		@apply flex flex-col bg-white bg-[url('/bgs/dot-gray-light.svg')] bg-size-[18px] bg-fixed lg:border-l lg:border-neutral-200 dark:bg-neutral-950 dark:bg-[url('/bgs/dot-gray-dark.svg')] lg:dark:border-neutral-700;
+		@apply flex flex-col bg-white bg-[url('/bgs/dot-gray-light.svg')] bg-size-[18px] bg-fixed lg:border-l lg:border-neutral-200 dark:bg-neutral-950 dark:bg-[url('/bgs/dot-teal-dark.svg')] lg:dark:border-neutral-700;
 	}
 	.footer__navigation {
 		@apply relative flex w-full flex-row flex-wrap bg-white dark:bg-neutral-950;
