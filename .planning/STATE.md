@@ -1,14 +1,14 @@
 # Project State: PromptMarketing Website
 
-**Last Updated:** 2026-01-23
+**Last Updated:** 2026-02-09
 
 ## Current Status
 
 | Field | Value |
 |-------|-------|
 | **Milestone** | v1 |
-| **Current Phase** | 3 |
-| **Phase Status** | Complete |
+| **Current Phase** | 4 |
+| **Phase Status** | In Progress |
 | **Blockers** | None |
 
 ## Progress
@@ -17,7 +17,7 @@
 Phase 1: ████████████████████ 100% (3/3 plans)
 Phase 2: ████████████████████ 100% (2/2 plans)
 Phase 3: ████████████████████ 100% (4/4 plans)
-Phase 4: ░░░░░░░░░░░░░░░░░░░░   0% (0/? plans)
+Phase 4: █████░░░░░░░░░░░░░░░  25% (1/4 plans estimated)
 Phase 5: ░░░░░░░░░░░░░░░░░░░░   0% (0/? plans)
 ```
 
@@ -58,8 +58,19 @@ All requirements verified:
 - 03-03-PLAN.md: Create Portfolio page with case studies collection (complete)
 - 03-04-PLAN.md: Homepage 4-Pillar Update + Footer Cleanup (complete)
 
+#### Phase 4: Technical SEO & Machine Readability
+**Status:** In Progress
+**Started:** 2026-02-09
+
+**Requirements:**
+- SEO-01: llms.txt for AI agent discoverability ✓
+- SEO-02: Schema.org structured data
+- SEO-03: Canonical URLs ✓
+
+**Plans:**
+- 04-01-PLAN.md: Production domain and llms.txt (complete)
+
 ### Upcoming Phases
-- Phase 4: Technical SEO & Machine Readability (SEO-01, SEO-02, SEO-03)
 - Phase 5: Sanity CMS Integration (CMS-01, CMS-02, CMS-03, CMS-04)
 
 ## Session Notes
@@ -100,6 +111,13 @@ All requirements verified:
   - Created placeholder case study content
 - Plan 03-04: Updated homepage 4-pillar structure and cleaned up footer
 
+### 2026-02-09 - Phase 4 Started
+- Plan 04-01: Technical SEO Foundation (complete)
+  - Fixed production domain from promptmarketing.ai to promptmarketing.com
+  - Removed duplicate canonical tag bug in Seo.astro
+  - Created llms.txt following llmstxt.org specification
+  - Completed SEO-01 and SEO-03 requirements
+
 ## Decisions Made
 
 | Decision | Context | Date |
@@ -112,6 +130,9 @@ All requirements verified:
 | About page inline sections | Used inline Tailwind sections instead of new components for minimal scope | 2026-01-23 |
 | PostCards basePath prop | Added basePath prop for portfolio/blog reusability | 2026-01-23 |
 | CaseStudyLayout | Created dedicated layout with challenge/solution/results summary cards | 2026-01-23 |
+| Production domain | https://promptmarketing.com (not .ai) for canonical URLs | 2026-02-09 |
+| Single canonical tag | Conditional rendering respecting config prop instead of duplicate tags | 2026-02-09 |
+| llms.txt voice | Scientific Forest tone - precise, technical, no guru language | 2026-02-09 |
 
 ## Quick Reference
 
@@ -130,11 +151,11 @@ All requirements verified:
 - Integrations: `.planning/codebase/INTEGRATIONS.md`
 - Concerns: `.planning/codebase/CONCERNS.md`
 
-**Last Session:** 2026-01-23
-**Stopped at:** Completed 03-03-PLAN.md (Phase 3 complete)
+**Last Session:** 2026-02-09
+**Stopped at:** Completed 04-01-PLAN.md
 **Resume file:** None
 
-**Next Action:** Execute Phase 4 plans (Technical SEO & Machine Readability)
+**Next Action:** Continue Phase 4 plans (Structured data implementation)
 
 ---
 
