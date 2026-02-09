@@ -33,9 +33,9 @@ Enable client self-service blog management through Sanity headless CMS. Replace 
 
 ### Draft/Preview Workflow
 - Manual preview button — click to preview before publish (not live preview)
-- Preview route design adaptable to deployment platform (TBD)
+- **Deployment: Vercel** — native Astro support, preview deployments, free tier
 - Scheduled publishing enabled — client can set future publish dates
-- Rebuild strategy: Claude's discretion (likely webhook + scheduled rebuilds)
+- Rebuild strategy: Claude's discretion (Vercel Deploy Hooks + Sanity webhooks)
 
 ### Claude's Discretion
 - Specific category names for the blog
@@ -58,9 +58,7 @@ Enable client self-service blog management through Sanity headless CMS. Replace 
 <blockers>
 ## Blockers to Resolve
 
-- **Deployment platform not decided** — affects preview implementation and rebuild webhooks
-  - Options: Netlify, Vercel, Google Cloud, other
-  - Need to decide before planning preview routes
+None — Vercel selected as deployment platform (2026-02-09)
 
 </blockers>
 

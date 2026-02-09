@@ -118,11 +118,11 @@
 			},
 			"media": {
 				"front": {
-					"src": "/steps/steps/step_02_front.webp",
+					"src": "/steps/steps/step_04_front.webp",
 					"alt": "Measurement"
 				},
 				"back": {
-					"src": "/steps/steps/step_02_back.webp",
+					"src": "/steps/steps/step_04_back.webp",
 					"alt": "Measurement"
 				}
 			}
