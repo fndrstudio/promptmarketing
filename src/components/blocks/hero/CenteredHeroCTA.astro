@@ -55,10 +55,14 @@ const {
 		<Col span="12" classes="pt-16 lg:pt-24">
 			<Header
 				title={title}
-				subtitle={subtitle}
 				classes="text-center"
 				titleWidth="mx-auto max-w-3xl"
 			/>
+			{subtitle && (
+				<p class="mx-auto mt-6 max-w-3xl px-6 text-center text-xl leading-relaxed text-neutral-600 dark:text-neutral-400 lg:px-8 lg:text-2xl">
+					{subtitle}
+				</p>
+			)}
 		</Col>
 
 		<Col
