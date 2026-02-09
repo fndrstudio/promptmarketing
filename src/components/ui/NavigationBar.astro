@@ -48,8 +48,20 @@ const savedNavActions = navActions.map((action: any) => ({
 		<nav aria-label="main navigation" role="navigation" class="header__nav">
 			{/* Logo */}
 			<a href={`/`} class="header__logo">
-				<img src={logo.src} alt={logo.alt} width="72" height="72" class="block dark:hidden" />
-				<img src={logo.srcDark} alt={logo.alt} width="72" height="72" class="hidden dark:block" />
+				<img
+					src={logo.src}
+					alt={logo.alt}
+					width="72"
+					height="72"
+					class="block dark:hidden"
+				/>
+				<img
+					src={logo.srcDark}
+					alt={logo.alt}
+					width="72"
+					height="72"
+					class="hidden dark:block"
+				/>
 				{logo.text && <span>{logo.text}</span>}
 			</a>
 
@@ -104,7 +116,11 @@ const savedNavActions = navActions.map((action: any) => ({
 												</a>
 											</li>
 										))}
-										<DecorationBorder type="all" style="dashed" extraClasses="hidden lg:block" />
+										<DecorationBorder
+											type="all"
+											style="dashed"
+											extraClasses="hidden lg:block"
+										/>
 									</ul>
 								</div>
 							)}
@@ -117,7 +133,11 @@ const savedNavActions = navActions.map((action: any) => ({
 			<div class="header__actions">
 				{
 					savedNavActions.map((action) => (
-						<Button link={action.link} classes="header__action w-full" style="neutral">
+						<Button
+							link={action.link}
+							classes="header__action w-full rounded-full border-2 border-transparent hover:bg-white! hover:text-neutral-950! hover:border-neutral-950!"
+							style="neutral"
+						>
 							{action.name}
 						</Button>
 					))
