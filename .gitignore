@@ -25,3 +25,11 @@ pnpm-debug.log*
 
 # Local Netlify folder
 .netlify
+
+# Local design assets (not for repo)
+gradients/
+logo's/
+
+# Planning docs in root (keep in Notion/local)
+/Layout*.md
+/Inhoud*.md
