@@ -10,7 +10,7 @@ import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://promptmarketing.ai/",
+  site: "https://promptmarketing.com",
   integrations: [
     icon(),
     sitemap(),
