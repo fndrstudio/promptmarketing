@@ -5,13 +5,13 @@
 		{
 			"id": "step-1",
 			"index": "1",
-			"label": "01. Audit",
+			"label": "01. Research",
 			"color": "#2d5016"
 		},
 		{
 			"id": "step-2",
 			"index": "2",
-			"label": "02. Design",
+			"label": "02. Architect",
 			"color": "#3d6b1e"
 		},
 		{
@@ -23,7 +23,7 @@
 		{
 			"id": "step-4",
 			"index": "4",
-			"label": "04. Measure",
+			"label": "04. Track",
 			"color": "#b8860b"
 		}
 	],
@@ -31,12 +31,11 @@
 		{
 			"id": "step-1",
 			"index": "01",
-			"title": "We map your position in the latent space",
+			"title": "Deep research in expected Prompt behaviour",
 			"subtitle": "step 01",
 			"color": "#2d5016",
 			"body": [
-				"The engagement begins with a comprehensive audit. We analyze how AI models currently perceive your brand, examining entity associations, selection rates, and semantic gaps.",
-				"You'll receive a detailed report showing exactly where you stand versus competitors, with quantified visibility scores and specific opportunities for improvement."
+				"We analyse your target audience to identify high-impact topics and benchmark your current visibility, defining exactly which prompts to track and optimise for maximum and positive Share of Model (SoM)."
 			],
 			"cta": {
 				"label": "Learn about our audit",
@@ -45,11 +44,11 @@
 			"media": {
 				"front": {
 					"src": "/steps/steps/step_01_front.webp",
-					"alt": "GEO Readiness Audit"
+					"alt": "Prompt Research"
 				},
 				"back": {
 					"src": "/steps/steps/step_01_back.webp",
-					"alt": "GEO Readiness Audit"
+					"alt": "Prompt Research"
 				}
 			}
 		},
@@ -60,12 +59,12 @@
 			"subtitle": "step 02",
 			"color": "#3d6b1e",
 			"body": [
-				"Based on audit findings, we design a technical architecture that addresses your specific gaps. Schema.org markup, entity optimization, content structure, everything AI needs to understand you correctly.",
+				"Based on audit findings, we design a technical architecture that addresses your specific gaps. Schema.org markup, entity optimisation, content structure, everything AI needs to understand you correctly.",
 				"Every recommendation is tied to measurable outcomes. No vague 'best practices', just engineered solutions for your identified problems."
 			],
 			"cta": {
 				"label": "See our approach",
-				"href": "/relevance-engineering"
+				"href": "/how-we-work"
 			},
 			"media": {
 				"front": {
@@ -85,7 +84,7 @@
 			"subtitle": "step 03",
 			"color": "#4a8024",
 			"body": [
-				"Our team implements the technical changes, whether that's structured data, content optimization, or knowledge graph integration. We work alongside your development team or handle it entirely.",
+				"Our team implements the technical changes, whether that's structured data, content optimisation, or knowledge graph integration. We work alongside your development team or handle it entirely.",
 				"Everything is documented, validated, and tested against real AI model responses before going live."
 			],
 			"cta": {
@@ -106,11 +105,11 @@
 		{
 			"id": "step-4",
 			"index": "04",
-			"title": "We track Selection Rate improvement",
+			"title": "We track Selection Rate long-term",
 			"subtitle": "step 04",
 			"color": "#b8860b",
 			"body": [
-				"Post-implementation, we monitor how AI models respond to your optimized presence. Selection Rate, entity accuracy, recommendation frequency, all measured and reported.",
+				"Post-implementation, we monitor how AI models respond to your optimised presence. Selection Rate, entity accuracy, recommendation frequency; all measured and reported.",
 				"This isn't a one-time project. As AI models evolve, we ensure your relevance engineering evolves with them."
 			],
 			"cta": {

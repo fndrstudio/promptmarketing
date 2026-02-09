@@ -1,12 +1,12 @@
 [
 	{
 		"title": "Intelligence",
-		"subtitle": "Understand Your Position",
+		"subtitle": "Measurement & Research",
 		"features": [
 			{
-				"title": "Latent Space Mapping",
-				"description": "Analyze how AI models perceive your brand by examining semantic associations in their training data. No guesswork, just observable patterns.",
-				"icon": "chart-bar"
+				"title": "Competitive Visibility",
+				"description": "See where you stand relative to competitors in the AI's knowledge layer. Understand who gets recommended, and why.",
+				"icon": "document-chart-bar"
 			},
 			{
 				"title": "AI Selection Rate",
@@ -14,40 +14,40 @@
 				"icon": "trending-up"
 			},
 			{
-				"title": "Competitive Visibility",
-				"description": "See where you stand relative to competitors in the AI's knowledge layer. Understand who gets recommended, and why.",
-				"icon": "document-chart-bar"
+				"title": "LLM Brand Sentiment",
+				"description": "Analyse how AI models perceive your brand by examining semantic associations in their training data. No guesswork, just observable patterns.",
+				"icon": "chart-bar"
 			}
 		]
 	},
 	{
-		"title": "Optimization",
-		"subtitle": "Engineer Machine Trust",
+		"title": "Optimisation",
+		"subtitle": "Relevance Engineering",
 		"features": [
 			{
-				"title": "Schema.org Architecture",
-				"description": "Structured data is the language AI understands. We build machine-readable architecture that makes your content parseable and trustworthy.",
+				"title": "SXO & Semantic Architecture",
+				"description": "Optimising site architecture and EEAT signals to provide a crawlable, authoritative base for AI agents.",
 				"icon": "code-bracket"
 			},
 			{
-				"title": "Entity Optimization",
+				"title": "Entity Optimisation",
 				"description": "Strengthen your brand's knowledge graph presence. Clear entity relationships mean consistent AI representation across platforms.",
 				"icon": "puzzle-piece"
 			},
 			{
 				"title": "Content Authority Signals",
-				"description": "Establish topical authority through semantic consistency. Align your content with how AI models structure domain expertise.",
+				"description": "We execute technical and content strategies to build \"Machine Trust,\" ensuring your brand is the cited authority for your core topics.",
 				"icon": "document-text"
 			}
 		]
 	},
 	{
 		"title": "Commerce",
-		"subtitle": "Prepare for Autonomous Transactions",
+		"subtitle": "Prepare for Agentic Transactions",
 		"features": [
 			{
-				"title": "AI Agent Compatibility",
-				"description": "Prepare for the autonomous economy. Optimize your data for ACP, MCP, and UCP protocols, the handshakes AI agents use to transact.",
+				"title": "AI Agent Optimisation",
+				"description": "Prepare for the shift from human-driven search to AI-driven transactions by optimising for autonomous agent protocols.",
 				"icon": "arrows-right-left"
 			},
 			{
@@ -56,8 +56,8 @@
 				"icon": "lock-closed"
 			},
 			{
-				"title": "Choosability Optimization",
-				"description": "When an AI agent needs to select a vendor, you want to be chosen. Engineer the signals that make you the reliable choice.",
+				"title": "Agentic Protocol Setup",
+				"description": "Optimising product data for OpenAI's ACP, Google's UCP, and Anthropic's MCP protocols to ensure \"choosability.\"",
 				"icon": "check-circle"
 			}
 		]
@@ -67,18 +67,18 @@
 		"subtitle": "Amplify AI Presence",
 		"features": [
 			{
-				"title": "AI-Native Campaigns",
-				"description": "Advertising strategies designed for AI-mediated discovery. Reach audiences through the channels AI systems prioritize.",
+				"title": "Generative Engine Advertising",
+				"description": "Prepare the strategic infrastructure needed to leverage paid advertising opportunities within generative AI environments.",
 				"icon": "megaphone"
 			},
 			{
-				"title": "Prompt-Optimized Creative",
-				"description": "Content that performs in AI contexts. From search to synthesis, ensure your messaging translates to AI recommendations.",
+				"title": "AI Advertising Insights",
+				"description": "Analyse competitor Ad placements & copy.",
 				"icon": "sparkles"
 			},
 			{
-				"title": "Performance Measurement",
-				"description": "Track what matters: AI mention rate, recommendation frequency, selection conversion. Metrics for the generative era.",
+				"title": "Incredible Intent Signals",
+				"description": "Ads in ChatGPT and Google's AI Mode offer incredible relevance & customer intent.",
 				"icon": "chart-pie"
 			}
 		]
