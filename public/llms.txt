@@ -1,0 +1,30 @@
+# PromptMarketing
+
+> Relevance Engineering consultancy that operationalizes Machine Trust. We architect the knowledge layers that ensure brands are understood, trusted, and selected by AI systems.
+
+PromptMarketing applies systematic measurement and technical optimization to improve how AI systems perceive and represent brands. Our work spans four practice areas: Prompt Intelligence (measurement), Relevance Engineering (optimization), Agentic Commerce (transactions), and AI Advertising (paid channels).
+
+Based in Amsterdam, we work with organizations navigating the shift from search-first to AI-first discovery.
+
+## Services
+
+- [Prompt Intelligence](/how-we-work): Measurement and research including Competitive Visibility Analysis, AI Selection Rate tracking, and LLM Brand Sentiment studies
+- [Relevance Engineering](/how-we-work): Technical optimization including Structured Data implementation, Entity Optimization, and Content Authority Signals
+- [Agentic Commerce](/how-we-work): AI-native transaction preparation including Agent Protocol Setup and Commerce Graph optimization
+- [AI Advertising](/how-we-work): Generative Engine Advertising strategy and campaign management
+
+## Company
+
+- [About Us](/about): Our approach, Amsterdam headquarters, and team
+- [How We Work](/how-we-work): Four-phase systematic process (Audit, Design, Build, Measure)
+- [Contact](/contact): Request a GEO Readiness Audit
+
+## Content
+
+- [Blog](/blog): Technical insights on AI marketing and machine trust
+- [Portfolio](/portfolio): Case studies demonstrating measurable results
+
+## Optional
+
+- [Privacy Policy](/privacy): Data handling practices
+- [Terms of Service](/terms): Service agreement
