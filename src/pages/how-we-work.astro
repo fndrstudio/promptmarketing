@@ -6,6 +6,8 @@
 // Components
 // - Layout
 import Layout from '../layouts/Layout.astro'
+// - SEO Schemas
+import ServiceSchema from '../components/seo/ServiceSchema.astro'
 // - Blocks
 import Hero from '../components/blocks/hero/SimpleHeroPrimary.astro'
 import BasicFeatures from '../components/blocks/features/StickyBasicFeatures.astro'
@@ -34,6 +36,22 @@ const ctaData = {
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
+	<ServiceSchema
+		name="Prompt Intelligence"
+		description="Measurement and research services including Competitive Visibility Analysis, AI Selection Rate tracking, and LLM Brand Sentiment studies. Understand how AI systems currently perceive and represent your brand."
+	/>
+	<ServiceSchema
+		name="Relevance Engineering"
+		description="Technical optimization including Structured Data implementation, Entity Optimization, and Content Authority Signals. Architect the knowledge layers that ensure your brand is understood by AI systems."
+	/>
+	<ServiceSchema
+		name="Agentic Commerce"
+		description="AI-native transaction preparation including Agent Protocol Setup and Commerce Graph optimization. Prepare your business for AI-driven discovery and purchasing decisions."
+	/>
+	<ServiceSchema
+		name="AI Advertising"
+		description="Generative Engine Advertising strategy and campaign management. Navigate paid channels in the emerging AI-mediated advertising landscape."
+	/>
 	<Hero title={heroData.title} subtitle={heroData.subtitle} text={heroData.text} />
 	<BasicFeatures />
 	<CTA
