@@ -1,0 +1,22 @@
+---
+// WebSiteSchema.astro
+// Renders WebSite JSON-LD for homepage
+import { Schema } from 'astro-seo-schema';
+
+const siteUrl = 'https://promptmarketing.com';
+---
+
+<Schema
+	item={{
+		'@context': 'https://schema.org',
+		'@type': 'WebSite',
+		'@id': `${siteUrl}/#website`,
+		name: 'PromptMarketing',
+		url: siteUrl,
+		description: 'Operationalizing Machine Trust through Relevance Engineering',
+		publisher: {
+			'@type': 'Organization',
+			'@id': `${siteUrl}/#organization`
+		}
+	}}
+/>

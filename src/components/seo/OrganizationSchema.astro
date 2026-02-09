@@ -1,0 +1,39 @@
+---
+// OrganizationSchema.astro
+// Renders Organization JSON-LD for homepage and about page
+import { Schema } from 'astro-seo-schema';
+import { configData } from '../../config/config';
+
+const siteUrl = 'https://promptmarketing.com';
+---
+
+<Schema
+	item={{
+		'@context': 'https://schema.org',
+		'@type': 'Organization',
+		'@id': `${siteUrl}/#organization`,
+		name: 'PromptMarketing',
+		url: siteUrl,
+		logo: {
+			'@type': 'ImageObject',
+			url: `${siteUrl}/logo-black.png`,
+			width: '200',
+			height: '60'
+		},
+		description: configData.siteDescription,
+		foundingDate: '2026',
+		address: {
+			'@type': 'PostalAddress',
+			addressLocality: 'Amsterdam',
+			addressCountry: 'NL'
+		},
+		sameAs: [
+			// LinkedIn URL to be added when available
+		],
+		contactPoint: {
+			'@type': 'ContactPoint',
+			contactType: 'sales',
+			url: `${siteUrl}/contact`
+		}
+	}}
+/>
