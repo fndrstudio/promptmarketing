@@ -273,7 +273,7 @@ h6,
 }
 
 main a {
-	@apply text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300;
+	@apply text-accent-600 hover:text-accent-700 dark:text-accent-500 dark:hover:text-accent-400;
 }
 
 .small {

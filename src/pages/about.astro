@@ -242,11 +242,11 @@ const teamMembers = [
 	.team-card:nth-child(3n) {
 		@apply lg:border-r-0;
 	}
-	/* Restore right border on 2nd card in desktop view */
+	/* Restore right border on cards that are 2n but not 3n in desktop view */
 	.team-card:nth-child(2) {
 		@apply lg:border-r;
 	}
-	.team-card:nth-child(5) {
+	.team-card:nth-child(4) {
 		@apply lg:border-r;
 	}
 	/* Remove bottom border on last row */

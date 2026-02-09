@@ -15,8 +15,9 @@ import DecorationBorder from '../../ui/DecorationBorder.astro'
 // Props
 interface Props {
 	title?: string
+	address?: string
 }
-const { title = '' } = Astro.props
+const { title = '', address = '' } = Astro.props
 ---
 
 <Section>
@@ -25,7 +26,8 @@ const { title = '' } = Astro.props
 			span="12"
 			classes="px-8 py-12 relative bg-[url('/bgs/dot-gray-light.svg')] bg-size-[18px] bg-fixed dark:bg-[url('/bgs/dot-gray-dark.svg')] dark:bg-size-[18px] dark:bg-fixed"
 		>
-			<h2 class="h5 mb-12 text-center leading-0">{title}</h2>
+			<h2 class="h5 mb-4 text-center leading-0">{title}</h2>
+			{address && <p class="mb-12 text-center text-neutral-500">{address}</p>}
 			<DecorationBorder type="bottom" style="dashed" />
 
 			<div class="md:px-12">

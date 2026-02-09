@@ -113,6 +113,7 @@ const { logo, footerAbout, footerColumns, copyright } = await getFooterNavigatio
 
 					<div class="footer__copy">
 						<p class="footer__copyright h5">{copyright?.text}</p>
+						<p class="footer__address h5">Jacob Bontiusplaats 9, 1018LL Amsterdam</p>
 						<div class="footer__legal">
 							{
 								copyright?.legal?.length && (
@@ -167,9 +168,12 @@ const { logo, footerAbout, footerColumns, copyright } = await getFooterNavigatio
 		@apply flex flex-row gap-4 lg:gap-8;
 	}
 	.footer__legal-link {
-		@apply text-primary-500 mb-0;
+		@apply text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200 mb-0;
 	}
 	.footer__copyright {
 		@apply mb-0;
+	}
+	.footer__address {
+		@apply mb-0 text-neutral-500;
 	}
 </style>

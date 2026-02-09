@@ -1,7 +1,7 @@
 {
 	"logo": {
-		"src": "/icon-black.png",
-		"srcDark": "/icon-white.png",
+		"src": "/logo-black.png",
+		"srcDark": "/logo-white.png",
 		"alt": "PromptMarketing"
 	},
 	"navItems": [

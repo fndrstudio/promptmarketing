@@ -25,7 +25,8 @@ const heroData = {
 }
 // - Contact data
 const contactData = {
-	title: 'Fill out the form below and let’s get started.'
+	title: "Fill out the form below and let's get started.",
+	address: 'Jacob Bontiusplaats 9, 1018LL Amsterdam'
 }
 // - Brand data
 const brandData = {
@@ -47,7 +48,7 @@ const ctaData = {
 
 <Layout title={SEO.title} description={SEO.description}>
 	<Hero title={heroData.title} subtitle={heroData.subtitle} text={heroData.text} />
-	<ContactForm title={contactData.title} />
+	<ContactForm title={contactData.title} address={contactData.address} />
 	<Faq subtitle={faqData.subtitle} title={faqData.title} />
 	<CTA
 		title={ctaData.title}
