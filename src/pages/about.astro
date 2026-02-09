@@ -6,6 +6,8 @@
 // Components
 // - Layout
 import Layout from '../layouts/Layout.astro'
+// - SEO Schemas
+import OrganizationSchema from '../components/seo/OrganizationSchema.astro'
 // - Layout components
 import Section from '../components/ui/Section.astro'
 import Row from '../components/ui/Row.astro'
@@ -113,6 +115,7 @@ const teamMembers = [
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
+	<OrganizationSchema />
 	<Hero title={heroData.title} subtitle={heroData.subtitle} text={heroData.text} />
 
 	<!-- Introduction Section -->
