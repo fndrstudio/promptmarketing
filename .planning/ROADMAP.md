@@ -52,7 +52,8 @@ Transform the Mizu Light Astro template into the PromptMarketing brand website w
 
 ---
 
-### Phase 3: Content & Pages
+### Phase 3: Content & Pages ✓
+**Status:** Complete (2026-01-23)
 **Goal:** Update all page copy and create About page reflecting PromptMarketing voice
 **Requirements:** CONTENT-04, CONTENT-05
 
@@ -74,6 +75,7 @@ Transform the Mizu Light Astro template into the PromptMarketing brand website w
 ### Phase 4: Technical SEO & Machine Readability
 **Goal:** Implement llms.txt and comprehensive Schema.org markup as proof-of-concept for Relevance Engineering
 **Requirements:** SEO-01, SEO-02, SEO-03
+**Plans:** 3 plans
 
 | ID | Requirement | Success Criteria |
 |----|-------------|------------------|
@@ -87,6 +89,11 @@ Transform the Mizu Light Astro template into the PromptMarketing brand website w
 - Schema.org Service markup on service pages
 - Schema.org Article markup on blog posts
 - Updated canonical URL configuration
+
+Plans:
+- [ ] 04-01-PLAN.md — Config fixes (domain, canonical) + llms.txt creation
+- [ ] 04-02-PLAN.md — Install schema packages + create schema components
+- [ ] 04-03-PLAN.md — Integrate schemas into pages
 
 ---
 
@@ -122,8 +129,8 @@ Transform the Mizu Light Astro template into the PromptMarketing brand website w
 | CONTENT-01 | 1 | Complete |
 | CONTENT-02 | 2 | Complete |
 | CONTENT-03 | 2 | Complete |
-| CONTENT-04 | 3 | Pending |
-| CONTENT-05 | 3 | Pending |
+| CONTENT-04 | 3 | Complete |
+| CONTENT-05 | 3 | Complete |
 | SEO-01 | 4 | Pending |
 | SEO-02 | 4 | Pending |
 | SEO-03 | 4 | Pending |
@@ -160,4 +167,4 @@ Phase 2 ──> Phase 3 (Content/Pages)
 ---
 
 *Roadmap created: 2026-01-22*
-*Last updated: 2026-01-22 (Phase 2 complete)*
+*Last updated: 2026-02-09 (Phase 4 planned)*
