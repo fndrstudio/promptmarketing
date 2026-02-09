@@ -55,14 +55,20 @@ const { logo, footerAbout, footerColumns, copyright } = await getFooterNavigatio
 			<Col span="8">
 				<div class="footer__content">
 					<div>
-						{footerAbout?.aboutText && <h2 class="footer__about h5">{footerAbout.aboutText}</h2>}
+						{
+							footerAbout?.aboutText && (
+								<h2 class="footer__about h5">{footerAbout.aboutText}</h2>
+							)
+						}
 					</div>
 					<div class="footer__navigation">
 						<!-- Navigation Columns -->
 						{
 							footerColumns?.map((column, index) => (
 								<div class="footer__col">
-									{column.title && <h3 class="footer__col-title h4">{column.title}</h3>}
+									{column.title && (
+										<h3 class="footer__col-title h4">{column.title}</h3>
+									)}
 									<ul class="footer__links">
 										{column.links?.map((link) => (
 											<li>
@@ -78,6 +84,30 @@ const { logo, footerAbout, footerColumns, copyright } = await getFooterNavigatio
 								</div>
 							))
 						}
+
+						<!-- Newsletter Column -->
+						<div class="footer__col">
+							<h3 class="footer__col-title h4">Newsletter</h3>
+							<p>Stay up to date on the newest something something</p>
+							<form class="mt-4">
+								<input
+									type="email"
+									placeholder="Enter your email"
+									class="focus:border-primary-500 mb-2 w-full rounded-full border border-neutral-200 px-4 py-2 text-sm focus:outline-none dark:border-neutral-700 dark:bg-neutral-900"
+								/>
+								<button
+									type="button"
+									class="w-full rounded-full bg-neutral-950 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-800 dark:bg-white dark:text-neutral-950 dark:hover:bg-neutral-200"
+								>
+									Subscribe
+								</button>
+							</form>
+							<DecorationBorder
+								type="left"
+								style="dashed"
+								extraClasses="hidden lg:block"
+							/>
+						</div>
 
 						<DecorationBorder type="top bottom" style="dashed" />
 					</div>

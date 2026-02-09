@@ -9,33 +9,55 @@
 	},
 	"footerColumns": [
 		{
-			"title": "Company",
+			"title": "Navigation",
 			"links": [
-				{ "label": "About Us", "href": "/about" },
-				{ "label": "How We Work", "href": "/how-we-work" },
-				{ "label": "Portfolio", "href": "/portfolio" },
-				{ "label": "Contact", "href": "/contact" }
-			]
-		},
-		{
-			"title": "Resources",
-			"links": [
-				{ "label": "Blog", "href": "/blog" }
+				{
+					"label": "About Us",
+					"href": "/about"
+				},
+				{
+					"label": "How We Work",
+					"href": "/how-we-work"
+				},
+				{
+					"label": "Portfolio",
+					"href": "/portfolio"
+				},
+				{
+					"label": "Blog",
+					"href": "/blog"
+				},
+				{
+					"label": "Contact",
+					"href": "/contact"
+				}
 			]
 		},
 		{
 			"title": "Connect",
 			"links": [
-				{ "label": "LinkedIn", "href": "https://www.linkedin.com/company/promptmarketing" },
-				{ "label": "Twitter / X", "href": "https://x.com/promptmarketing" }
+				{
+					"label": "LinkedIn",
+					"href": "https://www.linkedin.com/company/promptmarketing"
+				},
+				{
+					"label": "Twitter / X",
+					"href": "https://x.com/promptmarketing"
+				}
 			]
 		}
 	],
 	"copyright": {
 		"text": "© 2026 PromptMarketing. All rights reserved.",
 		"legal": [
-			{ "label": "Terms", "href": "/terms" },
-			{ "label": "Privacy", "href": "/privacy" }
+			{
+				"label": "Terms",
+				"href": "/terms"
+			},
+			{
+				"label": "Privacy",
+				"href": "/privacy"
+			}
 		]
 	}
 }
