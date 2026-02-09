@@ -110,15 +110,6 @@ const teamMembers = [
 	}
 ]
 
-// Create pairs for grid layout
-const pillarPairs = []
-for (let i = 0; i < pillarsData.length; i += 2) {
-	pillarPairs.push(pillarsData.slice(i, i + 2))
-}
-const valuePairs = []
-for (let i = 0; i < valuesData.length; i += 2) {
-	valuePairs.push(valuesData.slice(i, i + 2))
-}
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
@@ -143,98 +134,91 @@ for (let i = 0; i < valuesData.length; i += 2) {
 
 	<!-- Four Pillars Section -->
 	<Section decorationBorder="none">
-		<Row decorationBorder="none" style="transparent" classes="gap-y-0!">
-			<Col span="12" classes="pt-16 lg:pt-24 pb-8!" style="transparent">
-				<Header title="The Four Pillars of Relevance Engineering" headingLevel="h2" titleWidth="max-w-3xl" />
+		<Row decorationBorder="top bottom" decorationBorderStyle="dashed" style="transparent">
+			<Col span="12" style="transparent">
+				<div class="bg-white/80 dark:bg-neutral-950/80">
+					<div class="pt-12 pb-8 lg:pt-16">
+						<Header title="The Four Pillars of Relevance Engineering" headingLevel="h2" titleWidth="max-w-3xl" />
+					</div>
+					<div class="grid grid-cols-1 lg:grid-cols-2">
+						{pillarsData.map((item, index) => (
+							<div class="border-t border-dashed border-neutral-200 dark:border-neutral-700">
+								<FeatureBasicCard
+									title={item.title}
+									decorationType="none"
+								>
+									{item.description}
+								</FeatureBasicCard>
+							</div>
+						))}
+					</div>
+				</div>
 			</Col>
 		</Row>
-		{pillarPairs.map((pair, pairIndex) => (
-			<Row
-				decorationBorder="top bottom"
-				decorationBorderStyle="dashed"
-				style="transparent"
-				classes={pairIndex === pillarPairs.length - 1 ? 'mb-0' : 'mb-8'}
-			>
-				{pair.map((item, index) => (
-					<Col span="6" style="transparent">
-						<FeatureBasicCard
-							title={item.title}
-							decorationType={`top bottom right ${index === pair.length - 1 ? 'left' : ''}`}
-						>
-							{item.description}
-						</FeatureBasicCard>
-					</Col>
-				))}
-			</Row>
-		))}
 	</Section>
 
 	<!-- Values Section -->
 	<Section decorationBorder="none">
-		<Row decorationBorder="none" style="transparent" classes="gap-y-0!">
-			<Col span="12" classes="pt-16 lg:pt-24 pb-8!" style="transparent">
-				<Header title="What We Believe" headingLevel="h2" titleWidth="max-w-2xl" />
+		<Row decorationBorder="top bottom" decorationBorderStyle="dashed" style="transparent">
+			<Col span="12" style="transparent">
+				<div class="bg-white/80 dark:bg-neutral-950/80">
+					<div class="pt-12 pb-8 lg:pt-16">
+						<Header title="What We Believe" headingLevel="h2" titleWidth="max-w-2xl" />
+					</div>
+					<div class="grid grid-cols-1 lg:grid-cols-2">
+						{valuesData.map((item, index) => (
+							<div class="border-t border-dashed border-neutral-200 dark:border-neutral-700">
+								<FeatureBasicCard
+									title={item.title}
+									decorationType="none"
+								>
+									{item.description}
+								</FeatureBasicCard>
+							</div>
+						))}
+					</div>
+				</div>
 			</Col>
 		</Row>
-		{valuePairs.map((pair, pairIndex) => (
-			<Row
-				decorationBorder="top bottom"
-				decorationBorderStyle="dashed"
-				style="transparent"
-				classes={pairIndex === valuePairs.length - 1 ? 'mb-0' : 'mb-8'}
-			>
-				{pair.map((item, index) => (
-					<Col span="6" style="transparent">
-						<FeatureBasicCard
-							title={item.title}
-							decorationType={`top bottom right ${index === pair.length - 1 ? 'left' : ''}`}
-						>
-							{item.description}
-						</FeatureBasicCard>
-					</Col>
-				))}
-			</Row>
-		))}
 	</Section>
 
 	<!-- Team Section -->
 	<Section decorationBorder="none">
-		<Row decorationBorder="none" style="transparent" classes="gap-y-0!">
-			<Col span="12" classes="pt-16 lg:pt-24 pb-4!" style="transparent">
-				<Header title="A Gang of Super Specialists" headingLevel="h2" titleWidth="max-w-2xl" />
-			</Col>
-			<Col span="12" classes="pb-8!" style="transparent">
-				<p class="px-6 text-xl text-neutral-600 lg:px-8 lg:text-2xl dark:text-neutral-400">
-					We're a collective of deep experts. No generalists. No gurus. Just people who know their craft, are eager to explore, learn and dive deep.
-				</p>
-			</Col>
-		</Row>
-		<Row decorationBorder="top bottom" decorationBorderStyle="dashed" style="transparent" classes="gap-0!">
-			{teamMembers.map((member, index) => (
-				<Col span="4" spanTablet="6" style="transparent">
-					<div class="team-card group relative aspect-square cursor-pointer overflow-hidden border-r border-b border-neutral-200 bg-white transition-all duration-300 dark:border-neutral-700 dark:bg-neutral-950">
-						<!-- Default State: Name & Title -->
-						<div class="absolute inset-0 flex flex-col items-start justify-end p-6 transition-opacity duration-300 group-hover:opacity-0">
-							<h3 class="text-primary mb-1 text-lg font-semibold lg:text-xl">
-								{member.name}
-							</h3>
-							<p class="text-sm text-neutral-500 lg:text-base dark:text-neutral-400">
-								{member.title}
-							</p>
-						</div>
-						<!-- Hover State: Description -->
-						<div class="absolute inset-0 flex flex-col items-start justify-end bg-primary-500 p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-							<h3 class="mb-2 text-lg font-semibold text-white lg:text-xl">
-								{member.name}
-							</h3>
-							<p class="text-sm text-white/90 lg:text-base">
-								{member.description}
-							</p>
-						</div>
-						<DecorationBorder type="top bottom left right" style="dashed" />
+		<Row decorationBorder="top bottom" decorationBorderStyle="dashed" style="transparent">
+			<Col span="12" style="transparent">
+				<div class="bg-white/80 dark:bg-neutral-950/80">
+					<div class="pt-12 pb-4 lg:pt-16">
+						<Header title="A Gang of Super Specialists" headingLevel="h2" titleWidth="max-w-2xl" />
 					</div>
-				</Col>
-			))}
+					<p class="px-6 pb-8 text-lg text-neutral-600 lg:px-8 lg:text-xl dark:text-neutral-400">
+						We're a collective of deep experts. No generalists. No gurus. Just people who know their craft, are eager to explore, learn and dive deep.
+					</p>
+					<div class="grid grid-cols-2 lg:grid-cols-3 border-t border-dashed border-neutral-200 dark:border-neutral-700">
+						{teamMembers.map((member, index) => (
+							<div class="team-card group relative aspect-square cursor-pointer overflow-hidden border-r border-b border-dashed border-neutral-200 bg-white transition-all duration-300 dark:border-neutral-700 dark:bg-neutral-950">
+								<!-- Default State: Name & Title -->
+								<div class="absolute inset-0 flex flex-col items-start justify-end p-6 transition-opacity duration-300 group-hover:opacity-0">
+									<h3 class="text-primary mb-1 text-lg font-semibold lg:text-xl">
+										{member.name}
+									</h3>
+									<p class="text-sm text-neutral-500 lg:text-base dark:text-neutral-400">
+										{member.title}
+									</p>
+								</div>
+								<!-- Hover State: Description -->
+								<div class="absolute inset-0 flex flex-col items-start justify-end bg-primary-500 p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+									<h3 class="mb-2 text-lg font-semibold text-white lg:text-xl">
+										{member.name}
+									</h3>
+									<p class="text-sm text-white/90 lg:text-base">
+										{member.description}
+									</p>
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+			</Col>
 		</Row>
 	</Section>
 
@@ -249,26 +233,24 @@ for (let i = 0; i < valuesData.length; i += 2) {
 <style>
 	@reference '../styles/global.css';
 	/* Remove right border on last column in each row */
-	.team-card {
-		@apply last-of-type:border-r-0;
+	.team-card:nth-child(2n) {
+		@apply border-r-0;
 	}
-	/* Remove right border on 3rd and 6th cards (end of each row on desktop) */
-	:global(.col:nth-child(3n) .team-card),
-	:global(.col:nth-child(6n) .team-card) {
+	.team-card:nth-child(3n) {
 		@apply lg:border-r-0;
 	}
-	/* Remove right border on 2nd, 4th, 6th cards (end of each row on tablet) */
-	:global(.col:nth-child(2n) .team-card) {
-		@apply border-r-0 lg:border-r;
+	/* Restore right border on 2nd card in desktop view */
+	.team-card:nth-child(2) {
+		@apply lg:border-r;
 	}
-	:global(.col:nth-child(3n) .team-card) {
-		@apply lg:border-r-0;
+	.team-card:nth-child(5) {
+		@apply lg:border-r;
 	}
 	/* Remove bottom border on last row */
-	:global(.col:nth-last-child(-n+3) .team-card) {
+	.team-card:nth-last-child(-n+3) {
 		@apply lg:border-b-0;
 	}
-	:global(.col:nth-last-child(-n+2) .team-card) {
-		@apply border-b-0 md:border-b lg:border-b;
+	.team-card:nth-last-child(-n+2) {
+		@apply border-b-0;
 	}
 </style>
