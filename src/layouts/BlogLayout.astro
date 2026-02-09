@@ -11,6 +11,8 @@ const { frontmatter } = Astro.props
 // Components
 // - Layout
 import Layout from './Layout.astro'
+// - SEO Schemas
+import BlogPostingSchema from '../components/seo/BlogPostingSchema.astro'
 import Col from '../components/ui/Col.astro'
 import Row from '../components/ui/Row.astro'
 import Section from '../components/ui/Section.astro'
@@ -40,6 +42,13 @@ const CTA = {
 ---
 
 <Layout title={frontmatter.title} description={frontmatter.description}>
+	<BlogPostingSchema
+		title={frontmatter.title}
+		description={frontmatter.description}
+		pubDate={frontmatter.pubDate}
+		author={frontmatter.author}
+		image={frontmatter.image}
+	/>
 	<Hero
 		subtitle={`By ${formattedAuthorName(frontmatter.author)}, ${new Date(
 			frontmatter.pubDate
