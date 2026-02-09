@@ -1,8 +1,8 @@
 {
 	"logo": {
-		"src": "/logo-light.svg",
-		"srcDark": "/logo-dark.svg",
-		"alt": "PromptMarketing logo"
+		"src": "/icon-black.png",
+		"srcDark": "/icon-white.png",
+		"alt": "PromptMarketing"
 	},
 	"navItems": [
 		{ "name": "About Us", "link": "/about" },

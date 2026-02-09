@@ -1,15 +1,15 @@
 {
 	"logo": {
-		"src": "/logo-light.svg",
-		"srcDark": "/logo-dark.svg",
-		"alt": "PromptMarketing logo"
+		"src": "/icon-black.png",
+		"srcDark": "/icon-white.png",
+		"alt": "PromptMarketing"
 	},
 	"footerAbout": {
-		"aboutText": "PromptMarketing operationalizes Relevance Engineering to ensure brands are understood, trusted, and selected by AI systems."
+		"aboutText": "PromptMarketing operationalises relevance engineering to ensure brands are understood, trusted and selected by AI systems."
 	},
 	"footerColumns": [
 		{
-			"title": "Navigation",
+			"title": "Company",
 			"links": [
 				{
 					"label": "About Us",
@@ -24,12 +24,17 @@
 					"href": "/portfolio"
 				},
 				{
-					"label": "Blog",
-					"href": "/blog"
-				},
-				{
 					"label": "Contact",
 					"href": "/contact"
+				}
+			]
+		},
+		{
+			"title": "Resources",
+			"links": [
+				{
+					"label": "Blog",
+					"href": "/blog"
 				}
 			]
 		},
@@ -38,11 +43,7 @@
 			"links": [
 				{
 					"label": "LinkedIn",
-					"href": "https://www.linkedin.com/company/promptmarketing"
-				},
-				{
-					"label": "Twitter / X",
-					"href": "https://x.com/promptmarketing"
+					"href": "https://www.linkedin.com/company/promptmarketing/"
 				}
 			]
 		}

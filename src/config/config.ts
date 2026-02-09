@@ -27,12 +27,12 @@ export const configData: Config = {
 		'Empower your brand through Relevance Engineering. We architect the knowledge layers that ensure brands are understood, trusted, and successfully represented by AI systems.',
 	ogImage: '/og.jpg',
 	logo: {
-		src: '/logo-light.svg',
-		srcDark: '/logo-dark.svg',
+		src: '/logo-black.png',
+		srcDark: '/logo-white.png',
 		alt: 'PromptMarketing logo'
 	},
 	canonical: true,
 	noindex: false,
-	mode: 'auto',
+	mode: 'dark',
 	scrollAnimations: true
 }
