@@ -1,13 +1,13 @@
 # Project State: PromptMarketing Website
 
-**Last Updated:** 2026-01-23
+**Last Updated:** 2026-02-09
 
 ## Current Status
 
 | Field | Value |
 |-------|-------|
 | **Milestone** | v1 |
-| **Current Phase** | 3 |
+| **Current Phase** | 4 |
 | **Phase Status** | Complete |
 | **Blockers** | None |
 
@@ -17,7 +17,7 @@
 Phase 1: ████████████████████ 100% (3/3 plans)
 Phase 2: ████████████████████ 100% (2/2 plans)
 Phase 3: ████████████████████ 100% (4/4 plans)
-Phase 4: ░░░░░░░░░░░░░░░░░░░░   0% (0/? plans)
+Phase 4: ████████████████████ 100% (3/3 plans)
 Phase 5: ░░░░░░░░░░░░░░░░░░░░   0% (0/? plans)
 ```
 
@@ -58,8 +58,20 @@ All requirements verified:
 - 03-03-PLAN.md: Create Portfolio page with case studies collection (complete)
 - 03-04-PLAN.md: Homepage 4-Pillar Update + Footer Cleanup (complete)
 
+#### Phase 4: Technical SEO & Machine Readability
+**Completed:** 2026-02-09
+
+All 3 requirements verified:
+- SEO-01: llms.txt for AI agent discoverability ✓
+- SEO-02: Schema.org structured data ✓
+- SEO-03: Canonical URLs ✓
+
+**Plans:**
+- 04-01-PLAN.md: Production domain and llms.txt (complete)
+- 04-02-PLAN.md: Schema.org component library (complete)
+- 04-03-PLAN.md: Schema integration into pages (complete)
+
 ### Upcoming Phases
-- Phase 4: Technical SEO & Machine Readability (SEO-01, SEO-02, SEO-03)
 - Phase 5: Sanity CMS Integration (CMS-01, CMS-02, CMS-03, CMS-04)
 
 ## Session Notes
@@ -100,6 +112,27 @@ All requirements verified:
   - Created placeholder case study content
 - Plan 03-04: Updated homepage 4-pillar structure and cleaned up footer
 
+### 2026-02-09 - Phase 4 Complete
+- Plan 04-01: Technical SEO Foundation (complete)
+  - Fixed production domain from promptmarketing.ai to promptmarketing.com
+  - Removed duplicate canonical tag bug in Seo.astro
+  - Created llms.txt following llmstxt.org specification
+  - Completed SEO-01 and SEO-03 requirements
+- Plan 04-02: Schema.org Component Library (complete)
+  - Installed astro-seo-schema@5.1.0 and schema-dts@1.1.5
+  - Created OrganizationSchema with Amsterdam location and 2026 founding
+  - Created WebSiteSchema with Organization reference
+  - Created ServiceSchema accepting props for 4 service pillars
+  - Created BlogPostingSchema with required publisher metadata
+  - Established @id entity linking pattern for cross-schema references
+- Plan 04-03: Schema Integration (complete)
+  - Homepage has Organization and WebSite schemas
+  - About page has Organization schema reinforcement
+  - How We Work page has 4 Service schemas (one per pillar)
+  - Blog posts have BlogPosting schema with publisher metadata
+  - All schemas validated with correct JSON-LD structure
+  - Completed SEO-02 requirement
+
 ## Decisions Made
 
 | Decision | Context | Date |
@@ -112,6 +145,16 @@ All requirements verified:
 | About page inline sections | Used inline Tailwind sections instead of new components for minimal scope | 2026-01-23 |
 | PostCards basePath prop | Added basePath prop for portfolio/blog reusability | 2026-01-23 |
 | CaseStudyLayout | Created dedicated layout with challenge/solution/results summary cards | 2026-01-23 |
+| Production domain | https://promptmarketing.com (not .ai) for canonical URLs | 2026-02-09 |
+| Single canonical tag | Conditional rendering respecting config prop instead of duplicate tags | 2026-02-09 |
+| llms.txt voice | Scientific Forest tone - precise, technical, no guru language | 2026-02-09 |
+| Organization schema type | Used @type: Organization instead of deprecated ProfessionalService | 2026-02-09 |
+| ServiceSchema props pattern | Accepts name/description/serviceType props for pillar reusability | 2026-02-09 |
+| BlogPosting publisher requirement | Includes Organization with logo for Google rich results eligibility | 2026-02-09 |
+| Entity linking via @id | Organization uses @id pattern for cross-schema references | 2026-02-09 |
+| Schema placement in Layout | Place schema components inside Layout after opening tag for valid HTML5 JSON-LD | 2026-02-09 |
+| Service schema per pillar | Each of 4 service pillars gets dedicated ServiceSchema with specific description | 2026-02-09 |
+| BlogPosting dynamic data | Pass frontmatter props to BlogPostingSchema for per-post metadata | 2026-02-09 |
 
 ## Quick Reference
 
@@ -130,11 +173,11 @@ All requirements verified:
 - Integrations: `.planning/codebase/INTEGRATIONS.md`
 - Concerns: `.planning/codebase/CONCERNS.md`
 
-**Last Session:** 2026-01-23
-**Stopped at:** Completed 03-03-PLAN.md (Phase 3 complete)
+**Last Session:** 2026-02-09
+**Stopped at:** Completed 04-03-PLAN.md (Phase 4 complete)
 **Resume file:** None
 
-**Next Action:** Execute Phase 4 plans (Technical SEO & Machine Readability)
+**Next Action:** Phase 5 (Sanity CMS Integration) or other priorities
 
 ---
 

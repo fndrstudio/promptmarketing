@@ -52,7 +52,8 @@ Transform the Mizu Light Astro template into the PromptMarketing brand website w
 
 ---
 
-### Phase 3: Content & Pages
+### Phase 3: Content & Pages ✓
+**Status:** Complete (2026-01-23)
 **Goal:** Update all page copy and create About page reflecting PromptMarketing voice
 **Requirements:** CONTENT-04, CONTENT-05
 
@@ -71,7 +72,8 @@ Transform the Mizu Light Astro template into the PromptMarketing brand website w
 
 ---
 
-### Phase 4: Technical SEO & Machine Readability
+### Phase 4: Technical SEO & Machine Readability ✓
+**Status:** Complete (2026-02-09)
 **Goal:** Implement llms.txt and comprehensive Schema.org markup as proof-of-concept for Relevance Engineering
 **Requirements:** SEO-01, SEO-02, SEO-03
 
@@ -88,11 +90,17 @@ Transform the Mizu Light Astro template into the PromptMarketing brand website w
 - Schema.org Article markup on blog posts
 - Updated canonical URL configuration
 
+Plans:
+- [x] 04-01-PLAN.md — Config fixes (domain, canonical) + llms.txt creation
+- [x] 04-02-PLAN.md — Install schema packages + create schema components
+- [x] 04-03-PLAN.md — Integrate schemas into pages
+
 ---
 
 ### Phase 5: Sanity CMS Integration
 **Goal:** Enable client self-service blog management through Sanity headless CMS
 **Requirements:** CMS-01, CMS-02, CMS-03, CMS-04
+**Plans:** 4 plans
 
 | ID | Requirement | Success Criteria |
 |----|-------------|------------------|
@@ -108,6 +116,12 @@ Transform the Mizu Light Astro template into the PromptMarketing brand website w
 - GROQ queries for blog content
 - Sanity Studio deployment configuration
 
+Plans:
+- [ ] 05-01-PLAN.md — Sanity foundation (packages, config, schema)
+- [ ] 05-02-PLAN.md — Astro integration (client, queries, blog pages)
+- [ ] 05-03-PLAN.md — Studio deployment + sample content
+- [ ] 05-04-PLAN.md — Cleanup + webhook setup
+
 ---
 
 ## Requirement Coverage
@@ -122,11 +136,11 @@ Transform the Mizu Light Astro template into the PromptMarketing brand website w
 | CONTENT-01 | 1 | Complete |
 | CONTENT-02 | 2 | Complete |
 | CONTENT-03 | 2 | Complete |
-| CONTENT-04 | 3 | Pending |
-| CONTENT-05 | 3 | Pending |
-| SEO-01 | 4 | Pending |
-| SEO-02 | 4 | Pending |
-| SEO-03 | 4 | Pending |
+| CONTENT-04 | 3 | Complete |
+| CONTENT-05 | 3 | Complete |
+| SEO-01 | 4 | Complete |
+| SEO-02 | 4 | Complete |
+| SEO-03 | 4 | Complete |
 | CMS-01 | 5 | Pending |
 | CMS-02 | 5 | Pending |
 | CMS-03 | 5 | Pending |
@@ -160,4 +174,4 @@ Phase 2 ──> Phase 3 (Content/Pages)
 ---
 
 *Roadmap created: 2026-01-22*
-*Last updated: 2026-01-22 (Phase 2 complete)*
+*Last updated: 2026-02-09 (Phase 5 planned)*

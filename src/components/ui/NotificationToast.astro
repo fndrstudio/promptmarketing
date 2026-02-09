@@ -117,10 +117,10 @@ const {
 		@apply mb-0 text-base text-white;
 	}
 	.toast__text {
-		@apply relative z-10 text-sm text-white decoration-dotted [&>a]:font-medium! [&>a]:text-white [&>a]:underline;
+		@apply relative z-10 text-sm text-white decoration-dotted [&>a]:font-medium! [&>a]:text-accent-500 [&>a]:underline;
 	}
 	.toast__text a {
-		@apply underline decoration-white/60 underline-offset-4 transition hover:decoration-white;
+		@apply underline decoration-accent-500/60 underline-offset-4 transition hover:text-accent-400 hover:decoration-accent-400;
 	}
 	.toast__close {
 		@apply relative z-10 ml-auto inline-flex h-8 w-8 shrink-0 cursor-pointer items-center justify-center text-white transition hover:bg-white/20 hover:text-white focus-visible:outline-offset-2 focus-visible:outline-white/60;

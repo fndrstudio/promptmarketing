@@ -6,6 +6,8 @@
 // Components
 // - Layout
 import Layout from '../layouts/Layout.astro'
+// - SEO Schemas
+import OrganizationSchema from '../components/seo/OrganizationSchema.astro'
 // - Layout components
 import Section from '../components/ui/Section.astro'
 import Row from '../components/ui/Row.astro'
@@ -17,6 +19,11 @@ import CTA from '../components/blocks/cta/CTAPrimary.astro'
 import Header from '../components/ui/Header.astro'
 import FeatureBasicCard from '../components/ui/cards/FeatureBasicCard.astro'
 import DecorationBorder from '../components/ui/DecorationBorder.astro'
+// - Partner logos
+import logoAiam from '../assets/logos/partner-aiam.svg'
+import logoPromptwatch from '../assets/logos/partner-promptwatch.svg'
+import logoEverywhere from '../assets/logos/partner-everywhere.svg'
+import logoGoogle from '../assets/logos/partner-google.svg'
 
 // Content
 // - SEO
@@ -107,12 +114,41 @@ const teamMembers = [
 		name: 'Arjan ter Huurne',
 		title: 'Founder',
 		description: '20 years in Search marketing; pioneer in shifting from referral engines to generative experiences.'
+	},
+	{
+		name: 'Thomas Huijsmans',
+		title: 'Web Dev',
+		description: 'Full-stack developer; builds performant, accessible sites with structured data architectures for optimal AI visibility.'
+	}
+]
+// - Partners data
+const partnersData = [
+	{
+		name: 'AI.AM',
+		logo: logoAiam,
+		description: 'Our office space is the AI.AM Hub in Amsterdam - breeding ground for AI startups. All our processes & workflows are AI powered.'
+	},
+	{
+		name: 'Promptwatch',
+		logo: logoPromptwatch,
+		description: 'Deep partnership with this leading AI Visibility tool. We get founder-level support and give feedback on product roadmap.'
+	},
+	{
+		name: 'Everywhere Network',
+		logo: logoEverywhere,
+		description: 'International Agency Network, access to more than 15 markets. We collaborate as an innovation hub in AI Search.'
+	},
+	{
+		name: 'Google',
+		logo: logoGoogle,
+		description: "Instrumental company throughout Arjan's career. We've built strong relationships in many parts of the Google org."
 	}
 ]
 
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
+	<OrganizationSchema />
 	<Hero title={heroData.title} subtitle={heroData.subtitle} text={heroData.text} />
 
 	<!-- Introduction Section -->
@@ -222,6 +258,35 @@ const teamMembers = [
 		</Row>
 	</Section>
 
+	<!-- Partners Section -->
+	<Section decorationBorder="none">
+		<Row decorationBorder="top bottom" decorationBorderStyle="dashed" style="transparent">
+			<Col span="12" style="transparent">
+				<div class="bg-white/80 dark:bg-neutral-950/80">
+					<div class="pt-12 pb-8 lg:pt-16">
+						<Header title="Our Partners" headingLevel="h2" titleWidth="max-w-2xl" />
+					</div>
+					<div class="grid grid-cols-1 lg:grid-cols-2">
+						{partnersData.map((partner) => (
+							<div class="border-t border-dashed border-neutral-200 dark:border-neutral-700">
+								<div class="p-6 lg:p-8">
+									<img
+										src={partner.logo.src}
+										alt={partner.name}
+										class="h-8 mb-4 dark:brightness-200 dark:contrast-75"
+									/>
+									<p class="text-base text-neutral-600 dark:text-neutral-400">
+										{partner.description}
+									</p>
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+			</Col>
+		</Row>
+	</Section>
+
 	<CTA
 		title={ctaData.title}
 		text={ctaData.text}
@@ -239,11 +304,11 @@ const teamMembers = [
 	.team-card:nth-child(3n) {
 		@apply lg:border-r-0;
 	}
-	/* Restore right border on 2nd card in desktop view */
+	/* Restore right border on cards that are 2n but not 3n in desktop view */
 	.team-card:nth-child(2) {
 		@apply lg:border-r;
 	}
-	.team-card:nth-child(5) {
+	.team-card:nth-child(4) {
 		@apply lg:border-r;
 	}
 	/* Remove bottom border on last row */

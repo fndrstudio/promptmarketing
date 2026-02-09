@@ -1,0 +1,51 @@
+---
+// BlogPostingSchema.astro
+// Renders BlogPosting JSON-LD for individual blog posts
+import { Schema } from 'astro-seo-schema';
+
+interface Props {
+	title: string;
+	description: string;
+	pubDate: Date;
+	author: string;
+	image?: string;
+}
+
+const { title, description, pubDate, author, image } = Astro.props;
+const siteUrl = 'https://promptmarketing.com';
+const pageUrl = Astro.url.href;
+
+// Format author name from slug (e.g., "john-doe" -> "John Doe")
+const formattedAuthor = author
+	.split('-')
+	.map((part: string) => part.charAt(0).toUpperCase() + part.slice(1))
+	.join(' ');
+---
+
+<Schema
+	item={{
+		'@context': 'https://schema.org',
+		'@type': 'BlogPosting',
+		headline: title,
+		description: description,
+		image: image ? [`${siteUrl}${image}`] : undefined,
+		datePublished: pubDate.toISOString(),
+		author: {
+			'@type': 'Person',
+			name: formattedAuthor
+		},
+		publisher: {
+			'@type': 'Organization',
+			'@id': `${siteUrl}/#organization`,
+			name: 'PromptMarketing',
+			logo: {
+				'@type': 'ImageObject',
+				url: `${siteUrl}/logo-black.png`
+			}
+		},
+		mainEntityOfPage: {
+			'@type': 'WebPage',
+			'@id': pageUrl
+		}
+	}}
+/>

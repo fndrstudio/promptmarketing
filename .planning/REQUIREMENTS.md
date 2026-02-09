@@ -18,16 +18,16 @@ Requirements for initial release. Each maps to roadmap phases.
 ### Content & Pages
 
 - [x] **CONTENT-01**: Update site config (title, description, URLs) in `src/config/config.ts`
-- [ ] **CONTENT-02**: Restructure navigation around three pillars: Prompt Intelligence, Relevance Engineering, Agentic Commerce
-- [ ] **CONTENT-03**: Rewrite homepage with "Scientific Forest" messaging and "Priming vs Proving" framework
-- [ ] **CONTENT-04**: Update all page copy to reflect PromptMarketing voice (scientific, radically honest, Dutch pragmatism)
-- [ ] **CONTENT-05**: Create/update About page showing Amsterdam Clubhouse and "Gang of Super Specialists"
+- [x] **CONTENT-02**: Restructure navigation around three pillars: Prompt Intelligence, Relevance Engineering, Agentic Commerce
+- [x] **CONTENT-03**: Rewrite homepage with "Scientific Forest" messaging and "Priming vs Proving" framework
+- [x] **CONTENT-04**: Update all page copy to reflect PromptMarketing voice (scientific, radically honest, Dutch pragmatism)
+- [x] **CONTENT-05**: Create/update About page showing Amsterdam Clubhouse and "Gang of Super Specialists"
 
 ### Technical SEO & Machine Readability
 
-- [ ] **SEO-01**: Add llms.txt file at root for AI agent discoverability
-- [ ] **SEO-02**: Implement comprehensive Schema.org markup (Organization, Service, Article)
-- [ ] **SEO-03**: Update canonical URLs and site configuration for production domain
+- [x] **SEO-01**: Add llms.txt file at root for AI agent discoverability
+- [x] **SEO-02**: Implement comprehensive Schema.org markup (Organization, Service, Article)
+- [x] **SEO-03**: Update canonical URLs and site configuration for production domain
 
 ### CMS Integration
 
@@ -66,13 +66,13 @@ Which phases cover which requirements. Updated by create-roadmap.
 | BRAND-04 | 1 | Complete |
 | BRAND-05 | 1 | Complete |
 | CONTENT-01 | 1 | Complete |
-| CONTENT-02 | 2 | Pending |
-| CONTENT-03 | 2 | Pending |
-| CONTENT-04 | 3 | Pending |
-| CONTENT-05 | 3 | Pending |
-| SEO-01 | 4 | Pending |
-| SEO-02 | 4 | Pending |
-| SEO-03 | 4 | Pending |
+| CONTENT-02 | 2 | Complete |
+| CONTENT-03 | 2 | Complete |
+| CONTENT-04 | 3 | Complete |
+| CONTENT-05 | 3 | Complete |
+| SEO-01 | 4 | Complete |
+| SEO-02 | 4 | Complete |
+| SEO-03 | 4 | Complete |
 | CMS-01 | 5 | Pending |
 | CMS-02 | 5 | Pending |
 | CMS-03 | 5 | Pending |
@@ -85,4 +85,4 @@ Which phases cover which requirements. Updated by create-roadmap.
 
 ---
 *Requirements defined: 2026-01-22*
-*Last updated: 2026-01-22 after roadmap creation*
+*Last updated: 2026-02-09 after Phase 4 completion*

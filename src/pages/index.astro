@@ -7,6 +7,10 @@
 // - Layout
 import Layout from '../layouts/Layout.astro'
 
+// - SEO Schemas
+import OrganizationSchema from '../components/seo/OrganizationSchema.astro'
+import WebSiteSchema from '../components/seo/WebSiteSchema.astro'
+
 // - Blocks
 import Hero from '../components/blocks/hero/CenteredHeroCTA.astro'
 import Brand from '../components/blocks/brand/Marquee.astro'
@@ -56,6 +60,8 @@ const ctaData = {
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
+	<OrganizationSchema />
+	<WebSiteSchema />
 	<Hero
 		title={heroData.title}
 		subtitle={heroData.subtitle}
