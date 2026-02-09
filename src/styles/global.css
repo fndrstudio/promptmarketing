@@ -36,18 +36,18 @@
 	--color-primary-800: oklch(30% 0.08 180);
 	--color-primary-900: oklch(24% 0.07 180);
 	--color-primary-950: oklch(18% 0.06 180);
-	/* Accent - Neon Lime #beff00 (CTAs only - 5% usage) */
-	--color-accent-50: oklch(99% 0.12 110);
-	--color-accent-100: oklch(97% 0.22 108);
-	--color-accent-200: oklch(95% 0.32 106);
-	--color-accent-300: oklch(93% 0.40 104);
-	--color-accent-400: oklch(91% 0.44 103);
-	--color-accent-500: oklch(89% 0.46 102);
-	--color-accent-600: oklch(78% 0.40 102);
-	--color-accent-700: oklch(65% 0.32 102);
-	--color-accent-800: oklch(52% 0.25 102);
-	--color-accent-900: oklch(42% 0.18 102);
-	--color-accent-950: oklch(32% 0.12 102);
+	/* Accent - Neon Lime (CTAs only - 5% usage) */
+	--color-accent-50: oklch(98% 0.15 118);
+	--color-accent-100: oklch(96% 0.25 118);
+	--color-accent-200: oklch(94% 0.35 118);
+	--color-accent-300: oklch(92% 0.42 118);
+	--color-accent-400: oklch(90% 0.48 118);
+	--color-accent-500: oklch(88% 0.50 118);
+	--color-accent-600: oklch(76% 0.42 118);
+	--color-accent-700: oklch(64% 0.34 118);
+	--color-accent-800: oklch(52% 0.26 118);
+	--color-accent-900: oklch(42% 0.18 118);
+	--color-accent-950: oklch(32% 0.12 118);
 	/* Neutral - Teal-tinted (dark teal #003840 base - 65% usage) */
 	--color-neutral-50: oklch(98% 0.008 185);
 	--color-neutral-100: oklch(96% 0.012 185);
@@ -177,7 +177,7 @@ html {
 }
 
 body {
-	@apply font-body bg-white bg-[url('/bgs/stripe-gray-light.svg')] bg-size-[38px] bg-fixed text-base leading-7 text-neutral-700 selection:bg-neutral-950 selection:text-neutral-50 in-[.dark]:text-neutral-200 in-[.light]:text-neutral-700 has-[.header\_\_menu--open]:overflow-hidden lg:has-[.header\_\_menu--open]:overflow-auto dark:bg-neutral-950 dark:bg-[url('/bgs/stripe-teal-dark.svg')] dark:text-neutral-200 dark:selection:bg-neutral-50 dark:selection:text-neutral-950;
+	@apply font-headings font-light bg-white bg-[url('/bgs/stripe-gray-light.svg')] bg-size-[38px] bg-fixed text-base leading-7 text-neutral-700 selection:bg-neutral-950 selection:text-neutral-50 in-[.dark]:text-neutral-200 in-[.light]:text-neutral-700 has-[.header\_\_menu--open]:overflow-hidden lg:has-[.header\_\_menu--open]:overflow-auto dark:bg-neutral-950 dark:bg-[url('/bgs/stripe-teal-dark.svg')] dark:text-neutral-200 dark:selection:bg-neutral-50 dark:selection:text-neutral-950;
 }
 
 /* Main typography */
@@ -214,14 +214,25 @@ h6 strong {
 }
 
 h1,
-.h1,
-h2,
-.h2 {
+.h1 {
 	@apply mb-6 font-bold;
 }
 
+h2,
+.h2 {
+	@apply mb-6 font-semibold;
+}
+
 h3,
-.h3,
+.h3 {
+	@apply font-body font-normal;
+}
+
+h3,
+.h3 {
+	@apply mb-4;
+}
+
 h4,
 .h4,
 h5,
