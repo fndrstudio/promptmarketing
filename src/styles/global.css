@@ -24,46 +24,46 @@
 	/* Container */
 
 	/* Colors */
-	/* Primary - Forest Green (Scientific Forest aesthetic) */
-	--color-primary-50: oklch(97% 0.02 145);
-	--color-primary-100: oklch(93% 0.04 145);
-	--color-primary-200: oklch(85% 0.06 145);
-	--color-primary-300: oklch(75% 0.08 145);
-	--color-primary-400: oklch(60% 0.1 145);
-	--color-primary-500: oklch(45% 0.12 145);
-	--color-primary-600: oklch(38% 0.11 145);
-	--color-primary-700: oklch(32% 0.1 145);
-	--color-primary-800: oklch(26% 0.08 145);
-	--color-primary-900: oklch(22% 0.06 145);
-	--color-primary-950: oklch(15% 0.04 145);
-	/* Accent - Gold */
-	--color-accent-50: oklch(98% 0.03 85);
-	--color-accent-100: oklch(95% 0.06 85);
-	--color-accent-200: oklch(90% 0.1 85);
-	--color-accent-300: oklch(85% 0.13 85);
-	--color-accent-400: oklch(80% 0.15 85);
-	--color-accent-500: oklch(75% 0.15 85);
-	--color-accent-600: oklch(65% 0.14 85);
-	--color-accent-700: oklch(55% 0.12 85);
-	--color-accent-800: oklch(45% 0.1 85);
-	--color-accent-900: oklch(35% 0.08 85);
-	--color-accent-950: oklch(25% 0.06 85);
-	/* Neutral - Obsidian Forest (dark scientific feel) */
-	--color-neutral-50: oklch(98% 0.005 145);
-	--color-neutral-100: oklch(96% 0.008 145);
-	--color-neutral-200: oklch(92% 0.01 145);
-	--color-neutral-300: oklch(86% 0.012 145);
-	--color-neutral-400: oklch(70% 0.015 145);
-	--color-neutral-500: oklch(55% 0.018 145);
-	--color-neutral-600: oklch(44% 0.02 145);
-	--color-neutral-700: oklch(35% 0.018 145);
-	--color-neutral-800: oklch(25% 0.015 145);
-	--color-neutral-900: oklch(18% 0.012 145);
-	--color-neutral-950: oklch(12% 0.01 145);
+	/* Primary - Teal #038081 (for links, interactive elements - 30% usage) */
+	--color-primary-50: oklch(96% 0.03 180);
+	--color-primary-100: oklch(90% 0.06 180);
+	--color-primary-200: oklch(80% 0.09 180);
+	--color-primary-300: oklch(70% 0.11 180);
+	--color-primary-400: oklch(58% 0.12 180);
+	--color-primary-500: oklch(48% 0.11 180);
+	--color-primary-600: oklch(42% 0.10 180);
+	--color-primary-700: oklch(36% 0.09 180);
+	--color-primary-800: oklch(30% 0.08 180);
+	--color-primary-900: oklch(24% 0.07 180);
+	--color-primary-950: oklch(18% 0.06 180);
+	/* Accent - Neon Lime #beff00 (CTAs only - 5% usage) */
+	--color-accent-50: oklch(99% 0.12 110);
+	--color-accent-100: oklch(97% 0.22 108);
+	--color-accent-200: oklch(95% 0.32 106);
+	--color-accent-300: oklch(93% 0.40 104);
+	--color-accent-400: oklch(91% 0.44 103);
+	--color-accent-500: oklch(89% 0.46 102);
+	--color-accent-600: oklch(78% 0.40 102);
+	--color-accent-700: oklch(65% 0.32 102);
+	--color-accent-800: oklch(52% 0.25 102);
+	--color-accent-900: oklch(42% 0.18 102);
+	--color-accent-950: oklch(32% 0.12 102);
+	/* Neutral - Teal-tinted (dark teal #003840 base - 65% usage) */
+	--color-neutral-50: oklch(98% 0.008 185);
+	--color-neutral-100: oklch(96% 0.012 185);
+	--color-neutral-200: oklch(92% 0.016 185);
+	--color-neutral-300: oklch(85% 0.020 185);
+	--color-neutral-400: oklch(70% 0.024 185);
+	--color-neutral-500: oklch(55% 0.028 185);
+	--color-neutral-600: oklch(42% 0.032 185);
+	--color-neutral-700: oklch(32% 0.036 185);
+	--color-neutral-800: oklch(24% 0.040 185);
+	--color-neutral-900: oklch(18% 0.044 185);
+	--color-neutral-950: oklch(14% 0.048 185);
 
 	/* Fonts */
-	--font-headings: 'Playfair Display', serif;
-	--font-body: 'Nunito', sans-serif;
+	--font-headings: 'Rubik', sans-serif;
+	--font-body: 'Crimson Text', serif;
 
 	/* Spacing */
 	--spacing-15: 60px;
@@ -156,17 +156,17 @@
 }
 
 @font-face {
-	font-family: 'Playfair Display';
-	src: url('/fonts/playfair-display/PlayfairDisplay-Variable.woff2') format('woff2');
-	font-weight: 400 900;
+	font-family: 'Rubik';
+	src: url('/fonts/rubik/Rubik-Variable.woff2') format('woff2');
+	font-weight: 300 900;
 	font-display: swap;
 	font-style: normal;
 }
 
 @font-face {
-	font-family: 'Nunito';
-	src: url('/fonts/nunito/Nunito-Variable.woff2') format('woff2');
-	font-weight: 200 1000;
+	font-family: 'Crimson Text';
+	src: url('/fonts/crimson/CrimsonText-Regular.woff2') format('woff2');
+	font-weight: 400;
 	font-display: swap;
 	font-style: normal;
 }
@@ -177,12 +177,12 @@ html {
 }
 
 body {
-	@apply font-body bg-white bg-[url('/bgs/stripe-gray-light.svg')] bg-size-[38px] bg-fixed text-base leading-7 text-neutral-700 selection:bg-neutral-950 selection:text-neutral-50 in-[.dark]:text-neutral-200 in-[.light]:text-neutral-700 has-[.header\_\_menu--open]:overflow-hidden lg:has-[.header\_\_menu--open]:overflow-auto dark:bg-neutral-950 dark:bg-[url('/bgs/stripe-gray-dark.svg')] dark:text-neutral-200 dark:selection:bg-neutral-50 dark:selection:text-neutral-950;
+	@apply font-body bg-white bg-[url('/bgs/stripe-gray-light.svg')] bg-size-[38px] bg-fixed text-base leading-7 text-neutral-700 selection:bg-neutral-950 selection:text-neutral-50 in-[.dark]:text-neutral-200 in-[.light]:text-neutral-700 has-[.header\_\_menu--open]:overflow-hidden lg:has-[.header\_\_menu--open]:overflow-auto dark:bg-neutral-950 dark:bg-[url('/bgs/stripe-teal-dark.svg')] dark:text-neutral-200 dark:selection:bg-neutral-50 dark:selection:text-neutral-950;
 }
 
 /* Main typography */
 p {
-	@apply mb-6 last:mb-0 in-[.dark]:text-neutral-200 in-[.light]:text-neutral-700;
+	@apply mb-6 last:mb-0 in-[.dark]:text-neutral-200 in-[.light]:text-neutral-700 break-words;
 }
 
 .text-lead {
@@ -217,7 +217,7 @@ h1,
 .h1,
 h2,
 .h2 {
-	@apply mb-6 font-medium;
+	@apply mb-6 font-bold;
 }
 
 h3,
@@ -228,7 +228,7 @@ h5,
 .h5,
 h6,
 .h6 {
-	@apply mb-4 font-medium;
+	@apply mb-4 font-bold;
 }
 
 h1,
@@ -262,7 +262,7 @@ h6,
 }
 
 main a {
-	@apply text-primary-500 hover:text-primary-600 dark:text-primary-500 dark:hover:text-primary-400;
+	@apply text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300;
 }
 
 .small {
@@ -288,11 +288,11 @@ ol li {
 }
 
 form input {
-	@apply relative mb-6 h-12 w-full border border-neutral-200 px-4 text-neutral-700 placeholder-transparent transition-all outline-none autofill:bg-white invalid:border-red-500 invalid:text-red-500 focus:border-neutral-500 focus:outline-none invalid:focus:border-red-500 focus-visible:outline-none disabled:cursor-not-allowed disabled:bg-neutral-50 disabled:text-neutral-400 dark:border-neutral-800 dark:bg-neutral-900 dark:autofill:bg-neutral-900 dark:disabled:bg-neutral-600;
+	@apply relative mb-6 h-12 w-full border border-neutral-200 px-4 text-neutral-700 placeholder-transparent transition-all outline-none autofill:bg-white invalid:border-red-500 invalid:text-red-500 focus:border-primary-500 focus:outline-none invalid:focus:border-red-500 focus-visible:outline-none disabled:cursor-not-allowed disabled:bg-neutral-50 disabled:text-neutral-400 dark:border-neutral-800 dark:bg-neutral-900 dark:autofill:bg-neutral-900 dark:focus:border-primary-500 dark:disabled:bg-neutral-600;
 }
 
 form textarea {
-	@apply relative mb-6 w-full border border-neutral-200 px-4 text-neutral-700 placeholder-transparent -backdrop-hue-rotate-30 transition-all outline-none autofill:bg-white invalid:border-red-500 invalid:text-red-500 focus:border-neutral-500 focus:outline-none invalid:focus:border-red-500 focus-visible:outline-none disabled:cursor-not-allowed disabled:bg-neutral-50 disabled:text-neutral-400 dark:border-neutral-800 dark:bg-neutral-900 dark:autofill:bg-neutral-800 dark:disabled:bg-neutral-600;
+	@apply relative mb-6 w-full border border-neutral-200 px-4 text-neutral-700 placeholder-transparent -backdrop-hue-rotate-30 transition-all outline-none autofill:bg-white invalid:border-red-500 invalid:text-red-500 focus:border-primary-500 focus:outline-none invalid:focus:border-red-500 focus-visible:outline-none disabled:cursor-not-allowed disabled:bg-neutral-50 disabled:text-neutral-400 dark:border-neutral-800 dark:bg-neutral-900 dark:autofill:bg-neutral-800 dark:focus:border-primary-500 dark:disabled:bg-neutral-600;
 }
 
 form label {
