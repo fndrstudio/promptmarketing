@@ -6,10 +6,17 @@
 // Components
 // - Layout
 import Layout from '../layouts/Layout.astro'
-
+// - Layout components
+import Section from '../components/ui/Section.astro'
+import Row from '../components/ui/Row.astro'
+import Col from '../components/ui/Col.astro'
 // - Blocks
 import Hero from '../components/blocks/hero/SimpleHeroPrimary.astro'
 import CTA from '../components/blocks/cta/CTAPrimary.astro'
+// - UI
+import Header from '../components/ui/Header.astro'
+import FeatureBasicCard from '../components/ui/cards/FeatureBasicCard.astro'
+import DecorationBorder from '../components/ui/DecorationBorder.astro'
 
 // Content
 // - SEO
@@ -20,9 +27,9 @@ const SEO = {
 }
 // - Hero data
 const heroData = {
-	title: 'A Gang of Super Specialists',
+	title: 'Why We Exist',
 	subtitle: 'About Us',
-	text: "We're a collective of deep experts who believe the AI-mediated market rewards precision over promotion. No generalists. No gurus. Just people who know their craft."
+	text: 'The shift from search to synthesis is happening now. When people ask AI for recommendations, the model doesn\'t return a list of links—it makes choices. It synthesises, summarises, and selects. If your brand isn\'t part of that synthesis, you\'re invisible.'
 }
 // - CTA data
 const ctaData = {
@@ -31,129 +38,205 @@ const ctaData = {
 	buttonLink: '/contact',
 	buttonText: 'Start a Conversation'
 }
+// - Pillars data
+const pillarsData = [
+	{
+		title: '01. Machine Readability First',
+		description: 'We build structured data architectures that move beyond "best practices" to create verifiable machine trust.'
+	},
+	{
+		title: '02. Probabilistic, Not Guaranteed',
+		description: 'We acknowledge that LLMs are probabilistic; our work focuses on influencing the weights and associations within the latent space to favor your brand.'
+	},
+	{
+		title: '03. Data Provenance',
+		description: 'In the era of synthesis, verifiable data is currency. We establish clear provenance chains that AI agents can validate for transaction.'
+	},
+	{
+		title: '04. The Long Game',
+		description: 'We avoid "hacks." We build technical foundations that evolve as models update, ensuring long-term visibility without technical debt.'
+	}
+]
+// - Values data
+const valuesData = [
+	{
+		title: 'Measurement Over Opinion',
+		description: "If we can't measure it, we don't claim it. Every technical action is tied to an observable shift in AI visibility metrics."
+	},
+	{
+		title: 'Transparency By Default',
+		description: 'We show our work. Clients see the methodology, the risks, the reasoning. No black boxes, no proprietary "magic."'
+	},
+	{
+		title: 'Long-Term Thinking',
+		description: "Quick wins that create technical debt aren't wins. We build architecture that serves brands for years, not quarters."
+	},
+	{
+		title: 'Honest Limitations',
+		description: "We'll tell you when something is outside our expertise or when your expectations exceed what's possible. Trust requires honesty."
+	}
+]
+// - Team data
+const teamMembers = [
+	{
+		name: 'Fleur Steenbrink',
+		title: 'GEO / Content',
+		description: '10 years SEO experience; specialist in AEO/GEO content strategies and semantic HTML foundations.'
+	},
+	{
+		name: 'Ramon Guliker',
+		title: 'GEO / Technical',
+		description: '13 years SEO experience; expert in technical SXO audits and off-page authority building.'
+	},
+	{
+		name: 'Wouter van der Meij',
+		title: 'GEO / Technical',
+		description: '16 years SEO experience; specialist in optimizing site architecture and EEAT signals for machine trust.'
+	},
+	{
+		name: 'Bart Kalisvaart',
+		title: 'AI Developer',
+		description: '15 years dev experience; expert in AI workflows, agents, and platform integrations like ACP and MCP.'
+	},
+	{
+		name: 'Erik Jan Reijenga',
+		title: 'Business Consultant',
+		description: 'Agency COO & CEO exp; bridges the gap between technical AI engineering and enterprise growth strategies.'
+	},
+	{
+		name: 'Arjan ter Huurne',
+		title: 'Founder',
+		description: '20 years in Search marketing; pioneer in shifting from referral engines to generative experiences.'
+	}
+]
+
+// Create pairs for grid layout
+const pillarPairs = []
+for (let i = 0; i < pillarsData.length; i += 2) {
+	pillarPairs.push(pillarsData.slice(i, i + 2))
+}
+const valuePairs = []
+for (let i = 0; i < valuesData.length; i += 2) {
+	valuePairs.push(valuesData.slice(i, i + 2))
+}
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
 	<Hero title={heroData.title} subtitle={heroData.subtitle} text={heroData.text} />
 
-	<!-- Philosophy Section -->
-	<section class="py-16 lg:py-24">
-		<div class="container mx-auto px-6">
-			<div class="mx-auto max-w-4xl">
-				<h2 class="text-primary mb-8 font-serif text-3xl lg:text-4xl">Why We Exist</h2>
-				<div class="prose prose-xl dark:prose-invert">
-					<p class="mb-6 text-xl leading-relaxed">
-						The shift from search to synthesis is happening now. When people ask AI for
-						recommendations, the model doesn't return a list of links, it makes choices.
-						It synthesizes, summarizes, and selects. If your brand isn't part of that
-						synthesis, you're invisible.
-					</p>
-					<p class="mb-6 text-xl leading-relaxed">
-						Most marketing agencies haven't noticed. They're still optimizing for
+	<!-- Introduction Section -->
+	<Section decorationBorder="top bottom">
+		<Row decorationBorder="top bottom" decorationBorderStyle="dashed" style="transparent">
+			<Col span="12" style="transparent">
+				<div class="bg-white px-6 py-12 lg:px-8 lg:py-16 dark:bg-neutral-950">
+					<p class="mx-auto max-w-4xl text-xl leading-relaxed text-neutral-600 lg:text-2xl dark:text-neutral-400">
+						Most marketing agencies haven't noticed. They're still optimising for
 						algorithms that rank pages, not models that understand meaning. We built
-						PromptMarketing because someone needs to bridge that gap, with rigor, not
+						PromptMarketing because someone needs to bridge that gap—with rigor, not
 						hype.
 					</p>
 				</div>
-			</div>
-		</div>
-	</section>
+				<DecorationBorder type="top bottom" style="dashed" />
+			</Col>
+		</Row>
+	</Section>
 
-	<!-- Approach Section -->
-	<section class="bg-neutral-50 py-16 lg:py-24 dark:bg-neutral-900">
-		<div class="container mx-auto px-6">
-			<div class="mx-auto max-w-4xl">
-				<h2 class="text-primary mb-8 font-serif text-3xl lg:text-4xl">How We Work</h2>
-				<div class="prose prose-xl dark:prose-invert">
-					<p class="mb-6 text-xl leading-relaxed">
-						<strong>Engineers, not gurus.</strong> We don't sell certainty in an uncertain
-						domain. AI systems are probabilistic, anyone claiming guaranteed results is either
-						lying or doesn't understand the technology. We offer rigorous methodology, transparent
-						measurement, and honest assessment of what's achievable.
-					</p>
-					<p class="mb-6 text-xl leading-relaxed">
-						<strong>Specialists, not generalists.</strong> Every person on our team has deep
-						expertise in a specific discipline: semantic architecture, knowledge graphs, technical
-						SEO, AI systems. We collaborate on projects, each contributing what they know
-						best. No mediocre middle.
-					</p>
-					<p class="mb-6 text-xl leading-relaxed">
-						<strong>Dutch pragmatism.</strong> We're based in Amsterdam, and we bring that
-						directness to everything we do. No inflated promises. No buzzword theater. Just
-						clear thinking about hard problems.
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- Clubhouse Section -->
-	<section class="py-16 lg:py-24">
-		<div class="container mx-auto px-6">
-			<div class="mx-auto max-w-4xl">
-				<h2 class="text-primary mb-8 font-serif text-3xl lg:text-4xl">
-					The Amsterdam Clubhouse
-				</h2>
-				<div class="prose prose-xl dark:prose-invert">
-					<p class="mb-6 text-xl leading-relaxed">
-						Our base of operations is a workspace in Amsterdam where specialists
-						converge to solve problems that don't have playbooks yet. Part research lab,
-						part strategy room, a place where new ideas get stress-tested before they
-						reach clients.
-					</p>
-					<p class="mb-6 text-xl leading-relaxed">
-						The Clubhouse model means we can assemble exactly the right team for each
-						engagement. Your project might need a Schema.org architect, a knowledge
-						graph specialist, and an AI systems expert, we pull in precisely those
-						people, no padding.
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
+	<!-- Four Pillars Section -->
+	<Section decorationBorder="none">
+		<Row decorationBorder="none" style="transparent" classes="gap-y-0!">
+			<Col span="12" classes="pt-16 lg:pt-24 pb-8!" style="transparent">
+				<Header title="The Four Pillars of Relevance Engineering" headingLevel="h2" titleWidth="max-w-3xl" />
+			</Col>
+		</Row>
+		{pillarPairs.map((pair, pairIndex) => (
+			<Row
+				decorationBorder="top bottom"
+				decorationBorderStyle="dashed"
+				style="transparent"
+				classes={pairIndex === pillarPairs.length - 1 ? 'mb-0' : 'mb-8'}
+			>
+				{pair.map((item, index) => (
+					<Col span="6" style="transparent">
+						<FeatureBasicCard
+							title={item.title}
+							decorationType={`top bottom right ${index === pair.length - 1 ? 'left' : ''}`}
+						>
+							{item.description}
+						</FeatureBasicCard>
+					</Col>
+				))}
+			</Row>
+		))}
+	</Section>
 
 	<!-- Values Section -->
-	<section class="bg-neutral-50 py-16 lg:py-24 dark:bg-neutral-900">
-		<div class="container mx-auto px-6">
-			<div class="mx-auto max-w-4xl">
-				<h2 class="text-primary mb-8 font-serif text-3xl lg:text-4xl">What We Believe</h2>
-				<div class="grid gap-8 md:grid-cols-2">
-					<div>
-						<h3 class="text-primary mb-3 text-xl font-semibold">
-							Measurement Over Opinion
-						</h3>
-						<p class="text-lg text-neutral-600 dark:text-neutral-400">
-							If we can't measure it, we don't claim it. Every recommendation we make
-							is backed by observable data, not gut feeling.
-						</p>
+	<Section decorationBorder="none">
+		<Row decorationBorder="none" style="transparent" classes="gap-y-0!">
+			<Col span="12" classes="pt-16 lg:pt-24 pb-8!" style="transparent">
+				<Header title="What We Believe" headingLevel="h2" titleWidth="max-w-2xl" />
+			</Col>
+		</Row>
+		{valuePairs.map((pair, pairIndex) => (
+			<Row
+				decorationBorder="top bottom"
+				decorationBorderStyle="dashed"
+				style="transparent"
+				classes={pairIndex === valuePairs.length - 1 ? 'mb-0' : 'mb-8'}
+			>
+				{pair.map((item, index) => (
+					<Col span="6" style="transparent">
+						<FeatureBasicCard
+							title={item.title}
+							decorationType={`top bottom right ${index === pair.length - 1 ? 'left' : ''}`}
+						>
+							{item.description}
+						</FeatureBasicCard>
+					</Col>
+				))}
+			</Row>
+		))}
+	</Section>
+
+	<!-- Team Section -->
+	<Section decorationBorder="none">
+		<Row decorationBorder="none" style="transparent" classes="gap-y-0!">
+			<Col span="12" classes="pt-16 lg:pt-24 pb-4!" style="transparent">
+				<Header title="A Gang of Super Specialists" headingLevel="h2" titleWidth="max-w-2xl" />
+			</Col>
+			<Col span="12" classes="pb-8!" style="transparent">
+				<p class="px-6 text-xl text-neutral-600 lg:px-8 lg:text-2xl dark:text-neutral-400">
+					We're a collective of deep experts. No generalists. No gurus. Just people who know their craft, are eager to explore, learn and dive deep.
+				</p>
+			</Col>
+		</Row>
+		<Row decorationBorder="top bottom" decorationBorderStyle="dashed" style="transparent" classes="gap-0!">
+			{teamMembers.map((member, index) => (
+				<Col span="4" spanTablet="6" style="transparent">
+					<div class="team-card group relative aspect-square cursor-pointer overflow-hidden border-r border-b border-neutral-200 bg-white transition-all duration-300 dark:border-neutral-700 dark:bg-neutral-950">
+						<!-- Default State: Name & Title -->
+						<div class="absolute inset-0 flex flex-col items-start justify-end p-6 transition-opacity duration-300 group-hover:opacity-0">
+							<h3 class="text-primary mb-1 text-lg font-semibold lg:text-xl">
+								{member.name}
+							</h3>
+							<p class="text-sm text-neutral-500 lg:text-base dark:text-neutral-400">
+								{member.title}
+							</p>
+						</div>
+						<!-- Hover State: Description -->
+						<div class="absolute inset-0 flex flex-col items-start justify-end bg-primary-500 p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+							<h3 class="mb-2 text-lg font-semibold text-white lg:text-xl">
+								{member.name}
+							</h3>
+							<p class="text-sm text-white/90 lg:text-base">
+								{member.description}
+							</p>
+						</div>
+						<DecorationBorder type="top bottom left right" style="dashed" />
 					</div>
-					<div>
-						<h3 class="text-primary mb-3 text-xl font-semibold">
-							Transparency By Default
-						</h3>
-						<p class="text-lg text-neutral-600 dark:text-neutral-400">
-							We show our work. Clients see the methodology, the data, the reasoning.
-							No black boxes, no proprietary mystery.
-						</p>
-					</div>
-					<div>
-						<h3 class="text-primary mb-3 text-xl font-semibold">Long-Term Thinking</h3>
-						<p class="text-lg text-neutral-600 dark:text-neutral-400">
-							Quick wins that create technical debt aren't wins. We build architecture
-							that serves brands for years, not quarters.
-						</p>
-					</div>
-					<div>
-						<h3 class="text-primary mb-3 text-xl font-semibold">Honest Limitations</h3>
-						<p class="text-lg text-neutral-600 dark:text-neutral-400">
-							We'll tell you when something is outside our expertise or when your
-							expectations exceed what's possible. Trust requires honesty.
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+				</Col>
+			))}
+		</Row>
+	</Section>
 
 	<CTA
 		title={ctaData.title}
@@ -162,3 +245,30 @@ const ctaData = {
 		buttonText={ctaData.buttonText}
 	/>
 </Layout>
+
+<style>
+	@reference '../styles/global.css';
+	/* Remove right border on last column in each row */
+	.team-card {
+		@apply last-of-type:border-r-0;
+	}
+	/* Remove right border on 3rd and 6th cards (end of each row on desktop) */
+	:global(.col:nth-child(3n) .team-card),
+	:global(.col:nth-child(6n) .team-card) {
+		@apply lg:border-r-0;
+	}
+	/* Remove right border on 2nd, 4th, 6th cards (end of each row on tablet) */
+	:global(.col:nth-child(2n) .team-card) {
+		@apply border-r-0 lg:border-r;
+	}
+	:global(.col:nth-child(3n) .team-card) {
+		@apply lg:border-r-0;
+	}
+	/* Remove bottom border on last row */
+	:global(.col:nth-last-child(-n+3) .team-card) {
+		@apply lg:border-b-0;
+	}
+	:global(.col:nth-last-child(-n+2) .team-card) {
+		@apply border-b-0 md:border-b lg:border-b;
+	}
+</style>
