@@ -30,7 +30,7 @@ import logoGoogle from '../assets/logos/partner-google.svg'
 const SEO = {
 	title: 'PromptMarketing | About Us',
 	description:
-		'Meet the Gang of Super Specialists building the future of AI visibility. Based in Amsterdam, working globally on Generative Engine Optimization.'
+		'Meet the Team of specialist consultants building the future of AI visibility. Based in Amsterdam, working globally on Generative Engine Optimization.'
 }
 // - Hero data
 const heroData = {
@@ -45,25 +45,6 @@ const ctaData = {
 	buttonLink: '/contact',
 	buttonText: 'Start a Conversation'
 }
-// - Pillars data
-const pillarsData = [
-	{
-		title: '01. Machine Readability First',
-		description: 'We build structured data architectures that move beyond "best practices" to create verifiable machine trust.'
-	},
-	{
-		title: '02. Probabilistic, Not Guaranteed',
-		description: 'We acknowledge that LLMs are probabilistic; our work focuses on influencing the weights and associations within the latent space to favor your brand.'
-	},
-	{
-		title: '03. Data Provenance',
-		description: 'In the era of synthesis, verifiable data is currency. We establish clear provenance chains that AI agents can validate for transaction.'
-	},
-	{
-		title: '04. The Long Game',
-		description: 'We avoid "hacks." We build technical foundations that evolve as models update, ensuring long-term visibility without technical debt.'
-	}
-]
 // - Values data
 const valuesData = [
 	{
@@ -86,19 +67,9 @@ const valuesData = [
 // - Team data
 const teamMembers = [
 	{
-		name: 'Fleur Steenbrink',
-		title: 'GEO / Content',
-		description: '10 years SEO experience; specialist in AEO/GEO content strategies and semantic HTML foundations.'
-	},
-	{
-		name: 'Ramon Guliker',
-		title: 'GEO / Technical',
-		description: '13 years SEO experience; expert in technical SXO audits and off-page authority building.'
-	},
-	{
-		name: 'Wouter van der Meij',
-		title: 'GEO / Technical',
-		description: '16 years SEO experience; specialist in optimizing site architecture and EEAT signals for machine trust.'
+		name: 'Arjan ter Huurne',
+		title: 'Founder',
+		description: '20 years in Search marketing; pioneer in shifting from referral engines to generative experiences.'
 	},
 	{
 		name: 'Bart Kalisvaart',
@@ -111,14 +82,24 @@ const teamMembers = [
 		description: 'Agency COO & CEO exp; bridges the gap between technical AI engineering and enterprise growth strategies.'
 	},
 	{
-		name: 'Arjan ter Huurne',
-		title: 'Founder',
-		description: '20 years in Search marketing; pioneer in shifting from referral engines to generative experiences.'
+		name: 'Fleur Steenbrink',
+		title: 'GEO / Content',
+		description: '10 years SEO experience; specialist in AEO/GEO content strategies and semantic HTML foundations.'
+	},
+	{
+		name: 'Ramon Gulikers',
+		title: 'GEO / Technical',
+		description: '13 years SEO experience; expert in technical SXO audits and off-page authority building.'
+	},
+	{
+		name: 'Wouter van der Meij',
+		title: 'GEO / Technical',
+		description: '16 years SEO experience; specialist in optimizing site architecture and EEAT signals for machine trust.'
 	},
 	{
 		name: 'Thomas Huijsmans',
-		title: 'Web Dev',
-		description: 'Full-stack developer; builds performant, accessible sites with structured data architectures for optimal AI visibility.'
+		title: 'AI Developer',
+		description: 'AI Developer building websites and applications with Next.js and Astro. Experienced with AI integrations.'
 	}
 ]
 // - Partners data
@@ -168,48 +149,27 @@ const partnersData = [
 		</Row>
 	</Section>
 
-	<!-- Four Pillars Section -->
+	<!-- Partners Section -->
 	<Section decorationBorder="none">
 		<Row decorationBorder="top bottom" decorationBorderStyle="dashed" style="transparent">
 			<Col span="12" style="transparent">
 				<div class="bg-white/80 dark:bg-neutral-950/80">
 					<div class="pt-12 pb-8 lg:pt-16">
-						<Header title="The Four Pillars of Relevance Engineering" headingLevel="h2" titleWidth="max-w-3xl" />
+						<Header title="Our Partners" headingLevel="h2" titleWidth="max-w-2xl" />
 					</div>
 					<div class="grid grid-cols-1 lg:grid-cols-2">
-						{pillarsData.map((item, index) => (
+						{partnersData.map((partner) => (
 							<div class="border-t border-dashed border-neutral-200 dark:border-neutral-700">
-								<FeatureBasicCard
-									title={item.title}
-									decorationType="none"
-								>
-									{item.description}
-								</FeatureBasicCard>
-							</div>
-						))}
-					</div>
-				</div>
-			</Col>
-		</Row>
-	</Section>
-
-	<!-- Values Section -->
-	<Section decorationBorder="none">
-		<Row decorationBorder="top bottom" decorationBorderStyle="dashed" style="transparent">
-			<Col span="12" style="transparent">
-				<div class="bg-white/80 dark:bg-neutral-950/80">
-					<div class="pt-12 pb-8 lg:pt-16">
-						<Header title="What We Believe" headingLevel="h2" titleWidth="max-w-2xl" />
-					</div>
-					<div class="grid grid-cols-1 lg:grid-cols-2">
-						{valuesData.map((item, index) => (
-							<div class="border-t border-dashed border-neutral-200 dark:border-neutral-700">
-								<FeatureBasicCard
-									title={item.title}
-									decorationType="none"
-								>
-									{item.description}
-								</FeatureBasicCard>
+								<div class="p-6 lg:p-8">
+									<img
+										src={partner.logo.src}
+										alt={partner.name}
+										class="h-8 mb-4 dark:brightness-200 dark:contrast-75"
+									/>
+									<p class="text-base text-neutral-600 dark:text-neutral-400">
+										{partner.description}
+									</p>
+								</div>
 							</div>
 						))}
 					</div>
@@ -224,13 +184,13 @@ const partnersData = [
 			<Col span="12" style="transparent">
 				<div class="bg-white/80 dark:bg-neutral-950/80">
 					<div class="pt-12 pb-4 lg:pt-16">
-						<Header title="A Gang of Super Specialists" headingLevel="h2" titleWidth="max-w-2xl" />
+						<Header title="Team of specialist consultants" headingLevel="h2" titleWidth="max-w-2xl" />
 					</div>
 					<p class="px-6 pb-8 text-lg text-neutral-600 lg:px-8 lg:text-xl dark:text-neutral-400">
 						We're a collective of deep experts. No generalists. No gurus. Just people who know their craft, are eager to explore, learn and dive deep.
 					</p>
 					<div class="grid grid-cols-2 lg:grid-cols-3 border-t border-dashed border-neutral-200 dark:border-neutral-700">
-						{teamMembers.map((member, index) => (
+						{teamMembers.map((member) => (
 							<div class="team-card group relative aspect-square cursor-pointer overflow-hidden border-r border-b border-dashed border-neutral-200 bg-white transition-all duration-300 dark:border-neutral-700 dark:bg-neutral-950">
 								<!-- Default State: Name & Title -->
 								<div class="absolute inset-0 flex flex-col items-start justify-end p-6 transition-opacity duration-300 group-hover:opacity-0">
@@ -258,27 +218,23 @@ const partnersData = [
 		</Row>
 	</Section>
 
-	<!-- Partners Section -->
+	<!-- Values Section -->
 	<Section decorationBorder="none">
 		<Row decorationBorder="top bottom" decorationBorderStyle="dashed" style="transparent">
 			<Col span="12" style="transparent">
 				<div class="bg-white/80 dark:bg-neutral-950/80">
 					<div class="pt-12 pb-8 lg:pt-16">
-						<Header title="Our Partners" headingLevel="h2" titleWidth="max-w-2xl" />
+						<Header title="What We Believe" headingLevel="h2" titleWidth="max-w-2xl" />
 					</div>
 					<div class="grid grid-cols-1 lg:grid-cols-2">
-						{partnersData.map((partner) => (
+						{valuesData.map((item) => (
 							<div class="border-t border-dashed border-neutral-200 dark:border-neutral-700">
-								<div class="p-6 lg:p-8">
-									<img
-										src={partner.logo.src}
-										alt={partner.name}
-										class="h-8 mb-4 dark:brightness-200 dark:contrast-75"
-									/>
-									<p class="text-base text-neutral-600 dark:text-neutral-400">
-										{partner.description}
-									</p>
-								</div>
+								<FeatureBasicCard
+									title={item.title}
+									decorationType="none"
+								>
+									{item.description}
+								</FeatureBasicCard>
 							</div>
 						))}
 					</div>

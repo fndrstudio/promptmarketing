@@ -8,10 +8,17 @@
 import Layout from '../layouts/Layout.astro'
 // - SEO Schemas
 import ServiceSchema from '../components/seo/ServiceSchema.astro'
+// - Layout components
+import Section from '../components/ui/Section.astro'
+import Row from '../components/ui/Row.astro'
+import Col from '../components/ui/Col.astro'
 // - Blocks
 import Hero from '../components/blocks/hero/SimpleHeroPrimary.astro'
 import BasicFeatures from '../components/blocks/features/StickyBasicFeatures.astro'
 import CTA from '../components/blocks/cta/CTAPrimary.astro'
+// - UI
+import Header from '../components/ui/Header.astro'
+import FeatureBasicCard from '../components/ui/cards/FeatureBasicCard.astro'
 
 // Content
 // - SEO
@@ -33,6 +40,25 @@ const ctaData = {
 	buttonLink: '/contact',
 	buttonText: 'Get in Touch'
 }
+// - Pillars data
+const pillarsData = [
+	{
+		title: '01. Machine Readability First',
+		description: 'We build structured data architectures that move beyond "best practices" to create verifiable machine trust.'
+	},
+	{
+		title: '02. Probabilistic, Not Guaranteed',
+		description: 'We acknowledge that LLMs are probabilistic; our work focuses on influencing the weights and associations within the latent space to favor your brand.'
+	},
+	{
+		title: '03. Data Provenance',
+		description: 'In the era of synthesis, verifiable data is currency. We establish clear provenance chains that AI agents can validate for transaction.'
+	},
+	{
+		title: '04. The Long Game',
+		description: 'We avoid "hacks." We build technical foundations that evolve as models update, ensuring long-term visibility without technical debt.'
+	}
+]
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
@@ -54,6 +80,32 @@ const ctaData = {
 	/>
 	<Hero title={heroData.title} subtitle={heroData.subtitle} text={heroData.text} />
 	<BasicFeatures />
+
+	<!-- Four Pillars Section -->
+	<Section decorationBorder="none">
+		<Row decorationBorder="top bottom" decorationBorderStyle="dashed" style="transparent">
+			<Col span="12" style="transparent">
+				<div class="bg-white/80 dark:bg-neutral-950/80">
+					<div class="pt-12 pb-8 lg:pt-16">
+						<Header title="The Four Pillars of Relevance Engineering" headingLevel="h2" titleWidth="max-w-3xl" />
+					</div>
+					<div class="grid grid-cols-1 lg:grid-cols-2">
+						{pillarsData.map((item) => (
+							<div class="border-t border-dashed border-neutral-200 dark:border-neutral-700">
+								<FeatureBasicCard
+									title={item.title}
+									decorationType="none"
+								>
+									{item.description}
+								</FeatureBasicCard>
+							</div>
+						))}
+					</div>
+				</div>
+			</Col>
+		</Row>
+	</Section>
+
 	<CTA
 		title={ctaData.title}
 		text={ctaData.text}

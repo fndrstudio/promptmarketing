@@ -73,10 +73,16 @@ const {
 			if (state.shown) {
 				show(true)
 			} else {
-				setTimeout(() => {
-					show()
-					state.shown = true
-				}, 3000)
+				// Show toast after user scrolls 300px (not immediately on mobile)
+				const scrollThreshold = 300
+				const handleScroll = () => {
+					if (window.scrollY > scrollThreshold) {
+						show()
+						state.shown = true
+						window.removeEventListener('scroll', handleScroll)
+					}
+				}
+				window.addEventListener('scroll', handleScroll)
 			}
 
 			closeButton?.addEventListener('click', (event) => {
