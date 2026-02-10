@@ -94,11 +94,14 @@
 			}
 		}
 
-		// Allow transitions again shortly after
+		// Allow transitions after paint is complete
+		// Double-RAF ensures we're past the current and next paint cycle
 		window.requestAnimationFrame(() => {
-			setTimeout(() => {
-				document.documentElement.classList.remove('disable-transitions')
-			}, 0)
+			window.requestAnimationFrame(() => {
+				setTimeout(() => {
+					document.documentElement.classList.remove('disable-transitions')
+				}, 100)
+			})
 		})
 	}
 
@@ -155,11 +158,45 @@
 		setupThemeSwitcher()
 	}
 
-	// Run once
-	initTheme()
-	// Re-run on Astro transitions
-	document.addEventListener('astro:page-loaded', initTheme)
-	document.addEventListener('astro:after-swap', initTheme)
+	// astro:page-load fires on both initial load and after navigation
+	document.addEventListener('astro:page-load', initTheme)
+
+	// Prepare theme BEFORE DOM swap to prevent flash
+	document.addEventListener('astro:before-swap', (event) => {
+		const newDoc = event.newDocument
+		newDoc.documentElement.classList.add('disable-transitions')
+
+		const stored = localStorage.getItem('theme')
+		const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+
+		// Check for forced modes first
+		if (newDoc.documentElement.classList.contains('mode-dark')) {
+			newDoc.documentElement.classList.add('dark')
+		} else if (newDoc.documentElement.classList.contains('mode-light')) {
+			newDoc.documentElement.classList.remove('dark')
+		} else if (stored === 'dark' || (!stored && systemDark)) {
+			newDoc.documentElement.classList.add('dark')
+		} else if (stored === 'light') {
+			newDoc.documentElement.classList.remove('dark')
+		}
+	})
+</script>
+
+<!-- Page transition handlers -->
+<script>
+	// Add loading state during navigation
+	document.addEventListener('astro:before-preparation', () => {
+		document.documentElement.classList.add('page-transitioning')
+	})
+
+	document.addEventListener('astro:page-load', () => {
+		document.documentElement.classList.remove('page-transitioning')
+	})
+
+	// Scroll to top on new page
+	document.addEventListener('astro:after-swap', () => {
+		window.scrollTo({ top: 0, behavior: 'instant' })
+	})
 </script>
 
 <!-- Scroll animations -->
@@ -270,11 +307,22 @@
 		}
 		initializeScrollAnimationsAndCounters()
 		cleanupParallax = initializeParallax()
+
+		// Mark ready after observers are set up
+		// Triple RAF ensures we're past paint cycle to prevent flash
+		requestAnimationFrame(() => {
+			requestAnimationFrame(() => {
+				requestAnimationFrame(() => {
+					document.documentElement.classList.add('scroll-ready')
+				})
+			})
+		})
 	}
 
-	document.addEventListener('DOMContentLoaded', init)
+	// astro:page-load fires on both initial load and after navigation
 	document.addEventListener('astro:page-load', init)
 	document.addEventListener('astro:before-swap', () => {
+		document.documentElement.classList.remove('scroll-ready')
 		if (cleanupParallax) {
 			cleanupParallax()
 			cleanupParallax = null
@@ -303,8 +351,8 @@
 		})
 	}
 
-	document.addEventListener('astro:after-swap', fixFirefoxVideoResume)
-	document.addEventListener('astro:page-loaded', fixFirefoxVideoResume)
+	// astro:page-load fires on both initial load and after navigation
+	document.addEventListener('astro:page-load', fixFirefoxVideoResume)
 </script>
 
 <!-- Scrollspy -->
