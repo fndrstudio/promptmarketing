@@ -85,7 +85,7 @@
 **Hosting:**
 - Primary: Netlify
   - Adapter: `@astrojs/netlify` ^6.6.3
-  - Site URL: `https://mizu-theme.netlify.app/`
+  - Site URL: `https://promptmarketing.com/`
   - Config: `.netlify/v1/config.json`
 
 - Alternative: Vercel

@@ -12,8 +12,6 @@ A marketing website for PromptMarketing, an executing consultancy that helps bra
 
 ### Validated
 
-<!-- Existing capabilities from the Mizu Light template -->
-
 - ✓ Astro 5 static site with 100/100 PageSpeed ,  existing
 - ✓ Responsive design (mobile, tablet, desktop) ,  existing
 - ✓ Light/dark mode support ,  existing
@@ -29,7 +27,6 @@ A marketing website for PromptMarketing, an executing consultancy that helps bra
 <!-- Current scope: Transform template into PromptMarketing brand -->
 
 **Branding & Visual Identity**
-- [ ] Replace all "Mizu Light" branding with PromptMarketing
 - [ ] Update color palette: forest green primary, lighter forest green secondary, gold accent
 - [ ] Replace fonts: tight chic serif for H1/headings, modern rounded sans-serif for body
 - [ ] Update logo and favicon with PromptMarketing mark
@@ -63,8 +60,7 @@ A marketing website for PromptMarketing, an executing consultancy that helps bra
 
 ## Context
 
-**Template Base:** Mizu Light Astro Theme by Oxygenna
-- Astro 5.16 + Tailwind CSS 4 + TypeScript
+**Tech Stack:** Astro 5.16 + Tailwind CSS 4 + TypeScript
 - Component structure: `src/components/blocks/` (sections), `src/components/ui/` (primitives)
 - Styling via `src/styles/global.css` with Tailwind @theme customization
 - Fonts in `public/fonts/`, currently Clash-Display and Clash-Grotesk

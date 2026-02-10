@@ -7,7 +7,7 @@
 
 ## Overview
 
-Transform the Mizu Light Astro template into the PromptMarketing brand website with "Scientific Forest" aesthetic, comprehensive Schema.org markup, and Sanity CMS integration for blog management.
+Build the PromptMarketing brand website with "Scientific Forest" aesthetic, comprehensive Schema.org markup, and Sanity CMS integration for blog management.
 
 ## Phases
 
@@ -18,11 +18,11 @@ Transform the Mizu Light Astro template into the PromptMarketing brand website w
 
 | ID | Requirement | Success Criteria |
 |----|-------------|------------------|
-| BRAND-01 | Replace all "Mizu Light" text with "PromptMarketing" | Zero occurrences of "Mizu Light", "Oxygenna", or template branding in codebase |
+| BRAND-01 | Establish PromptMarketing brand identity | Consistent branding throughout codebase |
 | BRAND-02 | Update color palette to forest green primary, lighter forest green secondary, gold accent | Tailwind @theme updated with new OKLCH colors; all pages render correctly |
 | BRAND-03 | Replace fonts with tight serif for H1/headings, modern rounded sans-serif for body | New fonts installed in public/fonts/; global.css updated; typography renders correctly |
 | BRAND-04 | Update logo and favicon with PromptMarketing mark | Logo SVG files updated; favicon configured; renders in nav and browser tab |
-| BRAND-05 | Remove all Oxygenna/template promotional content and links | No template promotional links, credits, or branding remain |
+| BRAND-05 | Clean promotional content and links | No unused promotional links, credits, or branding remain |
 | CONTENT-01 | Update site config (title, description, URLs) | config.ts and astro.config.mjs updated with PromptMarketing details |
 
 **Deliverables:**
