@@ -9,11 +9,11 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Branding & Visual Identity
 
-- [x] **BRAND-01**: Replace all "Mizu Light" text with "PromptMarketing" across site
+- [x] **BRAND-01**: Establish PromptMarketing brand identity across site
 - [x] **BRAND-02**: Update color palette to forest green primary, lighter forest green secondary, gold accent
 - [x] **BRAND-03**: Replace fonts with tight serif for H1/headings, modern rounded sans-serif for body
 - [x] **BRAND-04**: Update logo and favicon with PromptMarketing mark
-- [x] **BRAND-05**: Remove all Oxygenna/template promotional content and links
+- [x] **BRAND-05**: Clean promotional content and links
 
 ### Content & Pages
 

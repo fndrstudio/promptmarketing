@@ -1,7 +1,7 @@
 {
 	"logo": {
-		"src": "/icon-black.png",
-		"srcDark": "/icon-white.png",
+		"src": "/pm-icon-dark.png",
+		"srcDark": "/pm-icon-light.png",
 		"alt": "PromptMarketing"
 	},
 	"footerAbout": {

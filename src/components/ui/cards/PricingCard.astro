@@ -152,7 +152,7 @@ const {
 				)}
 			</CardBody>
 			{cta && !featured && (
-				<CardFooter classes="bg-neutral-50 dark:bg-neutral-900 bg-[url('/bgs/dot-gray-light.svg')] dark:bg-[url('/bgs/dot-gray-dark.svg')] bg-size-[18px] bg-fixed">
+				<CardFooter classes="bg-neutral-50 dark:bg-neutral-900 bg-[url('/bgs/dot-gray-light.svg')] dark:bg-[url('/bgs/dot-gray-dark.svg')] bg-size-[18px]">
 					<Link link={cta.href} aria-label={`${cta.label} - ${title}`}>
 						{cta.label}
 					</Link>
@@ -160,7 +160,7 @@ const {
 				</CardFooter>
 			)}
 			{cta && featured && (
-				<CardFooter classes="bg-primary-600 dark:bg-primary-600 bg-[url('/bgs/dot-gray-transparent.svg')] bg-size-[18px] bg-fixed text-white">
+				<CardFooter classes="bg-primary-600 dark:bg-primary-600 bg-[url('/bgs/dot-gray-transparent.svg')] bg-size-[18px] text-white">
 					<Link link={cta.href} aria-label={`${cta.label} - ${title}`} classes="text-inherit!">
 						{cta.label}
 					</Link>
@@ -201,7 +201,7 @@ const {
 					<DecorationBorder type="top bottom" style="dashed" />
 				</div>
 				{cta && (
-					<CardFooter classes="hidden lg:block bg-primary-600 dark:bg-primary-600 bg-[url('/bgs/dot-gray-transparent.svg')] bg-size-[18px] bg-fixed text-white">
+					<CardFooter classes="hidden lg:block bg-primary-600 dark:bg-primary-600 bg-[url('/bgs/dot-gray-transparent.svg')] bg-size-[18px] text-white">
 						<Link link={cta.href} aria-label={`${cta.label} - ${title}`} classes="text-inherit!">
 							{cta.label}
 						</Link>
@@ -244,7 +244,7 @@ const {
 				)}
 			</CardBody>
 			{cta && (
-				<CardFooter classes="block lg:hidden! bg-primary-600 dark:bg-primary-600 bg-[url('/bgs/dot-gray-transparent.svg')] bg-size-[18px] bg-fixed text-white">
+				<CardFooter classes="block lg:hidden! bg-primary-600 dark:bg-primary-600 bg-[url('/bgs/dot-gray-transparent.svg')] bg-size-[18px] text-white">
 					<Link link={cta.href} aria-label={`${cta.label} - ${title}`} classes="text-inherit!">
 						{cta.label}
 					</Link>

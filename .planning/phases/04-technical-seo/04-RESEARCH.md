@@ -105,7 +105,7 @@ const siteUrl = 'https://promptmarketing.com';
     '@type': 'Organization',
     name: 'PromptMarketing',
     url: siteUrl,
-    logo: `${siteUrl}/logo-black.png`,
+    logo: `${siteUrl}/pm-logo-dark.png`,
     foundingDate: '2026',
     description: configData.siteDescription,
     address: {
@@ -223,7 +223,7 @@ const siteUrl = 'https://promptmarketing.com';
     url: siteUrl,
     logo: {
       '@type': 'ImageObject',
-      url: `${siteUrl}/logo-black.png`,
+      url: `${siteUrl}/pm-logo-dark.png`,
       width: '200',
       height: '60'
     },
@@ -320,7 +320,7 @@ const pageUrl = Astro.url.href;
       name: 'PromptMarketing',
       logo: {
         '@type': 'ImageObject',
-        url: `${siteUrl}/logo-black.png`
+        url: `${siteUrl}/pm-logo-dark.png`
       }
     },
     mainEntityOfPage: {

@@ -27,13 +27,9 @@
 - Impact: Code duplication, maintenance burden, risk of divergence
 - Fix approach: Export from single location (`postScripts.ts`) and import where needed
 
-**Hardcoded Theme Site URL:**
-- Issue: Site configuration contains original theme URL and branding, not customized for this project
-- Files:
-  - `src/config/config.ts:25-28` - Mizu Light theme title/description
-  - `astro.config.mjs:13` - `site: "https://mizu-theme.netlify.app/"`
-- Impact: SEO issues, incorrect canonical URLs, wrong branding in production
-- Fix approach: Update config.ts and astro.config.mjs with actual site details
+**Site URL Configuration:**
+- Status: Fixed - Site URL updated to https://promptmarketing.com/
+- Files: `src/config/config.ts`, `astro.config.mjs`
 
 **Large Monolithic Script File:**
 - Issue: ThemeScripts.astro contains 549 lines of client-side JavaScript in one file
@@ -146,10 +142,9 @@
 - Impact: `@astrojs/preact` and `@astrojs/react` both present in package.json
 - Migration plan: Standardize on one React-like library; remove unused integration
 
-**Outdated Theme Template:**
-- Risk: Using "astro-oxygenna-theme" template; updates may diverge from customizations
-- Impact: Difficult to merge upstream fixes/features
-- Migration plan: Document all customizations; consider forking or removing theme dependency
+**Codebase Independence:**
+- Status: Custom project, no upstream dependencies to track
+- Impact: All customizations are the source of truth
 
 ## Missing Critical Features
 

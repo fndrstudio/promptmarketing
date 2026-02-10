@@ -82,7 +82,7 @@
 
 **Astro:**
 - Config: `astro.config.mjs`
-- Site URL: `https://mizu-theme.netlify.app/`
+- Site URL: `https://promptmarketing.com/`
 - Adapter: Netlify (server-side rendering capable)
 - Active integrations: icon, sitemap, lottie, partytown, react, markdoc
 
