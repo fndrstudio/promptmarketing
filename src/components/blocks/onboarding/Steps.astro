@@ -1,7 +1,7 @@
 ---
 // ScrollSpy Steps (Stepper)
 // -------------------------
-// Uses JSON data with { subtitle, title, nav[{ id, index, label, color }], steps[{ id, index, title, subtitle, color, body[], cta, media{back,front} }] }
+// Uses JSON data with { subtitle, title, nav[{ id, index, label, color }], steps[{ id, index, title, subtitle, color, body[], cta, media{src,alt} }] }
 // Renders: header, a <ul> with  nav links, then step blocks
 
 // Components
@@ -16,10 +16,6 @@ import { Image } from 'astro:assets'
 import DecorationBorder from '../../ui/DecorationBorder.astro'
 
 // - Types
-interface MediaImage {
-	src: string
-	alt: string
-}
 interface Step {
 	id: string
 	index: string
@@ -28,7 +24,7 @@ interface Step {
 	color?: string
 	body: string[]
 	cta?: { label: string; href: string }
-	media?: { back?: MediaImage; front?: MediaImage }
+	media?: { src: string; alt: string }
 }
 interface NavItem {
 	id: string
@@ -64,8 +60,7 @@ const resolveAsset = (jsonPath?: string): ImageMetadata | null => {
 
 const steps = data.steps.map((s) => ({
 	...s,
-	_frontAsset: resolveAsset(s.media?.front?.src),
-	_backAsset: resolveAsset(s.media?.back?.src)
+	_asset: resolveAsset(s.media?.src)
 }))
 ---
 
@@ -109,51 +104,24 @@ const steps = data.steps.map((s) => ({
 
 							{step.media && (
 								<figure class="stepper__media scroll-animate">
-									{/* Back image */}
-									{step.media.back &&
-										(step._backAsset ? (
-											<Image
-												class="stepper__media-back"
-												src={step._backAsset}
-												alt={step.media.back.alt}
-												loading="lazy"
-												decoding="async"
-												layout="constrained"
-											/>
-										) : (
-											<img
-												class="stepper__media-back"
-												src={step.media.back.src}
-												alt={step.media.back.alt}
-												loading="lazy"
-												decoding="async"
-											/>
-										))}
-
-									{/* Front image */}
-									{step.media.front &&
-										(step._frontAsset ? (
-											<div class="parallax">
-												<Image
-													class="stepper__media-front"
-													src={step._frontAsset}
-													alt={step.media.front.alt}
-													loading="lazy"
-													decoding="async"
-													layout="constrained"
-												/>
-											</div>
-										) : (
-											<div class="parallax">
-												<img
-													class="stepper__media-front"
-													src={step.media.front.src}
-													alt={step.media.front.alt}
-													loading="lazy"
-													decoding="async"
-												/>
-											</div>
-										))}
+									{step._asset ? (
+										<Image
+											class="stepper__media-image"
+											src={step._asset}
+											alt={step.media.alt}
+											loading="lazy"
+											decoding="async"
+											layout="constrained"
+										/>
+									) : (
+										<img
+											class="stepper__media-image"
+											src={step.media.src}
+											alt={step.media.alt}
+											loading="lazy"
+											decoding="async"
+										/>
+									)}
 									<DecorationBorder type="left right" style="solid" />
 								</figure>
 							)}
@@ -182,12 +150,9 @@ const steps = data.steps.map((s) => ({
 		@apply p-6 pb-0 lg:px-8 lg:py-12 lg:text-xl lg:leading-9;
 	}
 	.stepper__media {
-		@apply relative h-full bg-neutral-50 bg-[url('/bgs/dot-gray-light.svg')] bg-size-[18px] bg-fixed lg:group-even:col-start-1 dark:bg-neutral-900 dark:bg-[url('/bgs/dot-gray-dark.svg')];
+		@apply relative h-full bg-neutral-50 bg-[url('/bgs/dot-gray-light.svg')] bg-size-[18px] lg:group-even:col-start-1 dark:bg-neutral-900 dark:bg-[url('/bgs/dot-gray-dark.svg')];
 	}
-	.stepper__media-front {
-		@apply absolute inset-0 z-10 h-full object-cover;
-	}
-	.stepper__media-back {
-		@apply h-full object-cover;
+	.stepper__media-image {
+		@apply h-full w-full object-cover;
 	}
 </style>

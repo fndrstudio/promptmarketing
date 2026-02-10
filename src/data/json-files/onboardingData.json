@@ -42,14 +42,8 @@
 				"href": "/contact"
 			},
 			"media": {
-				"front": {
-					"src": "/steps/steps/step_01_front.webp",
-					"alt": "Prompt Research"
-				},
-				"back": {
-					"src": "/steps/steps/step_01_back.webp",
-					"alt": "Prompt Research"
-				}
+				"src": "/steps/steps/step_01_front.webp",
+				"alt": "Prompt Research"
 			}
 		},
 		{
@@ -67,14 +61,8 @@
 				"href": "/how-we-work"
 			},
 			"media": {
-				"front": {
-					"src": "/steps/steps/step_02_front.webp",
-					"alt": "Architecture Design"
-				},
-				"back": {
-					"src": "/steps/steps/step_02_back.webp",
-					"alt": "Architecture Design"
-				}
+				"src": "/steps/steps/step_02_front.webp",
+				"alt": "Architecture Design"
 			}
 		},
 		{
@@ -92,14 +80,8 @@
 				"href": "/contact"
 			},
 			"media": {
-				"front": {
-					"src": "/steps/steps/step_03_front.webp",
-					"alt": "Implementation"
-				},
-				"back": {
-					"src": "/steps/steps/step_03_back.webp",
-					"alt": "Implementation"
-				}
+				"src": "/steps/steps/step_03_front.webp",
+				"alt": "Implementation"
 			}
 		},
 		{
@@ -117,14 +99,8 @@
 				"href": "/contact"
 			},
 			"media": {
-				"front": {
-					"src": "/steps/steps/step_04_front.webp",
-					"alt": "Measurement"
-				},
-				"back": {
-					"src": "/steps/steps/step_04_back.webp",
-					"alt": "Measurement"
-				}
+				"src": "/steps/steps/step_04_front.webp",
+				"alt": "Measurement"
 			}
 		}
 	]
