@@ -100,7 +100,7 @@
 			window.requestAnimationFrame(() => {
 				setTimeout(() => {
 					document.documentElement.classList.remove('disable-transitions')
-				}, 50)
+				}, 100)
 			})
 		})
 	}
@@ -179,6 +179,23 @@
 		} else if (stored === 'light') {
 			newDoc.documentElement.classList.remove('dark')
 		}
+	})
+</script>
+
+<!-- Page transition handlers -->
+<script>
+	// Add loading state during navigation
+	document.addEventListener('astro:before-preparation', () => {
+		document.documentElement.classList.add('page-transitioning')
+	})
+
+	document.addEventListener('astro:page-load', () => {
+		document.documentElement.classList.remove('page-transitioning')
+	})
+
+	// Scroll to top on new page
+	document.addEventListener('astro:after-swap', () => {
+		window.scrollTo({ top: 0, behavior: 'instant' })
 	})
 </script>
 
@@ -292,8 +309,13 @@
 		cleanupParallax = initializeParallax()
 
 		// Mark ready after observers are set up
+		// Triple RAF ensures we're past paint cycle to prevent flash
 		requestAnimationFrame(() => {
-			document.documentElement.classList.add('scroll-ready')
+			requestAnimationFrame(() => {
+				requestAnimationFrame(() => {
+					document.documentElement.classList.add('scroll-ready')
+				})
+			})
 		})
 	}
 
