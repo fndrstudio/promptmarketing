@@ -1,18 +1,11 @@
 ---
-// Google Analytics tracking script
-import { googleAnalyticsMeasurementID } from '../../../src/config/analytics.ts'
+// Google Analytics tracking script (gtag.js)
 ---
 
-<script
-	type="text/partytown"
-	src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsMeasurementID}`}></script>
-
-<script type="text/partytown" data-ga-measurement-id={googleAnalyticsMeasurementID} id="ga-init">
-	const measurementId = document.getElementById('ga-init').getAttribute('data-ga-measurement-id')
-	window.dataLayer = window.dataLayer || []
-	function gtag() {
-		dataLayer.push(arguments) // eslint-disable-line
-	}
-	gtag('js', new Date())
-	gtag('config', measurementId)
+<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-J9SDXYZ0Y6"></script>
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J9SDXYZ0Y6');
 </script>

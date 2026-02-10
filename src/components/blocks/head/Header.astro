@@ -14,6 +14,7 @@ import { ClientRouter } from 'astro:transitions'
 import GoogleAnalytics from '../../scripts/googleAnalytics.astro'
 import GoogleTagManagerHead from '../../scripts/googleTagManagerHead.astro'
 import GoogleSearchConsole from '../../scripts/googleSearchConsole.astro'
+import LinkedInInsightTag from '../../scripts/linkedInInsightTag.astro'
 // Partials
 import Seo from './partials/Seo.astro'
 
@@ -44,6 +45,7 @@ const {
 	{googleAnalyticsMeasurementID && <GoogleAnalytics />}
 	{googleTagManagerID && <GoogleTagManagerHead />}
 	<GoogleSearchConsole />
+	<LinkedInInsightTag />
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<Seo
