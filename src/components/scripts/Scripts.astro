@@ -1,4 +1,7 @@
 <script async defer>
+	// Reveal page once scripts are ready (FOUC prevention)
+	document.documentElement.classList.add('page-ready')
+
 	document.addEventListener('astro:page-load', () => {
 		// Menu Dropdown
 		const menuItems = document.querySelectorAll('.header__menu-item')
@@ -191,6 +194,8 @@
 
 	document.addEventListener('astro:page-load', () => {
 		document.documentElement.classList.remove('page-transitioning')
+		// Ensure page is visible after navigation (FOUC prevention)
+		document.documentElement.classList.add('page-ready')
 	})
 
 	// Scroll to top on new page

@@ -18,6 +18,7 @@ import NotificationToast from '../components/ui/NotificationToast.astro'
 // Scripts
 import Scripts from '../components/scripts/Scripts.astro'
 import GoogleTagManager from '../components/scripts/googleTagManagerBody.astro'
+import LinkedInInsightTagBody from '../components/scripts/linkedInInsightTagBody.astro'
 // Styles
 import '../styles/global.css'
 
@@ -51,6 +52,13 @@ const {
 <!doctype html>
 <html lang="en" class="scroll-animation mode-auto">
 	<Header title={title} description={description} ogImage={ogImage} noindex={noindex} />
+	<!-- Prevent FOUC: hide until stylesheets load -->
+	<style is:inline>
+		html:not(.page-ready) body {
+			visibility: hidden;
+			opacity: 0;
+		}
+	</style>
 	<body
 		class:list={[
 			{ ['mode-' + `${configData.mode}`]: configData.mode },
@@ -58,6 +66,7 @@ const {
 		]}
 	>
 		<GoogleTagManager />
+		<LinkedInInsightTagBody />
 		{navigation !== 'none' && <NavigationBar type={navigation} />}
 		<Main>
 			<slot />

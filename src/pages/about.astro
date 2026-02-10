@@ -71,45 +71,52 @@ const teamMembers = [
 		title: 'Founder',
 		description: '20 years in Search marketing; pioneer in shifting from referral engines to generative experiences.',
 		photo: '/team/arjan-ter-huurne.jpeg',
-		objectPosition: 'center 30%'
+		objectPosition: 'center 30%',
+		linkedin: 'https://www.linkedin.com/in/arjanth/'
 	},
 	{
 		name: 'Bart Kalisvaart',
 		title: 'AI Developer',
 		description: '15 years dev experience; expert in AI workflows, agents, and platform integrations like ACP and MCP.',
 		photo: '/team/bart-kalisvaart.jpeg',
-		objectPosition: 'center 80%'
+		objectPosition: 'center 80%',
+		linkedin: 'https://www.linkedin.com/in/kalisvaart/'
 	},
 	{
 		name: 'Erik Jan Reijenga',
 		title: 'Business Consultant',
 		description: 'Agency COO & CEO exp; bridges the gap between technical AI engineering and enterprise growth strategies.',
 		photo: '/team/erik-jan-reijenga.jpeg',
-		objectPosition: 'center 30%'
+		objectPosition: 'center 30%',
+		linkedin: 'https://www.linkedin.com/in/erikjanreijenga/'
 	},
 	{
 		name: 'Fleur Steenbrink',
 		title: 'GEO / Content',
 		description: '10 years SEO experience; specialist in AEO/GEO content strategies and semantic HTML foundations.',
-		photo: '/team/fleur-steenbrink.jpeg'
+		photo: '/team/fleur-steenbrink.jpeg',
+		linkedin: 'https://www.linkedin.com/in/fleursteenbrink/'
 	},
 	{
 		name: 'Ramon Gulikers',
 		title: 'GEO / Technical',
 		description: '13 years SEO experience; expert in technical SXO audits and off-page authority building.',
-		photo: '/team/ramon-gulikers.jpeg'
+		photo: '/team/ramon-gulikers.jpeg',
+		linkedin: 'https://www.linkedin.com/in/ramong/'
 	},
 	{
 		name: 'Wouter van der Meij',
 		title: 'GEO / Technical',
 		description: '16 years SEO experience; specialist in optimizing site architecture and EEAT signals for machine trust.',
-		photo: '/team/wouter-van-der-meij.png'
+		photo: '/team/wouter-van-der-meij.png',
+		linkedin: 'https://www.linkedin.com/in/woutervandermeij/'
 	},
 	{
 		name: 'Thomas Huijsmans',
 		title: 'AI Developer',
 		description: 'AI Developer building websites and applications with Next.js and Astro. Experienced with AI integrations.',
-		photo: '/team/thomas-huijsmans.jpg'
+		photo: '/team/thomas-huijsmans.jpg',
+		linkedin: 'https://www.linkedin.com/in/thomashuijsmans/'
 	}
 ]
 // - Partners data
@@ -214,7 +221,9 @@ const partnersData = [
 								<!-- Default State: Name & Title -->
 								<div class="absolute inset-0 flex flex-col items-start justify-end p-4 lg:p-6 transition-opacity duration-300 group-hover:opacity-0">
 									<h3 class="mb-1 text-base font-semibold text-white! lg:text-xl drop-shadow-md">
-										{member.name}
+										<a href={member.linkedin} target="_blank" rel="noopener noreferrer" class="hover:underline">
+											{member.name}
+										</a>
 									</h3>
 									<p class="text-sm text-white/80 lg:text-base drop-shadow-md">
 										{member.title}
@@ -223,7 +232,9 @@ const partnersData = [
 								<!-- Hover State: Description -->
 								<div class="absolute inset-0 flex flex-col items-start justify-end bg-primary-500/70 p-4 lg:p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
 									<h3 class="mb-2 text-base font-semibold text-white! lg:text-xl">
-										{member.name}
+										<a href={member.linkedin} target="_blank" rel="noopener noreferrer" class="hover:underline">
+											{member.name}
+										</a>
 									</h3>
 									<p class="text-sm text-white/90 lg:text-base">
 										{member.description}

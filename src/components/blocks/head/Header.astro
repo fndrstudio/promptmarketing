@@ -45,13 +45,23 @@ const {
 	<!-- Apply theme immediately before paint to prevent flash -->
 	<script is:inline>
 		(function() {
-			const saved = localStorage.getItem('theme');
-			const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-			if (saved === 'dark' || (!saved && prefersDark)) {
-				document.documentElement.classList.add('dark');
-			} else if (saved === 'light') {
-				document.documentElement.classList.remove('dark');
+			function applyTheme(doc) {
+				var saved = localStorage.getItem('theme');
+				var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+				if (saved === 'dark' || (!saved && prefersDark)) {
+					doc.documentElement.classList.add('dark');
+				} else {
+					doc.documentElement.classList.remove('dark');
+				}
 			}
+
+			// Apply immediately on initial load
+			applyTheme(document);
+
+			// Apply before swap to prevent flash on navigation
+			document.addEventListener('astro:before-swap', function(e) {
+				applyTheme(e.newDocument);
+			});
 		})();
 	</script>
 	{googleAnalyticsMeasurementID && <GoogleAnalytics />}

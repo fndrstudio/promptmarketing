@@ -1,7 +1,8 @@
 ---
-// LinkedIn Insight Tag
+// LinkedIn Insight Tag (Head)
 // ------------
-// Description: LinkedIn conversion tracking and audience insights
+// Description: LinkedIn conversion tracking scripts (head portion only)
+// Note: The <noscript> fallback is in linkedInInsightTagBody.astro (must be in body)
 ---
 
 <script type="text/javascript" is:inline>
@@ -19,6 +20,3 @@ b.type = "text/javascript";b.async = true;
 b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
 s.parentNode.insertBefore(b, s);})(window.lintrk);
 </script>
-<noscript>
-<img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=8623362&fmt=gif" />
-</noscript>

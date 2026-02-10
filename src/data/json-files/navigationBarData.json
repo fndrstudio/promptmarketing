@@ -7,7 +7,6 @@
 	"navItems": [
 		{ "name": "About Us", "link": "/about" },
 		{ "name": "How We Work", "link": "/how-we-work" },
-		{ "name": "Portfolio", "link": "/portfolio" },
 		{ "name": "Blog", "link": "/blog" }
 	],
 	"navActions": [{ "name": "Get Started", "link": "/contact" }]
