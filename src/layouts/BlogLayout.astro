@@ -85,12 +85,12 @@ const CTA = {
 	}
 	<Section>
 		<Row style="semitransparent">
-			<Col style="transparent" span="12" classes="basic-text flex justify-center items-center">
+			<Col style="transparent" span="12" classes="basic-text no-scroll-animation">
 				<div
-					class="relative max-w-5xl bg-white text-xl leading-9 dark:bg-neutral-950 [&_p]:px-8 [&_p]:first:pt-6"
+					class="relative mx-auto max-w-5xl bg-white text-xl leading-9 dark:bg-neutral-950 [&_p]:px-8 [&_p]:first:pt-6 [&_hr]:hidden"
 				>
 					<slot />
-					<DecorationBorder type="top right bottom left" style="solid" />
+					<DecorationBorder type="top bottom" style="solid" />
 				</div>
 			</Col>
 		</Row>

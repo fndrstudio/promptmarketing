@@ -2,21 +2,21 @@
 title: 'The Legible-Lovable Standard for Modern Marketing Strategy'
 pubDate: 2026-02-10T05:00:00.000Z
 author: 'Arjan ter Huurne'
-description: 'Marketing strategy is entering a rare moment of reset. When AI mediates discovery, brands are no longer competing for attention — they are competing for interpretation and selection. The Legible-Lovable standard captures what modern marketing requires.'
+description: 'Marketing strategy is entering a rare moment of reset. When AI mediates discovery, brands are no longer competing for attention - they are competing for interpretation and selection. The Legible-Lovable standard captures what modern marketing requires.'
 image: '/collections/blog/image-05.webp'
 thumbnail: '/collections/blog/image-05.webp'
 ---
 
 Marketing strategy is entering a rare moment of reset.
 
-Not because channels are changing — we've lived through that many times before — but because the **mediator between brands and people is changing**. Discovery, comparison and decision-making are increasingly being delegated to AI systems acting on behalf of users.
+Not because channels are changing - we've lived through that many times before - but because the **mediator between brands and people is changing**. Discovery, comparison and decision-making are increasingly being delegated to AI systems acting on behalf of users.
 
 When that happens, brands are no longer primarily competing for attention.
 They are competing for **interpretation** and **selection**.
 
 In a recent and important piece, **Thomas Marzano** articulates this shift through what he calls the **Legible-Lovable standard**: a simple but powerful framing for how brands must operate in an agentic economy.
 
-We believe this framework captures the essence of modern marketing strategy — and it also clarifies why new disciplines are now required.
+We believe this framework captures the essence of modern marketing strategy - and it also clarifies why new disciplines are now required.
 
 ---
 
@@ -33,8 +33,8 @@ AI systems shortlist brands based on what they can read, verify and reason about
 
 This gives us two foundational elements of marketing strategy in the generative AI era:
 
-1. **Legibility** – being machine-readable, verifiable and interpretable
-2. **Lovability** – being emotionally resonant, meaningful and culturally relevant
+1. **Legibility** - being machine-readable, verifiable and interpretable
+2. **Lovability** - being emotionally resonant, meaningful and culturally relevant
 
 These are not new ideas.
 What *is* new is that they now function as **distinct but interdependent strategic layers**.
@@ -45,7 +45,7 @@ What *is* new is that they now function as **distinct but interdependent strateg
 
 Legibility is not about creativity or storytelling. It is about **whether AI systems can correctly understand and represent your brand**.
 
-Generative AI does not browse the web the way humans do. It synthesises knowledge across entities, relationships, corroboration and trust signals. If a brand cannot be parsed reliably across those dimensions, it will simply be excluded — regardless of how strong it is in the real world.
+Generative AI does not browse the web the way humans do. It synthesises knowledge across entities, relationships, corroboration and trust signals. If a brand cannot be parsed reliably across those dimensions, it will simply be excluded - regardless of how strong it is in the real world.
 
 Legibility includes:
 
@@ -54,7 +54,7 @@ Legibility includes:
 * consistent naming, categorisation and semantics
 * verifiable sources, provenance and authority signals
 
-This is where many brands currently struggle — not because their brand strategy is weak, but because their digital foundations were never designed for reasoning systems.
+This is where many brands currently struggle - not because their brand strategy is weak, but because their digital foundations were never designed for reasoning systems.
 
 At PromptMarketing, this is where we focus most explicitly. We treat legibility as an **engineering challenge**:
 
@@ -69,11 +69,11 @@ Legibility turns brand intent into something AI systems can actually act on.
 
 ## 2. Lovability: the human reason to choose
 
-Lovability is the domain brand strategists know well — purpose, values, identity, narrative and emotional resonance.
+Lovability is the domain brand strategists know well - purpose, values, identity, narrative and emotional resonance.
 
 Even in an agentic world, this does not disappear. In fact, it becomes more important.
 
-When AI agents evaluate multiple viable options, they optimise for *human preference*. That means they increasingly lean on signals of trust, affinity and emotional alignment — often inferred from prior behaviour, cultural context and collective sentiment.
+When AI agents evaluate multiple viable options, they optimise for *human preference*. That means they increasingly lean on signals of trust, affinity and emotional alignment - often inferred from prior behaviour, cultural context and collective sentiment.
 
 Lovability is what:
 
@@ -94,9 +94,9 @@ Legibility ensures the *why* is not lost in translation.
 
 Many organisations over-invest in one side and neglect the other.
 
-Some brands are deeply lovable — culturally relevant, emotionally rich — but illegible to machines. They are admired by people, yet absent from AI-generated answers.
+Some brands are deeply lovable - culturally relevant, emotionally rich - but illegible to machines. They are admired by people, yet absent from AI-generated answers.
 
-Others are highly legible — clean data, strong authority signals — but emotionally flat. They appear, but they are rarely chosen.
+Others are highly legible - clean data, strong authority signals - but emotionally flat. They appear, but they are rarely chosen.
 
 This leads to familiar frustration:
 
@@ -137,4 +137,4 @@ It is a **two-part system**:
 The brands that win will not choose between them.
 They will connect them.
 
-Because in a world where AI mediates discovery, **existence and meaning are separate problems — and both must be solved**.
+Because in a world where AI mediates discovery, **existence and meaning are separate problems - and both must be solved**.

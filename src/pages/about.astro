@@ -69,37 +69,47 @@ const teamMembers = [
 	{
 		name: 'Arjan ter Huurne',
 		title: 'Founder',
-		description: '20 years in Search marketing; pioneer in shifting from referral engines to generative experiences.'
+		description: '20 years in Search marketing; pioneer in shifting from referral engines to generative experiences.',
+		photo: '/team/arjan-ter-huurne.jpeg',
+		objectPosition: 'center 30%'
 	},
 	{
 		name: 'Bart Kalisvaart',
 		title: 'AI Developer',
-		description: '15 years dev experience; expert in AI workflows, agents, and platform integrations like ACP and MCP.'
+		description: '15 years dev experience; expert in AI workflows, agents, and platform integrations like ACP and MCP.',
+		photo: '/team/bart-kalisvaart.jpeg',
+		objectPosition: 'center 80%'
 	},
 	{
 		name: 'Erik Jan Reijenga',
 		title: 'Business Consultant',
-		description: 'Agency COO & CEO exp; bridges the gap between technical AI engineering and enterprise growth strategies.'
+		description: 'Agency COO & CEO exp; bridges the gap between technical AI engineering and enterprise growth strategies.',
+		photo: '/team/erik-jan-reijenga.jpeg',
+		objectPosition: 'center 30%'
 	},
 	{
 		name: 'Fleur Steenbrink',
 		title: 'GEO / Content',
-		description: '10 years SEO experience; specialist in AEO/GEO content strategies and semantic HTML foundations.'
+		description: '10 years SEO experience; specialist in AEO/GEO content strategies and semantic HTML foundations.',
+		photo: '/team/fleur-steenbrink.jpeg'
 	},
 	{
 		name: 'Ramon Gulikers',
 		title: 'GEO / Technical',
-		description: '13 years SEO experience; expert in technical SXO audits and off-page authority building.'
+		description: '13 years SEO experience; expert in technical SXO audits and off-page authority building.',
+		photo: '/team/ramon-gulikers.jpeg'
 	},
 	{
 		name: 'Wouter van der Meij',
 		title: 'GEO / Technical',
-		description: '16 years SEO experience; specialist in optimizing site architecture and EEAT signals for machine trust.'
+		description: '16 years SEO experience; specialist in optimizing site architecture and EEAT signals for machine trust.',
+		photo: '/team/wouter-van-der-meij.png'
 	},
 	{
 		name: 'Thomas Huijsmans',
 		title: 'AI Developer',
-		description: 'AI Developer building websites and applications with Next.js and Astro. Experienced with AI integrations.'
+		description: 'AI Developer building websites and applications with Next.js and Astro. Experienced with AI integrations.',
+		photo: '/team/thomas-huijsmans.jpg'
 	}
 ]
 // - Partners data
@@ -191,19 +201,28 @@ const partnersData = [
 					</p>
 					<div class="grid grid-cols-2 lg:grid-cols-3 border-t border-dashed border-neutral-200 dark:border-neutral-700">
 						{teamMembers.map((member) => (
-							<div class="team-card group relative aspect-square cursor-pointer overflow-hidden border-r border-b border-dashed border-neutral-200 bg-white transition-all duration-300 dark:border-neutral-700 dark:bg-neutral-950">
+							<div class="team-card group relative aspect-square cursor-pointer overflow-hidden border-r border-b border-dashed border-neutral-200 bg-neutral-100 transition-all duration-300 dark:border-neutral-700 dark:bg-neutral-900">
+								<!-- Photo with B&W filter -->
+								<img
+									src={member.photo}
+									alt={member.name}
+									class="absolute inset-0 h-full w-full object-cover grayscale transition-all duration-500 group-hover:scale-110"
+									style={member.objectPosition ? `object-position: ${member.objectPosition}` : undefined}
+								/>
+								<!-- Gradient overlay for text readability -->
+								<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent transition-opacity duration-300 group-hover:opacity-0"></div>
 								<!-- Default State: Name & Title -->
-								<div class="absolute inset-0 flex flex-col items-start justify-end p-6 transition-opacity duration-300 group-hover:opacity-0">
-									<h3 class="text-primary mb-1 text-lg font-semibold lg:text-xl">
+								<div class="absolute inset-0 flex flex-col items-start justify-end p-4 lg:p-6 transition-opacity duration-300 group-hover:opacity-0">
+									<h3 class="mb-1 text-base font-semibold text-white lg:text-xl">
 										{member.name}
 									</h3>
-									<p class="text-sm text-neutral-500 lg:text-base dark:text-neutral-400">
+									<p class="text-sm text-white/80 lg:text-base">
 										{member.title}
 									</p>
 								</div>
 								<!-- Hover State: Description -->
-								<div class="absolute inset-0 flex flex-col items-start justify-end bg-primary-500 p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-									<h3 class="mb-2 text-lg font-semibold text-white lg:text-xl">
+								<div class="absolute inset-0 flex flex-col items-start justify-end bg-primary-500/70 p-4 lg:p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+									<h3 class="mb-2 text-base font-semibold text-white lg:text-xl">
 										{member.name}
 									</h3>
 									<p class="text-sm text-white/90 lg:text-base">

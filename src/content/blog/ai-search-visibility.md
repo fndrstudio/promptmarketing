@@ -7,9 +7,9 @@ image: '/collections/blog/image-02.webp'
 thumbnail: '/collections/blog/image-02.webp'
 ---
 
-When marketers talk about "search visibility," most of us instinctively think of classic search engines — rankings, impressions, click-throughs. But in 2026, search visibility means something fundamentally different.
+When marketers talk about "search visibility," most of us instinctively think of classic search engines - rankings, impressions, click-throughs. But in 2026, search visibility means something fundamentally different.
 
-In generative AI experiences — whether that's Google's AI-assisted responses, ChatGPT or specialised agents like Perplexity and Claude — users don't click ten blue links. Instead, they ask AI systems a question and *get an answer*. Often one answer. Sometimes a synthesis of multiple sources.
+In generative AI experiences - whether that's Google's AI-assisted responses, ChatGPT or specialised agents like Perplexity and Claude - users don't click ten blue links. Instead, they ask AI systems a question and *get an answer*. Often one answer. Sometimes a synthesis of multiple sources.
 
 This shift in the **interface** changes the game completely for brands. And it demands a new way of understanding visibility: **AI Search Visibility**.
 
@@ -34,7 +34,7 @@ This might include:
 * recommendation or ranking in a response
 * responses that reflect your thought leadership
 
-The key difference is not *if* the brand appears, but *how* it is *interpreted, weighted and presented* by generative models — which are statistical, context-sensitive, and often unpredictable.
+The key difference is not *if* the brand appears, but *how* it is *interpreted, weighted and presented* by generative models - which are statistical, context-sensitive, and often unpredictable.
 
 ---
 
@@ -42,7 +42,7 @@ The key difference is not *if* the brand appears, but *how* it is *interpreted, 
 
 One natural response is to try to "track AI visibility" the same way we track SEO visibility: cast a fixed set of queries, crawl responses, and count appearances.
 
-But as **Rand Fishkin's recent research** shows, AI systems are highly inconsistent when recommending brands or products. When you ask the same question multiple times, even with minimal variation, you can get completely different answers — different rankings, different recommendations, different sources cited. This inconsistency isn't noise to be ironed out; it's a fundamental property of these systems.
+But as **Rand Fishkin's recent research** shows, AI systems are highly inconsistent when recommending brands or products. When you ask the same question multiple times, even with minimal variation, you can get completely different answers - different rankings, different recommendations, different sources cited. This inconsistency isn't noise to be ironed out; it's a fundamental property of these systems.
 
 In other words:
 **AI systems do not behave like deterministic ranking engines.**
@@ -66,13 +66,13 @@ Rather than querying one prompt once and calling it a day, we:
 3. **Analyse patterns and probabilities**
    * We aggregate sampled responses to model what's *likely*, *possible*, and *rare*, rather than assuming any one sample is authoritative.
 
-This approach recognises that AI outputs vary — and treats that variation as signal, not noise.
+This approach recognises that AI outputs vary - and treats that variation as signal, not noise.
 
 ---
 
 ## Introducing PromptWatch: continuous AI sampling
 
-To operationalise this approach, we partner with **PromptWatch** — a purpose-built platform that samples AI responses across multiple models and environments.
+To operationalise this approach, we partner with **PromptWatch** - a purpose-built platform that samples AI responses across multiple models and environments.
 
 PromptWatch enables us to:
 
@@ -81,7 +81,7 @@ PromptWatch enables us to:
 * quantify how often brands, products, entities or attributes appear
 * compare visibility across models and over temporal windows
 
-This is fundamentally different from "snapshot monitoring" — it's **probabilistic measurement**.
+This is fundamentally different from "snapshot monitoring" - it's **probabilistic measurement**.
 
 ---
 
@@ -103,7 +103,7 @@ Which sources, pages or structured data elements the AI is relying on when it co
 
 ### Semantic Salience
 
-How strongly your brand appears in the *narrative* of the response — is it central, supportive, or merely incidental?
+How strongly your brand appears in the *narrative* of the response - is it central, supportive, or merely incidental?
 
 These metrics together give a more realistic picture of how often and how prominently generative AI systems feature your brand.
 
@@ -111,7 +111,7 @@ These metrics together give a more realistic picture of how often and how promin
 
 ## Why this matters
 
-AI Search Visibility is not just a measurement gimmick — it's a signal of how your brand is *understood* by the very engines shaping modern discovery and decision-making.
+AI Search Visibility is not just a measurement gimmick - it's a signal of how your brand is *understood* by the very engines shaping modern discovery and decision-making.
 
 If you:
 
@@ -121,7 +121,7 @@ If you:
 
 then how AI systems represent you will directly influence perception, trust, and commercial outcomes.
 
-Generative AI has turned search from a set of ranked links into a *selection ecosystem.* And in that ecosystem, models *choose* — and your visibility depends on being in their choice set.
+Generative AI has turned search from a set of ranked links into a *selection ecosystem.* And in that ecosystem, models *choose* - and your visibility depends on being in their choice set.
 
 ---
 
@@ -135,6 +135,6 @@ Generative AI has turned search from a set of ranked links into a *selection eco
 
 Instead, it is a **probabilistic profile of how generative AI systems reference, describe, and recommend your brand.** Measured by careful sampling, grounded in real intent data, and validated statistically.
 
-By taking this approach — and partnering with platforms like PromptWatch — we can help brands understand not just where they *are*, but where they *are likely to be* in AI-mediated discovery.
+By taking this approach - and partnering with platforms like PromptWatch - we can help brands understand not just where they *are*, but where they *are likely to be* in AI-mediated discovery.
 
 And that, in the generative era, is the new measure of visibility.

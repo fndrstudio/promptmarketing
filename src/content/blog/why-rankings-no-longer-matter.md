@@ -2,7 +2,7 @@
 title: 'Why Rankings No Longer Matter When AI Chooses'
 pubDate: 2026-01-24T05:00:00.000Z
 author: 'Arjan ter Huurne'
-description: 'For more than twenty years, search marketing revolved around rankings. But in a world increasingly mediated by generative AI, rankings are no longer the deciding factor. Because AI doesn''t rank brands — AI chooses them.'
+description: 'For more than twenty years, search marketing revolved around rankings. But in a world increasingly mediated by generative AI, rankings are no longer the deciding factor. Because AI doesn''t rank brands - AI chooses them.'
 image: '/collections/blog/image-03.webp'
 thumbnail: '/collections/blog/image-03.webp'
 ---
@@ -26,7 +26,7 @@ Because AI doesn't rank brands.
 
 Classic search engines were designed for human navigation.
 
-A query produced a ranked list. Users scanned, compared, clicked. Rankings mattered because they shaped *attention* — and humans made the final choice.
+A query produced a ranked list. Users scanned, compared, clicked. Rankings mattered because they shaped *attention* - and humans made the final choice.
 
 Even as Google evolved, the underlying logic remained intact:
 
@@ -64,7 +64,7 @@ This changes the optimisation problem entirely.
 
 In classic SEO, ranking was a *proxy* for success. It increased the probability of being clicked.
 
-In AI-mediated search, ranking is often invisible — and irrelevant.
+In AI-mediated search, ranking is often invisible - and irrelevant.
 
 What matters instead is:
 
@@ -100,7 +100,7 @@ They reason across:
 * trust signals
 * corroboration across sources
 
-This is why brands with strong rankings sometimes perform poorly in AI responses — and lesser-known brands with clear positioning and consistent signals are surprisingly visible.
+This is why brands with strong rankings sometimes perform poorly in AI responses - and lesser-known brands with clear positioning and consistent signals are surprisingly visible.
 
 ---
 
@@ -122,7 +122,7 @@ Selection is:
 
 There is no single lever to pull. No guaranteed position to defend.
 
-This is unsettling — but also liberating.
+This is unsettling - but also liberating.
 
 Because it forces a more fundamental question:
 
@@ -142,7 +142,7 @@ It's about being:
 
 A brand that is "visible" but not selected might as well be invisible.
 
-This is why rankings — even if they still exist in some interfaces — no longer deserve centre stage. They are an *input*, not an outcome.
+This is why rankings - even if they still exist in some interfaces - no longer deserve centre stage. They are an *input*, not an outcome.
 
 ---
 
@@ -168,7 +168,7 @@ Rankings mattered when users made the final choice.
 
 In AI-mediated search, the model chooses first.
 
-If your brand isn't selected at that moment — if it isn't part of the synthesis — rankings downstream don't save you.
+If your brand isn't selected at that moment - if it isn't part of the synthesis - rankings downstream don't save you.
 
 Search hasn't disappeared.
 But its centre of gravity has moved.

@@ -1,8 +1,8 @@
 ---
-title: 'Agentic Commerce: When AI Doesn''t Recommend — It Buys'
+title: 'Agentic Commerce: When AI Doesn''t Recommend - It Buys'
 pubDate: 2026-02-03T05:00:00.000Z
 author: 'Arjan ter Huurne'
-description: 'Today, AI often advises. Tomorrow, AI will act. The next step is obvious: the user won''t search for a product — they''ll say "Find me the best one for my needs" and the AI will execute the transaction. This is Agentic Commerce.'
+description: 'Today, AI often advises. Tomorrow, AI will act. The next step is obvious: the user won''t search for a product - they''ll say "Find me the best one for my needs" and the AI will execute the transaction. This is Agentic Commerce.'
 image: '/collections/blog/image-04.webp'
 thumbnail: '/collections/blog/image-04.webp'
 ---
@@ -15,7 +15,7 @@ I didn't read dozens of reviews.
 
 I asked ChatGPT. It started it's recent feature: ShoppingResearch.
 
-ShoppingResearch queried my situation: the size of my house, the mix of floors, the presence of pets, small children, and the inevitable toys scattered around. The AI didn't just give me a list of products — it reasoned. It filtered. It explained trade-offs. It narrowed the field to a handful of options that genuinely fit *my* context.
+ShoppingResearch queried my situation: the size of my house, the mix of floors, the presence of pets, small children, and the inevitable toys scattered around. The AI didn't just give me a list of products - it reasoned. It filtered. It explained trade-offs. It narrowed the field to a handful of options that genuinely fit *my* context.
 
 That experience already felt like the future.
 
@@ -71,8 +71,8 @@ This is where **Model Context Protocols (MCPs)** come in.
 
 MCPs define how AI systems consume, validate and act on external data. Within this emerging layer, two protocols matter enormously for commerce:
 
-* **ACP (Agentic Commerce Protocol)** — OpenAI's approach to enabling agents to transact
-* **UCP (Universal / Unified Commerce Protocol)** — Google's variant, built for its ecosystem
+* **ACP (Agentic Commerce Protocol)** - OpenAI's approach to enabling agents to transact
+* **UCP (Universal / Unified Commerce Protocol)** - Google's variant, built for its ecosystem
 
 These protocols are not marketing abstractions. They are *interfaces*.
 
@@ -92,7 +92,7 @@ If your data cannot be interpreted through these protocols, the agent cannot act
 Here is the uncomfortable truth:
 
 If your product data isn't perfectly structured for an agent to read,
-you are not just de-ranked — **you are un-buyable**.
+you are not just de-ranked - **you are un-buyable**.
 
 In Agentic Commerce, there is no "second page".
 There is no fallback click.
@@ -104,9 +104,9 @@ If the agent cannot:
 * confirm shipping conditions
 * confirm reliability of the source
 
-…it simply excludes you.
+...it simply excludes you.
 
-Not because you're a worse product — but because you're unreadable.
+Not because you're a worse product - but because you're unreadable.
 
 This is not an SEO problem.
 It's an **engineering problem**.
@@ -150,7 +150,7 @@ They will be the brands that:
 * align with emerging MCP standards
 * treat AI agents as primary customers, not edge cases
 
-This requires investment now — before transactions shift fully into agentic hands.
+This requires investment now - before transactions shift fully into agentic hands.
 
 ---
 
