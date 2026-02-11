@@ -55,7 +55,7 @@ const { title = '' } = Astro.props
 				{
 					images.map((item) => (
 						<div class="brand-grid--item">
-							<Image src={item.image} alt={item.alt} height="24" class="opacity-70 transition-opacity duration-300 hover:opacity-100" />
+							<Image src={item.image} alt={item.alt} height="24" class="invert dark:invert-0 opacity-70 transition-opacity duration-300 hover:opacity-100" />
 						</div>
 					))
 				}
