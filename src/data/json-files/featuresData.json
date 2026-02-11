@@ -1,6 +1,6 @@
 [
 	{
-		"title": "Intelligence",
+		"title": "Prompt Intelligence",
 		"subtitle": "Measurement & Research",
 		"features": [
 			{
@@ -21,7 +21,7 @@
 		]
 	},
 	{
-		"title": "Optimisation",
+		"title": "Prompt Optimisation",
 		"subtitle": "Relevance Engineering",
 		"features": [
 			{
@@ -42,7 +42,7 @@
 		]
 	},
 	{
-		"title": "Commerce",
+		"title": "Prompt Commerce",
 		"subtitle": "Prepare for Agentic Transactions",
 		"features": [
 			{
@@ -63,7 +63,7 @@
 		]
 	},
 	{
-		"title": "Advertising",
+		"title": "Prompt Advertising",
 		"subtitle": "Amplify AI Presence",
 		"features": [
 			{
@@ -77,7 +77,7 @@
 				"icon": "sparkles"
 			},
 			{
-				"title": "Incredible Intent Signals",
+				"title": "Run campaigns with incredible intent signals",
 				"description": "Ads in ChatGPT and Google's AI Mode offer incredible relevance & customer intent.",
 				"icon": "chart-pie"
 			}

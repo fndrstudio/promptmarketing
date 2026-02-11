@@ -31,75 +31,72 @@
 		{
 			"id": "step-1",
 			"index": "01",
-			"title": "Deep research in expected Prompt behaviour",
+			"title": "We research how people actually prompt AI",
 			"subtitle": "step 01",
 			"color": "#2d5016",
 			"body": [
-				"We analyse your target audience to identify high-impact topics and benchmark your current visibility, defining exactly which prompts to track and optimise for maximum and positive Share of Model (SoM)."
+				"We analyse your target audience to identify high-impact topics and benchmark your current AI visibility. This allows us to define which prompts to track, sample, and optimise for—so we focus on the questions that actually influence recommendations and Share of Model (SoM)."
 			],
 			"cta": {
 				"label": "Learn about our audit",
 				"href": "/contact"
 			},
 			"media": {
-				"src": "/steps/steps/step_01_front.webp",
+				"src": "/steps/steps/step_01_front.png",
 				"alt": "Prompt Research"
 			}
 		},
 		{
 			"id": "step-2",
 			"index": "02",
-			"title": "We architect your machine-readable foundation",
+			"title": "We design a website structure AI understands",
 			"subtitle": "step 02",
 			"color": "#3d6b1e",
 			"body": [
-				"Based on audit findings, we design a technical architecture that addresses your specific gaps. Schema.org markup, entity optimisation, content structure, everything AI needs to understand you correctly.",
-				"Every recommendation is tied to measurable outcomes. No vague 'best practices', just engineered solutions for your identified problems."
+				"Based on the audit, we design the technical and semantic structure AI systems rely on to interpret your brand correctly. Schema.org markup, entity relationships, and content structure—everything needed for accurate understanding and consistent representation. We work closely with your development team to ensure a clean, machine-readable foundation."
 			],
 			"cta": {
 				"label": "See our approach",
 				"href": "/how-we-work"
 			},
 			"media": {
-				"src": "/steps/steps/step_02_front.webp",
+				"src": "/steps/steps/step_02_front.png",
 				"alt": "Architecture Design"
 			}
 		},
 		{
 			"id": "step-3",
 			"index": "03",
-			"title": "We build and deploy the infrastructure",
+			"title": "We implement, test, and deploy the solution",
 			"subtitle": "step 03",
 			"color": "#4a8024",
 			"body": [
-				"Our team implements the technical changes, whether that's structured data, content optimisation, or knowledge graph integration. We work alongside your development team or handle it entirely.",
-				"Everything is documented, validated, and tested against real AI model responses before going live."
+				"Our team implements the required changes—structured data, content optimisation, and knowledge graph integration. We collaborate with your teams or deliver end-to-end. Everything is documented, validated, and tested against real AI model outputs before going live."
 			],
 			"cta": {
 				"label": "Our implementation process",
 				"href": "/contact"
 			},
 			"media": {
-				"src": "/steps/steps/step_03_front.webp",
+				"src": "/steps/steps/step_03_front.png",
 				"alt": "Implementation"
 			}
 		},
 		{
 			"id": "step-4",
 			"index": "04",
-			"title": "We track Selection Rate long-term",
+			"title": "We measure Selection Rate and improve it over time",
 			"subtitle": "step 04",
 			"color": "#b8860b",
 			"body": [
-				"Post-implementation, we monitor how AI models respond to your optimised presence. Selection Rate, entity accuracy, recommendation frequency; all measured and reported.",
-				"This isn't a one-time project. As AI models evolve, we ensure your relevance engineering evolves with them."
+				"After launch, we monitor how AI models respond to your optimised presence. Selection Rate, entity accuracy, and recommendation frequency are continuously measured and reported. This isn't a one-off project—your relevance engineering evolves as models, prompts, and AI behaviour change."
 			],
 			"cta": {
 				"label": "Get Started",
 				"href": "/contact"
 			},
 			"media": {
-				"src": "/steps/steps/step_04_front.webp",
+				"src": "/steps/steps/step_04_front.png",
 				"alt": "Measurement"
 			}
 		}
