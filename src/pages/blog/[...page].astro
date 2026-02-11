@@ -27,9 +27,9 @@ const SEO = {
 		'Read the latest insights on Relevance Engineering, AI-readiness, and how brands can become machine-trustworthy in the age of agentic commerce.'
 }
 
-// Sort blog posts by publication date (newest first)
+// Sort blog posts by publication date (oldest first)
 const sortedBlogPosts = page.data.sort((a: any, b: any) => {
-	return new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+	return new Date(a.data.pubDate).getTime() - new Date(b.data.pubDate).getTime()
 })
 ---
 

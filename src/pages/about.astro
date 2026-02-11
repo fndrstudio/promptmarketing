@@ -20,10 +20,10 @@ import Header from '../components/ui/Header.astro'
 import FeatureBasicCard from '../components/ui/cards/FeatureBasicCard.astro'
 import DecorationBorder from '../components/ui/DecorationBorder.astro'
 // - Partner logos
-import logoAiam from '../assets/logos/partner-aiam.svg'
-import logoPromptwatch from '../assets/logos/partner-promptwatch.svg'
-import logoEverywhere from '../assets/logos/partner-everywhere.svg'
-import logoGoogle from '../assets/logos/partner-google.svg'
+import logoAiam from '../assets/logos/pm-ai.am-logo.png'
+import logoPromptwatch from '../assets/logos/pm-promptwatch-logo.png'
+import logoEverywhere from '../assets/logos/pm-everywhere-logo.png'
+import logoGoogle from '../assets/logos/pm-google-logo.png'
 
 // Content
 // - SEO
@@ -206,9 +206,9 @@ const partnersData = [
 					<p class="px-6 pb-8 text-lg text-neutral-600 lg:px-8 lg:text-xl dark:text-neutral-400">
 						We're a collective of deep experts. No generalists. No gurus. Just people who know their craft, are eager to explore, learn and dive deep.
 					</p>
-					<div class="grid grid-cols-2 lg:grid-cols-3 border-t border-dashed border-neutral-200 dark:border-neutral-700">
+					<div class="grid grid-cols-2 lg:grid-cols-3">
 						{teamMembers.map((member) => (
-							<div class="team-card group relative aspect-square cursor-pointer overflow-hidden border-r border-b border-dashed border-neutral-200 bg-neutral-100 transition-all duration-300 dark:border-neutral-700 dark:bg-neutral-900">
+							<div class="team-card group relative aspect-square cursor-pointer overflow-hidden bg-neutral-100 transition-all duration-300 dark:bg-neutral-900">
 								<!-- Photo with B&W filter -->
 								<img
 									src={member.photo}
@@ -220,8 +220,8 @@ const partnersData = [
 								<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent transition-opacity duration-300 group-hover:opacity-0"></div>
 								<!-- Default State: Name & Title -->
 								<div class="absolute inset-0 flex flex-col items-start justify-end p-4 lg:p-6 transition-opacity duration-300 group-hover:opacity-0">
-									<h3 class="mb-1 text-base font-semibold text-white! lg:text-xl drop-shadow-md">
-										<a href={member.linkedin} target="_blank" rel="noopener noreferrer" class="hover:underline">
+									<h3 class="mb-1 text-base font-semibold lg:text-xl drop-shadow-md">
+										<a href={member.linkedin} target="_blank" rel="noopener noreferrer" class="!text-white hover:underline">
 											{member.name}
 										</a>
 									</h3>
@@ -231,8 +231,8 @@ const partnersData = [
 								</div>
 								<!-- Hover State: Description -->
 								<div class="absolute inset-0 flex flex-col items-start justify-end bg-primary-500/70 p-4 lg:p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-									<h3 class="mb-2 text-base font-semibold text-white! lg:text-xl">
-										<a href={member.linkedin} target="_blank" rel="noopener noreferrer" class="hover:underline">
+									<h3 class="mb-2 text-base font-semibold lg:text-xl">
+										<a href={member.linkedin} target="_blank" rel="noopener noreferrer" class="!text-white hover:underline">
 											{member.name}
 										</a>
 									</h3>
@@ -281,27 +281,3 @@ const partnersData = [
 	/>
 </Layout>
 
-<style>
-	@reference '../styles/global.css';
-	/* Remove right border on last column in each row */
-	.team-card:nth-child(2n) {
-		@apply border-r-0;
-	}
-	.team-card:nth-child(3n) {
-		@apply lg:border-r-0;
-	}
-	/* Restore right border on cards that are 2n but not 3n in desktop view */
-	.team-card:nth-child(2) {
-		@apply lg:border-r;
-	}
-	.team-card:nth-child(4) {
-		@apply lg:border-r;
-	}
-	/* Remove bottom border on last row */
-	.team-card:nth-last-child(-n+3) {
-		@apply lg:border-b-0;
-	}
-	.team-card:nth-last-child(-n+2) {
-		@apply border-b-0;
-	}
-</style>
