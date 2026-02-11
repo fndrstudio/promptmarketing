@@ -124,16 +124,19 @@ const partnersData = [
 	{
 		name: 'AI.AM',
 		logo: logoAiam,
+		url: 'https://aiam.amsterdam/',
 		description: 'Our office space is the AI.AM Hub in Amsterdam - breeding ground for AI startups. All our processes & workflows are AI powered.'
 	},
 	{
 		name: 'Promptwatch',
 		logo: logoPromptwatch,
+		url: 'https://promptwatch.com/',
 		description: 'Deep partnership with this leading AI Visibility tool. We get founder-level support and give feedback on product roadmap.'
 	},
 	{
 		name: 'Everywhere Network',
 		logo: logoEverywhere,
+		url: 'https://everywhere-network.com/',
 		description: 'International Agency Network, access to more than 15 markets. We collaborate as an innovation hub in AI Search.'
 	},
 	{
@@ -178,11 +181,21 @@ const partnersData = [
 						{partnersData.map((partner) => (
 							<div class="border-t border-dashed border-neutral-200 dark:border-neutral-700">
 								<div class="p-6 lg:p-8">
-									<img
-										src={partner.logo.src}
-										alt={partner.name}
-										class="h-8 mb-4 dark:brightness-200 dark:contrast-75"
-									/>
+									{partner.url ? (
+										<a href={partner.url} target="_blank" rel="noopener noreferrer" class="inline-block">
+											<img
+												src={partner.logo.src}
+												alt={partner.name}
+												class="h-8 mb-4 invert dark:invert-0 transition-opacity hover:opacity-70"
+											/>
+										</a>
+									) : (
+										<img
+											src={partner.logo.src}
+											alt={partner.name}
+											class="h-8 mb-4 invert dark:invert-0"
+										/>
+									)}
 									<p class="text-base text-neutral-600 dark:text-neutral-400">
 										{partner.description}
 									</p>

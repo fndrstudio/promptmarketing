@@ -25,7 +25,7 @@ export const configData: Config = {
 	siteTitle: 'PromptMarketing | Operationalizing Machine Trust',
 	siteDescription:
 		'Empower your brand through Relevance Engineering. We architect the knowledge layers that ensure brands are understood, trusted, and successfully represented by AI systems.',
-	ogImage: '/og.jpg',
+	ogImage: '/og.png',
 	logo: {
 		src: '/pm-logo-dark.png',
 		srcDark: '/pm-logo-light.png',
