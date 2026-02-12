@@ -139,7 +139,17 @@
 
 /* Layout rules */
 html {
-	@apply scroll-smooth antialiased;
+	@apply antialiased;
+}
+
+/* Lenis smooth scroll */
+html.lenis,
+html.lenis body {
+	height: auto;
+}
+
+.lenis.lenis-smooth {
+	scroll-behavior: auto !important;
 }
 
 /* FOUC prevention: reveal body once stylesheets are loaded */
