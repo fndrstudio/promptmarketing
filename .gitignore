@@ -33,3 +33,9 @@ logo's/
 # Planning docs in root (keep in Notion/local)
 /Layout*.md
 /Inhoud*.md
+
+# Sanity
+.sanity/
+
+# Auxly
+.auxly/
