@@ -9,7 +9,7 @@
 | **Milestone** | v1 |
 | **Current Phase** | 5 |
 | **Phase Status** | In progress |
-| **Blockers** | SANITY_API_TOKEN env var needed before Plan 02 can fetch data |
+| **Blockers** | SANITY_API_TOKEN env var needed for live data; Plan 03 (Studio deployment) remaining |
 
 ## Progress
 
@@ -18,7 +18,7 @@ Phase 1: ████████████████████ 100% (3/3 
 Phase 2: ████████████████████ 100% (2/2 plans)
 Phase 3: ████████████████████ 100% (4/4 plans)
 Phase 4: ████████████████████ 100% (3/3 plans)
-Phase 5: █████░░░░░░░░░░░░░░░  33% (1/3 plans)
+Phase 5: ██████████░░░░░░░░░░  67% (2/3 plans)
 ```
 
 ### Completed Phases
@@ -76,11 +76,10 @@ All 3 requirements verified:
 
 **Plans:**
 - 05-01-PLAN.md: Sanity packages + config + blog schema + client utilities (complete)
-- 05-02-PLAN.md: Blog page integration (pending)
+- 05-02-PLAN.md: Blog page integration (complete)
 - 05-03-PLAN.md: Studio deployment (pending)
 
 ### Upcoming Plans
-- 05-02: Rewrite blog pages to fetch from Sanity via GROQ queries
 - 05-03: Deploy Sanity Studio at /admin
 
 ## Session Notes
@@ -120,6 +119,14 @@ All 3 requirements verified:
   - Added basePath prop to PostCards for reusability
   - Created placeholder case study content
 - Plan 03-04: Updated homepage 4-pillar structure and cleaned up footer
+
+### 2026-02-23 - Phase 5 Plan 02 Complete
+- Rewrote blog listing and post pages to fetch from Sanity via GROQ
+- Created PortableTextRenderer.astro using astro-portabletext
+- Updated BlogPostingSchema for Sanity data (optional description, string pubDate, absolute image URLs)
+- Removed markdown blog infrastructure: 5 placeholder posts + blog collection from content.config.ts
+- Portfolio collection and pages untouched
+- Auto-fixed: BlogPostingSchema image URL handling for absolute Sanity CDN URLs
 
 ### 2026-02-23 - Phase 5 Plan 01 Complete
 - Installed Sanity v5 packages with @sanity/astro integration
@@ -173,6 +180,10 @@ All 3 requirements verified:
 | Service schema per pillar | Each of 4 service pillars gets dedicated ServiceSchema with specific description | 2026-02-09 |
 | BlogPosting dynamic data | Pass frontmatter props to BlogPostingSchema for per-post metadata | 2026-02-09 |
 | scheduledPublishing removed | sanity/scheduled-publishing not a valid subpath export in sanity v5.11.0 | 2026-02-23 |
+| BlogLayout not used for posts | Blog post page uses Layout directly — simpler, no unnecessary indirection | 2026-02-23 |
+| BlogPostingSchema optional description | description prop made optional with title fallback for posts without seoDescription | 2026-02-23 |
+| Sanity image URL handling | CDN URLs are absolute; BlogPostingSchema checks startsWith('http') before prepending siteUrl | 2026-02-23 |
+| Blog markdown posts removed | 5 placeholder markdown posts deleted; blog collection removed from content.config.ts | 2026-02-23 |
 | React as peer dep only | react/react-dom/@astrojs/react installed for sanity v5 but NOT added to Astro integrations | 2026-02-23 |
 | seoDescription in blog schema | Added to satisfy BlogPostingSchema description requirement for Google rich results | 2026-02-23 |
 | GROQ queries as string constants | Export raw strings from queries.ts, not functions, for type-safe reuse | 2026-02-23 |
@@ -195,10 +206,10 @@ All 3 requirements verified:
 - Concerns: `.planning/codebase/CONCERNS.md`
 
 **Last Session:** 2026-02-23
-**Stopped at:** Completed 05-01-PLAN.md (Sanity foundation)
+**Stopped at:** Completed 05-02-PLAN.md (blog Sanity integration)
 **Resume file:** None
 
-**Next Action:** Execute 05-02-PLAN.md (blog page integration) after setting SANITY_API_TOKEN
+**Next Action:** Execute 05-03-PLAN.md (Sanity Studio deployment at /admin)
 
 ---
 
