@@ -1,15 +1,15 @@
 # Project State: PromptMarketing Website
 
-**Last Updated:** 2026-02-09
+**Last Updated:** 2026-02-23
 
 ## Current Status
 
 | Field | Value |
 |-------|-------|
 | **Milestone** | v1 |
-| **Current Phase** | 4 |
-| **Phase Status** | Complete |
-| **Blockers** | None |
+| **Current Phase** | 5 |
+| **Phase Status** | In progress |
+| **Blockers** | SANITY_API_TOKEN env var needed before Plan 02 can fetch data |
 
 ## Progress
 
@@ -18,7 +18,7 @@ Phase 1: ████████████████████ 100% (3/3 
 Phase 2: ████████████████████ 100% (2/2 plans)
 Phase 3: ████████████████████ 100% (4/4 plans)
 Phase 4: ████████████████████ 100% (3/3 plans)
-Phase 5: ░░░░░░░░░░░░░░░░░░░░   0% (0/? plans)
+Phase 5: █████░░░░░░░░░░░░░░░  33% (1/3 plans)
 ```
 
 ### Completed Phases
@@ -71,8 +71,17 @@ All 3 requirements verified:
 - 04-02-PLAN.md: Schema.org component library (complete)
 - 04-03-PLAN.md: Schema integration into pages (complete)
 
-### Upcoming Phases
-- Phase 5: Sanity CMS Integration (CMS-01, CMS-02, CMS-03, CMS-04)
+#### Phase 5: Sanity CMS Integration
+**Status:** In progress
+
+**Plans:**
+- 05-01-PLAN.md: Sanity packages + config + blog schema + client utilities (complete)
+- 05-02-PLAN.md: Blog page integration (pending)
+- 05-03-PLAN.md: Studio deployment (pending)
+
+### Upcoming Plans
+- 05-02: Rewrite blog pages to fetch from Sanity via GROQ queries
+- 05-03: Deploy Sanity Studio at /admin
 
 ## Session Notes
 
@@ -111,6 +120,14 @@ All 3 requirements verified:
   - Added basePath prop to PostCards for reusability
   - Created placeholder case study content
 - Plan 03-04: Updated homepage 4-pillar structure and cleaned up footer
+
+### 2026-02-23 - Phase 5 Plan 01 Complete
+- Installed Sanity v5 packages with @sanity/astro integration
+- Replaced markdoc with sanity() in astro.config.mjs
+- Created blog post schema (Portable Text, predefined categories, seoDescription)
+- Created src/lib/sanity/ client utilities (client.ts, queries.ts, image.ts)
+- Fixed: scheduledPublishing removed (not available in sanity v5.11.0)
+- Build passes, type check passes, 0 errors
 
 ### 2026-02-09 - Phase 4 Complete
 - Plan 04-01: Technical SEO Foundation (complete)
@@ -155,6 +172,10 @@ All 3 requirements verified:
 | Schema placement in Layout | Place schema components inside Layout after opening tag for valid HTML5 JSON-LD | 2026-02-09 |
 | Service schema per pillar | Each of 4 service pillars gets dedicated ServiceSchema with specific description | 2026-02-09 |
 | BlogPosting dynamic data | Pass frontmatter props to BlogPostingSchema for per-post metadata | 2026-02-09 |
+| scheduledPublishing removed | sanity/scheduled-publishing not a valid subpath export in sanity v5.11.0 | 2026-02-23 |
+| React as peer dep only | react/react-dom/@astrojs/react installed for sanity v5 but NOT added to Astro integrations | 2026-02-23 |
+| seoDescription in blog schema | Added to satisfy BlogPostingSchema description requirement for Google rich results | 2026-02-23 |
+| GROQ queries as string constants | Export raw strings from queries.ts, not functions, for type-safe reuse | 2026-02-23 |
 
 ## Quick Reference
 
@@ -173,11 +194,11 @@ All 3 requirements verified:
 - Integrations: `.planning/codebase/INTEGRATIONS.md`
 - Concerns: `.planning/codebase/CONCERNS.md`
 
-**Last Session:** 2026-02-09
-**Stopped at:** Completed 04-03-PLAN.md (Phase 4 complete)
+**Last Session:** 2026-02-23
+**Stopped at:** Completed 05-01-PLAN.md (Sanity foundation)
 **Resume file:** None
 
-**Next Action:** Phase 5 (Sanity CMS Integration) or other priorities
+**Next Action:** Execute 05-02-PLAN.md (blog page integration) after setting SANITY_API_TOKEN
 
 ---
 
