@@ -24,7 +24,7 @@
 	{
 		"title": "Prompt Optimisation",
 		"subtitle": "Relevance Engineering",
-		"description": "Optimise technical architecture, structured data, content and authority signals so LLMs accurately understand and represent your brand.",
+		"description": "Optimise architecture, structured data, content and authority signals so LLMs accurately understand and represent your brand.",
 		"features": [
 			{
 				"title": "SXO & Semantic Architecture",
@@ -45,7 +45,7 @@
 	},
 	{
 		"title": "Prompt Commerce",
-		"subtitle": "Prepare for Agentic Transactions",
+		"subtitle": "Agentic Transactions",
 		"description": "Connect inventory to AI platforms via transactional protocols, enabling conversational journeys that convert directly into transactions.",
 		"features": [
 			{

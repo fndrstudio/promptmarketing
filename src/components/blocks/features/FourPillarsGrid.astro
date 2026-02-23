@@ -45,22 +45,22 @@ const { classes = '' } = Astro.props
 		{
 			featuresData.map((pillar: any, index: number) => (
 				<Col span="3" spanTablet="6" spanMobile="12" style="transparent">
-					<div class="relative flex h-full flex-col justify-between bg-white/80 px-6 py-6 lg:min-h-[28rem] lg:px-6 lg:py-8 dark:bg-neutral-950/80">
+					<div class="relative grid h-full grid-rows-[auto_1fr_auto_auto_auto_auto_1fr] bg-white/80 px-6 py-6 lg:min-h-[28rem] lg:px-6 lg:py-8 dark:bg-neutral-950/80">
 						<p class="h5 mb-0 font-bold">{String(index + 1).padStart(2, '0')}</p>
-						<div>
-							<p class="mb-2 text-sm font-medium tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
-								{pillar.subtitle}
-							</p>
-							<h2 class="mb-2! text-base! font-semibold lg:text-4xl!">
-								{pillar.title.replace('Prompt ', '')}
-							</h2>
-							<p class="mb-4 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
-								{pillar.description}
-							</p>
-							<Link link="/how-we-work" size="sm">
-								Learn more
-							</Link>
-						</div>
+						<div></div>
+						<p class="mb-2 text-sm font-medium tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
+							{pillar.subtitle}
+						</p>
+						<h2 class="mb-2! text-base! font-semibold lg:text-2xl! xl:text-4xl!">
+							{pillar.title.replace('Prompt ', '')}
+						</h2>
+						<p class="mb-4 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+							{pillar.description}
+						</p>
+						<Link link="/how-we-work" size="sm">
+							Learn more
+						</Link>
+						<div></div>
 						<DecorationBorder
 							type={`top bottom right ${index === featuresData.length - 1 ? 'left' : ''}`}
 							style="solid"
