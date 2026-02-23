@@ -1,18 +1,18 @@
 # Phase 5: Sanity CMS Integration - Research
 
-**Researched:** 2026-02-09
+**Researched:** 2026-02-23 (RE-RESEARCH — updates original 2026-02-09 findings)
 **Domain:** Headless CMS integration with Astro static site
 **Confidence:** HIGH
 
 ## Summary
 
-Sanity CMS integrates with Astro through the official `@sanity/astro` package, providing a headless CMS solution for blog content management. The standard implementation replaces Astro's content collections with dynamic queries to Sanity's Content Lake using GROQ (Sanity's query language). Content is stored as Portable Text (JSON-based rich text format) and rendered using `astro-portabletext`.
+This is an updated research document replacing the 2026-02-09 version. Since the last research, Sanity has released Studio v5 (requiring React 19.2), `@sanity/image-url` was bumped to v2.x with a breaking API change (named export `createImageUrlBuilder` replaces default import), and scheduled publishing moved to a built-in `defineConfig()` option (the separate plugin is deprecated).
 
-The architecture supports both static site generation (SSG) and server-side rendering (SSR). For this project, we'll use SSG with webhook-triggered rebuilds: when content is published in Sanity Studio, a webhook triggers a Vercel Deploy Hook, rebuilding the entire site with fresh content. This approach is simpler than SSR and leverages Vercel's CDN for optimal performance.
+The standard implementation uses `@sanity/astro` 3.x (current: 3.2.11), which provides the `sanity:client` virtual module. This virtual module API is unchanged and still valid. Rendering rich text uses `astro-portabletext` 0.13.0, which has the same `<PortableText value={...} />` API as previously documented.
 
-Sanity Studio can be hosted by Sanity at no cost (`*.sanity.studio`), eliminating infrastructure concerns for the client. Preview functionality requires a separate preview environment that uses the `drafts` perspective to show unpublished changes. Scheduled publishing is available through Sanity's native "Scheduled Drafts" feature.
+The existing blog infrastructure uses plain `.md` files with Astro content collections — **not** markdoc format. The `@astrojs/markdoc` package is installed but appears unused for blog content (no `.mdoc` files exist). Removing markdoc from the project is safe and straightforward.
 
-**Primary recommendation:** Use `@sanity/astro` 4.x with `astro-portabletext` for rendering, deploy Studio to Sanity's hosted platform, configure Vercel Deploy Hooks for automatic rebuilds on publish, and implement preview via separate Vercel deployment with `perspective: 'drafts'`.
+**Primary recommendation:** Install `@sanity/astro@^3.2.11`, `@sanity/client@^7.x`, `sanity@^5.x`, `astro-portabletext@^0.13.0`, `@sanity/image-url@^2.0.3`. Use `createImageUrlBuilder` (not default import). Use `scheduledPublishing: { enabled: true }` in `defineConfig()` (not the deprecated plugin). Embed nothing in Astro — Studio goes on `*.sanity.studio`.
 
 ---
 
@@ -61,6 +61,20 @@ None — discussion stayed within phase scope
 
 ---
 
+## What Changed Since 2026-02-09
+
+| Item | Previous Research | Current Reality | Impact |
+|------|-------------------|-----------------|--------|
+| `@sanity/astro` version | "4.x" | 3.2.11 (was always 3.x) | Original was wrong — package never had a v4 |
+| `sanity` package | 3.x | 5.11.0 (v5 released Dec 16 2025) | Requires React 19.2 as peer dependency |
+| `@sanity/client` | 6.x | 7.15.0 | Major version bump, `@sanity/astro` 3.x requires `^7.6.0` |
+| `@sanity/image-url` | 1.x | 2.0.3 | **Breaking change**: named export `createImageUrlBuilder` replaces default export |
+| Scheduled publishing | `@sanity/scheduled-publishing` plugin | Built-in `scheduledPublishing` in `defineConfig()` | Plugin deprecated; use native config |
+| Blog file format | "uses markdoc" | Plain `.md` files (no `.mdoc` files exist) | Markdoc integration is installed but unused for blog |
+| `astro-portabletext` | Latest | 0.13.0 | API unchanged, same usage |
+
+---
+
 ## Standard Stack
 
 The established libraries/tools for Sanity + Astro integration:
@@ -69,38 +83,36 @@ The established libraries/tools for Sanity + Astro integration:
 
 | Library | Version | Purpose | Why Standard |
 |---------|---------|---------|--------------|
-| `@sanity/astro` | 4.x | Official Sanity integration for Astro | Provides sanityClient, Studio embedding, official support |
-| `@sanity/client` | 6.x | Sanity Content Lake client | Required peer dependency, GROQ query execution |
-| `sanity` | 3.x | Sanity Studio and CLI | Schema definition, Studio deployment, content management |
-| `astro-portabletext` | Latest | Portable Text renderer for Astro | Astro-native component for rendering rich text, official recommendation |
-| `@sanity/image-url` | 1.x | Image URL builder | Handles crop/hotspot, generates optimized CDN URLs |
+| `@sanity/astro` | 3.2.11 | Official Sanity integration for Astro | Provides `sanity:client` virtual module, Studio route injection, official support |
+| `@sanity/client` | 7.15.0 | Sanity Content Lake client | Required peer dependency for `@sanity/astro` 3.x, GROQ query execution |
+| `sanity` | 5.11.0 | Sanity Studio and CLI | Schema definition, Studio deployment, content management, scheduled publishing |
+| `astro-portabletext` | 0.13.0 | Portable Text renderer for Astro | Astro-native component for rendering rich text, no React runtime needed |
+| `@sanity/image-url` | 2.0.3 | Image URL builder | Handles crop/hotspot, generates optimized CDN URLs |
 
 ### Supporting
 
 | Library | Version | Purpose | When to Use |
 |---------|---------|---------|-------------|
-| `@astrojs/react` | 4.x | React integration for Astro | Required if embedding Studio in Astro site |
-| `groq` | Latest | GROQ syntax highlighting (dev) | TypeScript type safety for queries |
-| `sanity-plugin-vercel-deploy` | Latest | Deploy button in Studio | Trigger manual rebuilds from Studio UI |
+| `react` + `react-dom` | 19.2.4 | React runtime | Required by `sanity` v5 (Studio) and `@sanity/astro` peer deps |
+| `@astrojs/react` | 4.4.2 | React integration for Astro | Required to satisfy `@sanity/astro` peer deps when `sanity` v5 is used |
+| `sanity-plugin-vercel-deploy` | Latest | Deploy button in Studio | Optional: trigger manual rebuilds from Studio UI |
 
 ### Alternatives Considered
 
 | Instead of | Could Use | Tradeoff |
 |------------|-----------|----------|
 | `astro-portabletext` | `@portabletext/react` | React-specific, requires React runtime; not idiomatic for Astro |
-| SSG + webhooks | Astro SSR + live queries | Requires server, higher complexity, costs more; SSG is simpler for blog |
+| SSG + webhooks | Astro SSR + live queries | Requires persistent server, higher complexity, costs more; SSG is simpler for blog |
 | Sanity-hosted Studio | Self-hosted Studio | Self-hosting requires server infrastructure, monitoring; hosted is free and managed |
 
 **Installation:**
 
 ```bash
 npm install @sanity/astro @sanity/client sanity astro-portabletext @sanity/image-url
-```
-
-**If embedding Studio in Astro (optional):**
-```bash
 npm install @astrojs/react react react-dom
 ```
+
+**Note on React:** `sanity` v5 requires React 19.2 as a peer dependency. `@sanity/astro` 3.x also requires React as a peer. Installing `@astrojs/react` is required even though Studio is hosted externally — it satisfies the peer dependencies. React is NOT added to the Astro integration list (only needed for peer dep resolution and potential future use).
 
 ---
 
@@ -113,43 +125,42 @@ src/
 ├── pages/
 │   └── blog/
 │       ├── [slug].astro          # Dynamic blog post pages (SSG)
-│       └── [...page].astro       # Paginated blog index (SSG)
+│       └── [...page].astro       # Paginated blog index (SSG) — replaces existing [...page].astro
 ├── lib/
 │   └── sanity/
-│       ├── client.ts             # Sanity client configuration
+│       ├── client.ts             # Sanity client instance (re-exports from sanity:client)
 │       ├── queries.ts            # GROQ queries
-│       ├── portabletext.ts       # Portable Text component config
-│       └── imageBuilder.ts       # Image URL builder instance
+│       └── imageBuilder.ts       # Image URL builder (uses createImageUrlBuilder)
 ├── schemas/
-│   └── post.ts                   # Sanity schema definitions
-├── env.d.ts                      # TypeScript types for Sanity
-└── sanity.config.ts              # Studio configuration (project root)
+│   └── post.ts                   # Sanity schema definition
+└── sanity.config.ts              # Studio configuration (project root, not src/)
 ```
 
-**Note:** `sanity.config.ts` lives in project root, not `src/`, per Sanity convention.
+**Note:** `sanity.config.ts` lives in project root per Sanity convention. `content.config.ts` remains for portfolio collection — only the blog collection is removed.
 
 ### Pattern 1: Sanity Client Configuration
 
-**What:** Configure Sanity client with project credentials and CDN settings
+**What:** Configure Sanity client from the virtual module
 **When to use:** Required for all Sanity queries in Astro
 
-**Example:**
 ```typescript
 // src/lib/sanity/client.ts
+// Source: https://raw.githubusercontent.com/sanity-io/sanity-astro/main/packages/sanity-astro/README.md
 import { sanityClient } from 'sanity:client'
-import { useCdn } from '@sanity/client'
 
-// For static builds, disable CDN to ensure fresh content at build time
+// For static builds — disable CDN to ensure fresh content at build time
 export const client = sanityClient.withConfig({
   useCdn: false, // CRITICAL: false for SSG to avoid stale content
-  perspective: 'published', // Only show published content on production
+  perspective: 'published',
+  apiVersion: '2025-02-19',
 })
 
-// For preview environment (separate deployment)
+// For preview environment (separate Vercel deployment)
 export const previewClient = sanityClient.withConfig({
-  useCdn: false, // CRITICAL: drafts perspective requires useCdn: false
-  perspective: 'drafts', // Show draft content for preview
-  token: import.meta.env.SANITY_READ_TOKEN, // Required for drafts
+  useCdn: false,
+  perspective: 'drafts',
+  token: import.meta.env.SANITY_READ_TOKEN,
+  apiVersion: '2025-02-19',
 })
 ```
 
@@ -158,151 +169,169 @@ export const previewClient = sanityClient.withConfig({
 **What:** Fetch blog posts using GROQ query language
 **When to use:** In `getStaticPaths()` and page components for SSG
 
-**Example:**
 ```typescript
 // src/lib/sanity/queries.ts
 export const blogPostsQuery = `*[_type == "post" && defined(slug.current)] | order(publishedAt desc) {
   _id,
   title,
-  slug,
+  "slug": slug.current,
   publishedAt,
   author,
   category,
-  "imageUrl": featuredImage.asset->url,
+  "featuredImage": featuredImage.asset->{url, metadata { dimensions }},
   body
 }`
 
 export const blogPostBySlugQuery = `*[_type == "post" && slug.current == $slug][0] {
   _id,
   title,
-  slug,
+  "slug": slug.current,
   publishedAt,
   author,
   category,
-  "imageUrl": featuredImage.asset->url,
+  "featuredImage": featuredImage.asset->{url, metadata { dimensions }},
   body
 }`
-
-// Usage in Astro page
-import { client } from '@/lib/sanity/client'
-import { blogPostsQuery } from '@/lib/sanity/queries'
-
-export async function getStaticPaths() {
-  const posts = await client.fetch(blogPostsQuery)
-  return posts.map((post) => ({
-    params: { slug: post.slug.current },
-    props: { post },
-  }))
-}
 ```
 
 ### Pattern 3: Portable Text Rendering
 
-**What:** Render Sanity's Portable Text rich content as HTML
+**What:** Render Sanity Portable Text as HTML using `astro-portabletext`
 **When to use:** Rendering blog post body content
 
-**Example:**
 ```astro
 ---
 // src/pages/blog/[slug].astro
 import { PortableText } from 'astro-portabletext'
 import { client } from '@/lib/sanity/client'
 import { blogPostBySlugQuery } from '@/lib/sanity/queries'
+import BlogLayout from '@/layouts/BlogLayout.astro'
 
-const { slug } = Astro.params
-const post = await client.fetch(blogPostBySlugQuery, { slug })
+export async function getStaticPaths() {
+  const posts = await client.fetch(blogPostsQuery)
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }))
+}
+
+const { post } = Astro.props
 ---
 
-<Layout>
-  <h1>{post.title}</h1>
+<BlogLayout frontmatter={{
+  title: post.title,
+  author: post.author,
+  pubDate: new Date(post.publishedAt),
+  image: post.featuredImage?.url,
+}}>
   <PortableText value={post.body} />
-</Layout>
+</BlogLayout>
 ```
 
-### Pattern 4: Image Optimization
+### Pattern 4: Image URL Builder — UPDATED API
 
 **What:** Generate optimized image URLs with Sanity's CDN
-**When to use:** Displaying featured images and image assets
+**When to use:** Displaying featured images
 
-**Example:**
 ```typescript
 // src/lib/sanity/imageBuilder.ts
-import imageUrlBuilder from '@sanity/image-url'
-import { client } from './client'
+// Source: https://github.com/sanity-io/image-url/blob/main/CHANGELOG.md
+// BREAKING CHANGE in v2: use named export createImageUrlBuilder, NOT default import
+import { createImageUrlBuilder } from '@sanity/image-url'
+import { sanityClient } from 'sanity:client'
 
-const builder = imageUrlBuilder(client)
+const builder = createImageUrlBuilder(sanityClient)
 
 export function urlFor(source: any) {
   return builder.image(source)
 }
 
-// Usage in component
-import { urlFor } from '@/lib/sanity/imageBuilder'
-
-const imageUrl = urlFor(post.featuredImage)
-  .width(800)
-  .height(600)
-  .format('webp')
-  .url()
+// Usage:
+// const imageUrl = urlFor(post.featuredImage).width(800).format('webp').url()
 ```
 
-### Pattern 5: Webhook-Triggered Rebuilds
+**WARNING:** The original research showed `import imageUrlBuilder from '@sanity/image-url'`. This is broken in v2. Use the named export `createImageUrlBuilder`.
 
-**What:** Automatic site rebuilds when content is published
-**When to use:** Production deployment automation
+### Pattern 5: Astro Config with Sanity Integration
 
-**Setup:**
-1. **Create Vercel Deploy Hook** (in Vercel project settings):
-   - Navigate to Settings → Git → Deploy Hooks
-   - Name: "Sanity Content Publish"
-   - Branch: main
-   - Copy generated URL (e.g., `https://api.vercel.com/v1/integrations/deploy/...`)
+**What:** Configure `@sanity/astro` in astro.config.mjs
+**When to use:** Initial setup — replaces markdoc integration
 
-2. **Configure Sanity Webhook** (in Sanity project settings):
-   - Navigate to API → Webhooks
-   - URL: [Vercel Deploy Hook URL]
-   - Trigger on: Create, Update, Delete
-   - Filter: `_type == "post"` (only trigger on blog posts)
-   - HTTP method: POST
-
-**Alternative:** Install `sanity-plugin-vercel-deploy` for manual deploy button in Studio UI.
-
-### Pattern 6: Preview Environment
-
-**What:** Separate Vercel deployment for previewing draft content
-**When to use:** Allow clients to preview posts before publishing
-
-**Setup:**
-```typescript
+```javascript
 // astro.config.mjs
 import { defineConfig } from 'astro/config'
+import partytown from '@astrojs/partytown'
+import tailwindcss from '@tailwindcss/vite'
+import icon from 'astro-icon'
+import sitemap from '@astrojs/sitemap'
 import sanity from '@sanity/astro'
-
-const isPreview = import.meta.env.PUBLIC_PREVIEW_MODE === 'true'
+import vercel from '@astrojs/vercel'
 
 export default defineConfig({
+  site: 'https://promptmarketing.com',
   integrations: [
+    icon(),
+    sitemap(),
+    partytown({ config: { forward: ['dataLayer.push'] } }),
     sanity({
       projectId: 'pbui2f8s',
       dataset: 'production',
       useCdn: false,
-      perspective: isPreview ? 'drafts' : 'published',
-      token: isPreview ? import.meta.env.SANITY_READ_TOKEN : undefined,
+      perspective: 'published',
+      apiVersion: '2025-02-19',
     }),
+    // NOTE: @astrojs/react is NOT added here — it's only installed for peer dep resolution
+    // Studio is hosted on *.sanity.studio, not embedded in this Astro site
   ],
+  vite: { plugins: [tailwindcss()] },
+  adapter: vercel(),
 })
 ```
 
-**Vercel Environment Variables:**
-- Production: `PUBLIC_PREVIEW_MODE=false`
-- Preview: `PUBLIC_PREVIEW_MODE=true`, `SANITY_READ_TOKEN=[read token]`
+**Note:** Remove `markdoc()` from integrations. Remove `@astrojs/markdoc` from package.json after migration.
 
-### Pattern 7: Sanity Schema Definition
+### Pattern 6: Sanity Config with Built-in Scheduled Publishing
+
+**What:** Configure Sanity Studio with scheduled publishing (native, no plugin)
+**When to use:** Initial studio setup — replaces the deprecated `@sanity/scheduled-publishing` plugin
+
+```typescript
+// sanity.config.ts (project root)
+import { defineConfig } from 'sanity'
+import { structureTool } from 'sanity/structure'
+import { visionTool } from '@sanity/vision'
+
+export default defineConfig({
+  name: 'default',
+  title: 'Prompt Marketing Blog',
+  projectId: 'pbui2f8s',
+  dataset: 'production',
+
+  plugins: [
+    structureTool(),
+    visionTool(),
+    // NO @sanity/scheduled-publishing import — it's deprecated
+  ],
+
+  // Scheduled publishing is now native in sanity v3.39.0+
+  // sanity v5.11.0 includes this built-in
+  scheduledPublishing: {
+    enabled: true,
+  },
+
+  schema: {
+    types: [postSchema],
+  },
+})
+```
+
+**WARNING:** Original research showed `import { scheduledPublishing } from '@sanity/scheduled-publishing'` and added it to `plugins`. This is the old approach. Do NOT use `@sanity/scheduled-publishing` — use the `scheduledPublishing` key in `defineConfig()`.
+
+### Pattern 7: Schema Definition
 
 **What:** Define content model for blog posts
-**When to use:** Initial setup and schema modifications
+**When to use:** Initial setup
 
-**Example:**
 ```typescript
 // schemas/post.ts
 import { defineType, defineField } from 'sanity'
@@ -322,10 +351,7 @@ export default defineType({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
+      options: { source: 'title', maxLength: 96 },
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -349,6 +375,8 @@ export default defineType({
           { title: 'AI Strategy', value: 'ai-strategy' },
           { title: 'Prompt Engineering', value: 'prompt-engineering' },
           { title: 'Marketing Automation', value: 'marketing-automation' },
+          { title: 'AI Search & Discovery', value: 'ai-search' },
+          { title: 'Content Strategy', value: 'content-strategy' },
         ],
       },
       validation: (Rule) => Rule.required(),
@@ -357,9 +385,7 @@ export default defineType({
       name: 'featuredImage',
       title: 'Featured Image',
       type: 'image',
-      options: {
-        hotspot: true, // Enable focal point selection
-      },
+      options: { hotspot: true },
     }),
     defineField({
       name: 'body',
@@ -384,13 +410,7 @@ export default defineType({
                 name: 'link',
                 type: 'object',
                 title: 'Link',
-                fields: [
-                  {
-                    name: 'href',
-                    type: 'url',
-                    title: 'URL',
-                  },
-                ],
+                fields: [{ name: 'href', type: 'url', title: 'URL' }],
               },
             ],
           },
@@ -401,14 +421,57 @@ export default defineType({
 })
 ```
 
+### Pattern 8: TypeScript Type Declaration
+
+**What:** Enable TypeScript support for `sanity:client` virtual module
+**When to use:** After installing `@sanity/astro`
+
+```typescript
+// src/env.d.ts
+/// <reference types="astro/client" />
+/// <reference types="@sanity/astro/module" />
+```
+
+**Known issue:** There is a reported issue (GitHub #135) where `@astrojs/check` fails to resolve `sanity:client` types in some configurations. If build fails with "Cannot find module 'sanity:client'", add `"@sanity/astro/module"` to `tsconfig.json` `types` array as fallback.
+
+### Pattern 9: Webhook-Triggered Rebuilds
+
+**What:** Automatic site rebuilds when content is published
+**When to use:** Production deployment automation
+
+```
+Sanity Webhook Configuration:
+- URL: [Vercel Deploy Hook URL from Vercel project settings]
+- Trigger: Update
+- Filter: _type == "post" && !(_id in path("drafts.**"))
+- HTTP method: POST
+```
+
+**Key:** Filter `!(_id in path("drafts.**"))` prevents draft saves from triggering builds. Only fired on actual publish events.
+
+### Pattern 10: Adapting BlogLayout for Sanity
+
+**What:** The existing `BlogLayout.astro` uses `frontmatter.pubDate` (Date), `frontmatter.author` (string slug), `frontmatter.image` (local path). With Sanity these become `publishedAt` (ISO string), `author` (plain name string), `featuredImage.url` (Sanity CDN URL).
+
+**Key differences:**
+- `author` is now a plain string (e.g., "Arjan ter Huurne"), not a slug — remove slug-to-name conversion logic
+- `pubDate` becomes `publishedAt` as ISO datetime string — wrap in `new Date()` when passing
+- `image` is now a Sanity CDN URL, not a local path — use `urlFor()` from imageBuilder
+- `description` field used in SEO (BlogPostingSchema) maps to Sanity's... there is no description field in the locked schema. Use the title for og:description or add a brief `seoDescription` field.
+
+**Decision needed by planner:** The existing `BlogPostingSchema.astro` requires a `description` prop. The locked schema has no description/excerpt field. Options:
+1. Add a `seoDescription` field to the schema (violates "no excerpt" constraint if treated as summary)
+2. Generate description from body portable text (complex)
+3. Use a static fallback description (simplest, acceptable for a small blog)
+
 ### Anti-Patterns to Avoid
 
-- **Using `useCdn: true` for static builds:** Results in stale content when site rebuilds. SSG must use `useCdn: false` to fetch fresh content at build time.
-- **Querying without `defined(slug.current)` filter:** Returns posts without slugs, causing build errors. Always filter for defined slugs.
-- **Fetching full document trees without projection:** GROQ returns entire documents including all nested data. Use `{ field1, field2 }` projection to limit payload size.
-- **Not setting `studioHost` in CI/CD:** Deployment fails without configured hostname. Set in `sanity.cli.ts` or via environment variable.
-- **Using `@portabletext/react` in Astro:** Requires React runtime unnecessarily. Use `astro-portabletext` instead.
-- **Embedding Studio in production Astro site:** Adds React to production bundle. Host Studio separately on `*.sanity.studio`.
+- **Using `import imageUrlBuilder from '@sanity/image-url'`** (v2 removed default export — use `createImageUrlBuilder`)
+- **Adding `scheduledPublishing()` to `plugins[]`** (plugin is deprecated — use `scheduledPublishing: { enabled: true }` at config root)
+- **Setting `useCdn: true` for static builds** (results in stale content)
+- **Missing `defined(slug.current)` filter** (causes undefined errors in `getStaticPaths`)
+- **Fetching full documents without projection** (slow builds as content grows)
+- **Adding `@astrojs/react` to integrations in astro.config.mjs** (Studio is externally hosted — React integration only needed for peer dep resolution if at all)
 
 ---
 
@@ -418,355 +481,195 @@ Problems that look simple but have existing solutions:
 
 | Problem | Don't Build | Use Instead | Why |
 |---------|-------------|-------------|-----|
-| Rich text storage | Custom markdown or HTML storage | Portable Text (Sanity's native format) | Portable Text is structured JSON, versioned, supports custom blocks, has sanitization built-in, and serializes to any output format |
-| Image optimization | Custom image processing pipeline | `@sanity/image-url` + Sanity's CDN | Sanity provides on-demand transforms, automatic WebP conversion, hotspot/crop handling, global CDN, and LQIP/blurhash generation |
-| Slug generation | Custom slugification logic | Sanity's built-in `slug` field type | Handles uniqueness validation, source field tracking, custom slugify function, and kebab-case normalization |
-| Content validation | Manual validation in code | Sanity schema validation rules | Schema validation runs in Studio, provides immediate feedback, prevents invalid content from being saved |
-| Draft management | Custom draft system | Sanity's native draft documents | Every document has corresponding `drafts.*` document, Studio UI handles draft/publish flow, perspectives API abstracts query logic |
-| Scheduled publishing | Custom cron jobs | Sanity's Scheduled Drafts feature | Built into Studio UI, handles timezone complexity, API-driven scheduling, no server infrastructure required |
-| Webhook management | Custom webhook system | Sanity's built-in webhooks | Configurable via UI, retry logic included, payload customization, filter by document type/field changes |
-
-**Key insight:** Sanity is a fully-featured CMS platform, not just a content API. Every feature above is battle-tested across thousands of production sites. Custom implementations introduce edge cases, maintenance burden, and security risks that the platform already solves.
+| Rich text storage | Custom markdown or HTML fields | Portable Text (Sanity's native format) | Structured JSON, versioned, sanitized, framework-agnostic output |
+| Image optimization | Manual CDN or Astro Image for Sanity assets | `@sanity/image-url` with Sanity CDN | On-demand transforms, WebP conversion, hotspot crop, global CDN |
+| Slug generation | Custom slugify function | Sanity's built-in `slug` field type | Handles uniqueness, source tracking, kebab-case normalization |
+| Content validation | Runtime validation in Astro | Sanity schema validation rules | Studio-level validation, immediate feedback, prevents invalid saves |
+| Draft management | Custom draft system | Sanity's native draft documents | Every document has `drafts.*` twin, Studio handles publish flow |
+| Scheduled publishing | Cron jobs or custom schedulers | Native `scheduledPublishing` in `defineConfig()` | Built into Studio UI, timezone-aware, no server infrastructure |
+| Webhook management | Custom webhook system | Sanity's built-in webhooks (sanity.io/manage) | Retry logic, payload customization, filter by document type |
 
 ---
 
 ## Common Pitfalls
 
-### Pitfall 1: CDN Caching Causes Stale Content After Rebuild
+### Pitfall 1: Wrong `@sanity/image-url` Import (v2 Breaking Change)
 
-**What goes wrong:** Site rebuilds but still shows old content because Sanity client uses CDN cache.
+**What goes wrong:** Build fails with "does not provide an export named 'default'" or TypeScript errors.
 
-**Why it happens:** Default `useCdn: true` serves cached responses. CDN cache TTL can be several minutes, so fresh builds fetch stale data.
+**Why it happens:** `@sanity/image-url` v2 removed the default export. Old code `import imageUrlBuilder from '@sanity/image-url'` is broken.
 
-**How to avoid:** Always set `useCdn: false` for static site generation (SSG) builds. Only use `useCdn: true` for client-side queries or SSR in production (not applicable for this project).
-
-**Warning signs:**
-- Content updates in Studio but doesn't appear after Vercel deployment
-- Rebuild logs show "success" but site content is old
-- Content eventually updates after 5-10 minutes
-
-**Fix:**
+**How to avoid:** Use the named export:
 ```typescript
-// astro.config.mjs
-export default defineConfig({
-  integrations: [
-    sanity({
-      projectId: 'pbui2f8s',
-      dataset: 'production',
-      useCdn: false, // CRITICAL for SSG
-    }),
-  ],
-})
+// WRONG (v1 style):
+import imageUrlBuilder from '@sanity/image-url'
+const builder = imageUrlBuilder(client)
+
+// CORRECT (v2):
+import { createImageUrlBuilder } from '@sanity/image-url'
+const builder = createImageUrlBuilder(client)
 ```
 
-### Pitfall 2: Studio 404 on Page Refresh When Embedded
+**Warning signs:** Build error "SyntaxError: The requested module '@sanity/image-url' does not provide an export named 'default'"
 
-**What goes wrong:** Embedding Sanity Studio at `/studio` route in Astro causes 404 errors on refresh for Studio sub-routes like `/studio/structure`.
+### Pitfall 2: Using Deprecated `@sanity/scheduled-publishing` Plugin
 
-**Why it happens:** Studio is a single-page application (SPA) that handles routing client-side. Astro's SSG generates static HTML files, so `/studio/structure` doesn't exist as a file. On initial navigation from `/studio`, client-side routing works, but refresh tries to load `/studio/structure.html` which doesn't exist.
+**What goes wrong:** Plugin import fails or shows deprecation warnings; Studio may not load correctly.
 
-**How to avoid:** Don't embed Studio in production Astro site. Use Sanity's hosted Studio (`*.sanity.studio`) instead. This is already decided in user constraints (Sanity-hosted studio).
+**Why it happens:** `@sanity/scheduled-publishing` was deprecated when scheduled publishing moved to `sanity` core in v3.39.0.
 
-**Warning signs:**
-- Studio works on initial load
-- Navigation within Studio works
-- Refresh on any Studio sub-route returns 404
-
-**Note:** This pitfall is avoided by deployment decision (Sanity-hosted). Documenting for awareness.
-
-### Pitfall 3: Draft Content Requires Authentication Token
-
-**What goes wrong:** Preview environment returns 401 errors or shows empty results when trying to fetch draft content.
-
-**Why it happens:** Draft documents require authenticated API requests. The `drafts` perspective cannot be used with anonymous requests or CDN caching.
-
-**How to avoid:**
-1. Generate a read token in Sanity project settings (API → Tokens)
-2. Add token to Vercel preview environment variables: `SANITY_READ_TOKEN`
-3. Configure preview client with token and `useCdn: false`
-4. Never commit tokens to version control
-
-**Warning signs:**
-- Preview environment shows no draft content
-- Console errors: "Insufficient permissions"
-- Published content works, drafts don't
-
-**Fix:**
+**How to avoid:** Use the native `defineConfig()` option:
 ```typescript
-// Preview environment only
-export const previewClient = sanityClient.withConfig({
-  useCdn: false, // Required for drafts
-  perspective: 'drafts',
-  token: import.meta.env.SANITY_READ_TOKEN, // Env var
-})
+// WRONG:
+import { scheduledPublishing } from '@sanity/scheduled-publishing'
+defineConfig({ plugins: [scheduledPublishing()] })
+
+// CORRECT (sanity v3.39.0+ / v5.x):
+defineConfig({ scheduledPublishing: { enabled: true } })
 ```
 
-### Pitfall 4: GROQ Query Over-Fetching Slows Builds
+### Pitfall 3: CDN Caching Causes Stale Content After Rebuild
 
-**What goes wrong:** Build times increase significantly as content grows, eventually timing out.
+**What goes wrong:** Site rebuilds but still shows old content.
 
-**Why it happens:** Querying without projections returns entire document trees, including all nested references and arrays. Large documents with many fields cause excessive data transfer and JSON parsing overhead.
+**How to avoid:** Always set `useCdn: false` in both `astro.config.mjs` and `client.ts` for SSG builds.
 
-**How to avoid:** Always use GROQ projections to fetch only required fields. Use specific field selection `{ field1, field2 }` instead of returning full documents.
+### Pitfall 4: `sanity:client` TypeScript Resolution Failure with `@astrojs/check`
 
-**Warning signs:**
-- Build time increases with each new post
-- Network tab shows large response payloads (>1MB)
-- Build logs show slow query times
+**What goes wrong:** Build fails during `astro check` with "Cannot find module 'sanity:client' or its corresponding type declarations."
 
-**Fix:**
+**Why it happens:** Virtual module type resolution can fail when `@astrojs/check` is used (known issue, GitHub #135).
+
+**How to avoid:** Ensure `src/env.d.ts` has the reference:
 ```typescript
-// Bad: Over-fetching
-const posts = await client.fetch(`*[_type == "post"]`)
-
-// Good: Projection
-const posts = await client.fetch(`*[_type == "post"] {
-  _id,
-  title,
-  slug,
-  publishedAt,
-  "imageUrl": featuredImage.asset->url
-}`)
+/// <reference types="@sanity/astro/module" />
+```
+If still failing, add to `tsconfig.json`:
+```json
+{ "compilerOptions": { "types": ["@sanity/astro/module"] } }
 ```
 
-### Pitfall 5: Missing `defined()` Filter Causes Build Failures
+**Warning signs:** `astro check` fails but `astro dev` and `astro build` work fine.
 
-**What goes wrong:** Build fails with error "Cannot read property 'current' of undefined" when generating blog post paths.
+### Pitfall 5: `BlogLayout.astro` Props Mismatch
 
-**Why it happens:** Sanity documents can exist without required fields during editing (drafts). If a post doesn't have a slug yet, `slug.current` is undefined, causing runtime errors in `getStaticPaths()`.
+**What goes wrong:** `BlogLayout.astro` receives Sanity post data but expects the old content collection frontmatter shape.
 
-**How to avoid:** Always filter for `defined(slug.current)` in queries that generate static paths. This ensures only posts with valid slugs are included.
+**Why it happens:** Current `BlogLayout.astro` receives `frontmatter` with `pubDate` (Date), `author` (slug string like "arjan-ter-huurne"), `image` (local path string). Sanity returns `publishedAt` (ISO string), `author` (plain name), CDN URL.
 
-**Warning signs:**
-- Build succeeds locally (testing with complete posts)
-- Production build fails
-- Error references undefined property access
+**How to avoid:** When calling `BlogLayout.astro` from the Sanity-powered `[slug].astro`, transform data to match expected prop shape:
+- Convert `publishedAt` string to `Date` for `pubDate`
+- `author` is already a plain name — but the current layout does slug-to-name conversion; skip that step
+- Use `urlFor(post.featuredImage).width(1920).format('webp').url()` for `image`
 
-**Fix:**
-```typescript
-// Bad: Missing defined() filter
-const posts = await client.fetch(`*[_type == "post"] | order(publishedAt desc)`)
+### Pitfall 6: Webhook Triggers Too Frequently
 
-// Good: Filter for defined slugs
-const posts = await client.fetch(`*[_type == "post" && defined(slug.current)] | order(publishedAt desc)`)
-```
+**What goes wrong:** Vercel builds trigger for every Studio draft save, not just publishes.
 
-### Pitfall 6: Environment Variables Not Available in `astro.config.mjs`
+**How to avoid:** Set webhook filter: `_type == "post" && !(_id in path("drafts.**"))`
 
-**What goes wrong:** Sanity configuration reads `undefined` for `projectId` or `dataset` from environment variables.
+### Pitfall 7: Removing Blog Content Collection Breaks Portfolio
 
-**Why it happens:** Astro's `astro.config.mjs` runs in Node.js before Astro's environment variable injection. Standard `import.meta.env` doesn't work. Must use `process.env` instead.
+**What goes wrong:** Deleting `content.config.ts` removes the portfolio collection too.
 
-**How to avoid:** Use `process.env` for configuration values in `astro.config.mjs`, not `import.meta.env`.
-
-**Warning signs:**
-- `projectId` shows as undefined in errors
-- Sanity client initialization fails
-- Works locally (hardcoded values) but fails in CI/CD
-
-**Fix:**
-```javascript
-// Bad: Won't work in astro.config.mjs
-import.meta.env.PUBLIC_SANITY_PROJECT_ID
-
-// Good: Use process.env
-process.env.PUBLIC_SANITY_PROJECT_ID
-```
-
-### Pitfall 7: Webhook Triggers Too Frequently
-
-**What goes wrong:** Vercel builds trigger for every Studio edit, not just publishes. Client saves draft → webhook fires → wasted build minutes.
-
-**Why it happens:** Default webhook configuration triggers on all document mutations, including draft saves. Auto-save in Studio can trigger dozens of webhooks per editing session.
-
-**How to avoid:** Configure webhook filter to only trigger on published documents: `_type == "post" && !(_id in path("drafts.**"))`
-
-**Warning signs:**
-- Build queue constantly active
-- Vercel usage limits reached quickly
-- Multiple builds for single post edit
-
-**Fix:**
-```
-// Sanity webhook configuration
-Trigger on: Update
-Filter: _type == "post" && !(_id in path("drafts.**"))
-```
+**How to avoid:** Update `content.config.ts` to remove only the `blog` collection definition, keep `portfolio`. The blog collection references are replaced with Sanity queries. Portfolio remains as content collection.
 
 ---
 
 ## Code Examples
 
-Verified patterns from official sources:
+### Complete astro.config.mjs (Post-Migration)
 
-### Complete Sanity + Astro Blog Setup
-
-```typescript
+```javascript
 // astro.config.mjs
-// Source: https://github.com/sanity-io/sanity-astro
 import { defineConfig } from 'astro/config'
+import partytown from '@astrojs/partytown'
+import tailwindcss from '@tailwindcss/vite'
+import icon from 'astro-icon'
+import sitemap from '@astrojs/sitemap'
 import sanity from '@sanity/astro'
 import vercel from '@astrojs/vercel'
 
 export default defineConfig({
   site: 'https://promptmarketing.com',
   integrations: [
+    icon(),
+    sitemap(),
+    partytown({ config: { forward: ['dataLayer.push'] } }),
     sanity({
       projectId: 'pbui2f8s',
       dataset: 'production',
       useCdn: false,
       perspective: 'published',
-      apiVersion: '2025-02-19', // Latest API version
+      apiVersion: '2025-02-19',
     }),
   ],
+  vite: { plugins: [tailwindcss()] },
   adapter: vercel(),
 })
 ```
 
-```typescript
-// src/env.d.ts
-// Source: https://www.sanity.io/plugins/sanity-astro
-/// <reference types="astro/client" />
-/// <reference types="@sanity/astro/module" />
-```
+### Complete sanity.config.ts
 
 ```typescript
 // sanity.config.ts (project root)
-// Source: https://www.sanity.io/docs/studio/deployment
 import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
 import { visionTool } from '@sanity/vision'
-import { scheduledPublishing } from '@sanity/scheduled-publishing'
-import { schemas } from './schemas'
+import postSchema from './schemas/post'
 
 export default defineConfig({
   name: 'default',
   title: 'Prompt Marketing Blog',
   projectId: 'pbui2f8s',
   dataset: 'production',
-
-  plugins: [
-    structureTool(),
-    visionTool(),
-    scheduledPublishing(),
-  ],
-
-  schema: {
-    types: schemas,
-  },
-
-  // Optional: if embedding Studio in Astro (not recommended)
-  // basePath: '/studio',
+  plugins: [structureTool(), visionTool()],
+  scheduledPublishing: { enabled: true },
+  schema: { types: [postSchema] },
 })
 ```
 
-```typescript
-// src/pages/blog/[slug].astro
-// Source: https://developers.netlify.com/guides/how-to-use-sanity-portable-text-with-astro/
----
-import { sanityClient } from 'sanity:client'
-import { PortableText } from 'astro-portabletext'
-import Layout from '@/layouts/BlogLayout.astro'
-
-export async function getStaticPaths() {
-  const posts = await sanityClient.fetch(
-    `*[_type == "post" && defined(slug.current)] | order(publishedAt desc) {
-      _id,
-      title,
-      "slug": slug.current,
-      publishedAt,
-      author,
-      category,
-      featuredImage,
-      body
-    }`
-  )
-
-  return posts.map((post) => ({
-    params: { slug: post.slug },
-    props: { post },
-  }))
-}
-
-const { post } = Astro.props
----
-
-<Layout
-  title={post.title}
-  description={post.excerpt}
-  image={post.featuredImage}
->
-  <article>
-    <h1>{post.title}</h1>
-    <time datetime={post.publishedAt}>
-      {new Date(post.publishedAt).toLocaleDateString()}
-    </time>
-    <PortableText value={post.body} />
-  </article>
-</Layout>
-```
-
-```typescript
-// src/lib/sanity/portabletext.ts
-// Source: https://www.sanity.io/plugins/astro-portabletext
-import { PortableText } from 'astro-portabletext'
-
-// Custom component mapping (optional)
-export const components = {
-  type: {
-    // Custom block types
-  },
-  mark: {
-    // Custom marks (like links)
-    link: ({ value, children }) => {
-      const href = value?.href || '#'
-      return `<a href="${href}" target="_blank" rel="noopener">${children}</a>`
-    },
-  },
-  block: {
-    // Custom block styles
-    h2: ({ children }) => `<h2 class="text-3xl font-bold">${children}</h2>`,
-    blockquote: ({ children }) => `<blockquote class="border-l-4 pl-4 italic">${children}</blockquote>`,
-  },
-}
-```
-
-### Image URL Generation
+### Image Builder (v2 API)
 
 ```typescript
 // src/lib/sanity/imageBuilder.ts
-// Source: https://www.sanity.io/docs/apis-and-sdks/presenting-images
-import imageUrlBuilder from '@sanity/image-url'
+// Source: https://github.com/sanity-io/image-url — MIGRATE-v1-to-v2.md
+import { createImageUrlBuilder } from '@sanity/image-url'
 import { sanityClient } from 'sanity:client'
 
-const builder = imageUrlBuilder(sanityClient)
+export const urlFor = (source: any) =>
+  createImageUrlBuilder(sanityClient).image(source)
 
-export function urlFor(source: any) {
-  return builder.image(source)
-}
-
-// Usage example:
-// const url = urlFor(post.featuredImage).width(800).format('webp').url()
+// Usage: urlFor(post.featuredImage).width(800).format('webp').url()
 ```
 
-### Scheduled Publishing Setup
-
-```bash
-# Install scheduled publishing plugin
-npm install @sanity/scheduled-publishing
-```
+### Updated content.config.ts (Blog Collection Removed)
 
 ```typescript
-// sanity.config.ts
-// Source: https://www.sanity.io/docs/user-guides/content-releases
-import { scheduledPublishing } from '@sanity/scheduled-publishing'
+// src/content.config.ts (after migration)
+import { z, defineCollection } from 'astro:content'
+import { glob } from 'astro/loaders'
 
-export default defineConfig({
-  // ...
-  plugins: [
-    scheduledPublishing(),
-  ],
+// Blog collection removed — replaced by Sanity queries
+// Portfolio collection remains unchanged
+
+const portfolio = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/portfolio' }),
+  schema: () =>
+    z.object({
+      title: z.string(),
+      client: z.string(),
+      pubDate: z.date(),
+      description: z.string(),
+      challenge: z.string(),
+      solution: z.string(),
+      results: z.array(z.string()),
+      image: z.string().optional(),
+      thumbnail: z.string().optional(),
+    }),
 })
+
+export const collections = { portfolio }
 ```
 
 ---
@@ -775,39 +678,36 @@ export default defineConfig({
 
 | Old Approach | Current Approach | When Changed | Impact |
 |--------------|------------------|--------------|--------|
-| `@sanity/block-content-to-react` | `@portabletext/react` (React) or `astro-portabletext` (Astro) | 2022 | Portable Text ecosystem standardized with framework-specific renderers |
-| Scheduled publishing plugin | Scheduled Drafts + Content Releases | October 2025 | Native scheduling in Studio UI, deprecated separate plugin |
-| Studio v2 | Studio v3 | 2023 | New plugin API, improved performance, React 18 support |
-| `perspective: 'raw'` (default) | `perspective: 'published'` (default) | February 2025 (API v2025-02-19) | Must explicitly set perspective for drafts or published content |
-| Manual webhook configuration | Vercel Deploy plugin in Studio | 2024 | One-click deploy button in Studio UI, manual trigger option |
-| Content migrations via scripts | `sanity migration` CLI commands | 2024 | Structured migration workflow with dry-run, validation, rollback |
+| `import imageUrlBuilder from '@sanity/image-url'` | `import { createImageUrlBuilder } from '@sanity/image-url'` | v2.0.0 (2024) | Breaking change — default export removed |
+| `@sanity/scheduled-publishing` plugin | `scheduledPublishing: { enabled: true }` in `defineConfig()` | v3.39.0 (April 2024) | Plugin deprecated, use native config |
+| `sanity` v3 → React 18 | `sanity` v5 → React 19.2 | December 2025 | Must install React 19.2 as peer dep |
+| `@sanity/client` v6 | `@sanity/client` v7 | 2025 | `@sanity/astro` 3.x requires `^7.6.0` |
+| `perspective: 'raw'` (pre-2025 default) | `perspective: 'published'` | February 2025 (API v2025-02-19) | Explicitly set perspective |
+| `@sanity/block-content-to-react` | `astro-portabletext` | 2022 | Framework-native, no React needed |
 
 **Deprecated/outdated:**
-- **@sanity/block-content-to-react** (deprecated 2022): Use `@portabletext/react` or framework-specific renderers
-- **Scheduled publishing plugin** (deprecated October 2025): Use Scheduled Drafts feature (built-in)
-- **Studio v2** (end of life): Upgrade to Studio v3 for continued support
-- **`raw` perspective as default** (changed February 2025): Explicitly set `perspective: 'published'` or `'drafts'`
+- **`@sanity/scheduled-publishing`**: Deprecated. Remove from `plugins`, use `scheduledPublishing: { enabled: true }` at config root.
+- **Default import from `@sanity/image-url`**: Removed in v2. Use named export `createImageUrlBuilder`.
+- **`@sanity/astro` "4.x"**: The original research was incorrect — the package version is 3.x and never released a v4.
 
 ---
 
 ## Open Questions
 
-Things that couldn't be fully resolved:
+1. **`BlogPostingSchema.astro` description prop**
+   - What we know: Current schema has no description field (locked decision: no excerpt). `BlogPostingSchema.astro` requires `description` for JSON-LD.
+   - What's unclear: How to satisfy SEO schema requirement without an excerpt field.
+   - Recommendation: Use a static fallback (e.g., site description) for posts without rich SEO descriptions. Alternatively, add a dedicated `seoDescription` field (short, separate from content body) — this is not an excerpt but an SEO meta field. The planner should decide whether this constitutes "excerpt" and thus violates the constraint, or is a distinct SEO-specific field.
 
-1. **Scheduled Drafts vs. Content Releases**
-   - What we know: Scheduled Drafts schedules individual documents; Content Releases schedules grouped changes
-   - What's unclear: Whether client needs Content Releases for coordinated multi-post launches
-   - Recommendation: Start with Scheduled Drafts (simpler), evaluate Content Releases if client needs batch scheduling
+2. **Route slug format change**
+   - What we know: Current blog uses `[...id].astro` with Astro content collection IDs as paths (e.g., `/blog/agentic-commerce`). Sanity uses `[slug].astro` with explicit slug field.
+   - What's unclear: Whether existing URLs need 301 redirects (content is placeholder so likely no).
+   - Recommendation: Use `[slug].astro` for new route. No redirects needed since old posts are placeholders being removed.
 
-2. **Preview Button UX Implementation**
-   - What we know: Preview environment can use `drafts` perspective; Sanity has Presentation tool for preview links
-   - What's unclear: Whether to implement preview button as: (a) Studio plugin linking to preview URL, (b) Sanity Presentation tool, or (c) custom preview route
-   - Recommendation: Use Sanity Presentation tool (built-in) with preview environment URL configured. Provides side-by-side editing experience.
-
-3. **Category List Management**
-   - What we know: User wants predefined categories (not documents); Claude picks categories based on consultancy context
-   - What's unclear: Whether to allow client to add categories later (requires schema update) or lock list completely
-   - Recommendation: Start with fixed list in schema; if client needs new categories, add via schema update (rare operation, acceptable manual process)
+3. **`@astrojs/react` in integrations**
+   - What we know: `sanity` v5 and `@sanity/astro` require React as peer dep, but Studio is externally hosted.
+   - What's unclear: Whether React needs to be in Astro integrations list (which would add React to the site bundle) or just installed as a package.
+   - Recommendation: Install `@astrojs/react`, `react`, `react-dom` as packages but do NOT add `react()` to the `integrations` array in `astro.config.mjs`. This satisfies peer dep resolution without bundling React into the site.
 
 ---
 
@@ -815,48 +715,47 @@ Things that couldn't be fully resolved:
 
 ### Primary (HIGH confidence)
 
-- [Sanity + Astro Official Guide](https://docs.astro.build/en/guides/cms/sanity/) - Setup and configuration
-- [Sanity Astro Integration Plugin](https://www.sanity.io/plugins/sanity-astro) - Official @sanity/astro documentation
-- [Sanity Astro GitHub Repository](https://github.com/sanity-io/sanity-astro) - README and examples
-- [Sanity Studio Deployment](https://www.sanity.io/docs/studio/deployment) - Hosted Studio setup
-- [Sanity Perspectives Documentation](https://www.sanity.io/docs/content-lake/perspectives) - Draft vs. published content
-- [Vercel Deploy Hooks](https://vercel.com/docs/deploy-hooks) - Webhook-triggered rebuilds
-- [High Performance GROQ](https://www.sanity.io/docs/developer-guides/high-performance-groq) - Query optimization
-- [Sanity Image Optimization](https://www.sanity.io/docs/apis-and-sdks/presenting-images) - Image URL builder
+- [sanity-io/sanity-astro README](https://raw.githubusercontent.com/sanity-io/sanity-astro/main/packages/sanity-astro/README.md) — Virtual module API, configuration
+- [Sanity Astro Quickstart](https://www.sanity.io/docs/astro-quickstart/displaying-content-in-an-astro-front-end) — Current official guide
+- [Scheduled Publishing Moved to Core](https://www.sanity.io/docs/changelog/e6013ee5-8214-4e03-9593-f7b19124b8a3) — April 2024, v3.39.0
+- [Sanity Studio v5 Blog Post](https://www.sanity.io/blog/sanity-studio-v5) — React 19.2 requirement, December 2025
+- [@sanity/image-url CHANGELOG](https://github.com/sanity-io/image-url/blob/main/CHANGELOG.md) — v2 breaking changes (named export)
+- [npm: @sanity/astro 3.2.11](https://www.npmjs.com) — Verified via `npm view`
+- [npm: @sanity/image-url 2.0.3](https://www.npmjs.com) — Verified via `npm view`
+- [npm: sanity 5.11.0](https://www.npmjs.com) — Verified via `npm view`
 
 ### Secondary (MEDIUM confidence)
 
-- [Sanity Portable Text with Astro - Netlify Guide](https://developers.netlify.com/guides/how-to-use-sanity-portable-text-with-astro/) - Portable Text rendering patterns
-- [Sanity Blog Guide](https://www.sanity.io/docs/developer-guides/sanity-astro-blog) - Blog-specific implementation
-- [Sanity Content Migrations](https://www.sanity.io/docs/content-lake/schema-and-content-migrations) - Migration best practices
-- [Sanity Scheduled Publishing](https://www.sanity.io/docs/studio/scheduled-publishing) - Scheduling documentation
-- [Sanity Taxonomy Patterns](https://www.sanity.io/guides/parent-child-taxonomy) - Category/tag schema patterns
+- [Sanity guide: Build blog with Astro and Sanity](https://www.sanity.io/guides/sanity-astro-blog) — Integration patterns
+- [GitHub issue #135: sanity:client type resolution](https://github.com/sanity-io/sanity-astro/issues/135) — Known TypeScript issue with @astrojs/check
 
-### Tertiary (LOW confidence - for awareness)
+### Tertiary (LOW confidence)
 
-- Various blog posts and tutorials referenced in web searches - Implementation patterns and gotchas
+- Web searches for ecosystem patterns — corroborated with official docs where possible
 
 ---
 
 ## Metadata
 
 **Confidence breakdown:**
-- Standard stack: HIGH - Official packages, verified versions, established ecosystem
-- Architecture patterns: HIGH - Official documentation, GitHub examples, verified implementations
-- Pitfalls: MEDIUM-HIGH - Mix of official docs (CDN caching, auth) and community issues (Studio routing)
-- Preview implementation: MEDIUM - Multiple approaches exist, official Presentation tool vs. custom
+- Standard stack: HIGH — Verified via `npm view`, official documentation
+- Architecture patterns: HIGH — Official documentation, verified API
+- Breaking changes: HIGH — Official changelogs (image-url, scheduled-publishing, sanity v5)
+- Pitfalls: HIGH (breaking changes), MEDIUM (blog layout adaptation)
+- Open questions: LOW (require planner judgment)
 
-**Research date:** 2026-02-09
-**Valid until:** 2026-03-31 (Sanity ecosystem stable; Astro releases frequently but backwards compatible)
+**Research date:** 2026-02-23
+**Valid until:** 2026-04-15 (Sanity ecosystem moving; check again before executing)
 
 ---
 
 **Notes for planner:**
 
-1. **User constraints section is MANDATORY** - Contains locked decisions from CONTEXT.md that must be honored
-2. **Sanity-hosted Studio is locked decision** - Don't plan for embedding Studio in Astro site
-3. **Minimal schema is locked decision** - Simple author text field, predefined categories, no excerpt/reading time
-4. **SSG + webhooks is locked decision** - Vercel Deploy Hooks + Sanity webhooks for rebuilds
-5. **Preview button is locked decision** - Manual preview (not live), use drafts perspective
-6. **Markdown removal is locked decision** - Phase includes removing content collections after Sanity works
-7. **Sample posts required** - Seed Sanity with 2-3 posts matching current styling for handoff
+1. **`createImageUrlBuilder` is the only correct import** — Default import is gone in v2
+2. **No `@sanity/scheduled-publishing` package** — Use native `scheduledPublishing` key in `defineConfig()`
+3. **React must be installed** but does NOT need to be in Astro integrations array for this project
+4. **Markdoc is effectively unused** for blog — no `.mdoc` files exist, removing it is safe
+5. **Portfolio content collection stays** — only blog collection is removed from `content.config.ts`
+6. **`BlogLayout.astro` needs prop adaptation** — `pubDate`→`publishedAt`, `author` slug logic removed, `image` becomes CDN URL
+7. **`BlogPostingSchema.astro` needs a `description` source** — decision pending (planner resolves via open question above)
+8. **Route changes from `[...id]` to `[slug]`** — safe since existing posts are placeholders
