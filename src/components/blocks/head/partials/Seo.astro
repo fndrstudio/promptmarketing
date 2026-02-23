@@ -34,10 +34,13 @@ const absoluteOgImage = ogImage?.startsWith('/') ? `${siteUrl}${ogImage}` : ogIm
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
 	<meta property="og:image" content={absoluteOgImage} />
-	<meta property="twitter:card" content="summary_large_image" />
-	<meta property="twitter:url" content={pageUrl} />
-	<meta property="twitter:title" content={title} />
-	<meta property="twitter:description" content={description} />
-	<meta property="twitter:image" content={absoluteOgImage} />
+	<meta property="og:image:width" content="445" />
+	<meta property="og:image:height" content="191" />
+	<meta property="og:site_name" content="PromptMarketing" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:url" content={pageUrl} />
+	<meta name="twitter:title" content={title} />
+	<meta name="twitter:description" content={description} />
+	<meta name="twitter:image" content={absoluteOgImage} />
 	{canonical && <link rel="canonical" href={pageUrl} />}
 </Fragment>
