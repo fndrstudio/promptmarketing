@@ -5,8 +5,8 @@ import { Schema } from 'astro-seo-schema';
 
 interface Props {
 	title: string;
-	description: string;
-	pubDate: Date;
+	description?: string;
+	pubDate: Date | string;
 	author: string;
 	image?: string;
 }
@@ -15,11 +15,11 @@ const { title, description, pubDate, author, image } = Astro.props;
 const siteUrl = 'https://promptmarketing.com';
 const pageUrl = Astro.url.href;
 
-// Format author name from slug (e.g., "john-doe" -> "John Doe")
-const formattedAuthor = author
-	.split('-')
-	.map((part: string) => part.charAt(0).toUpperCase() + part.slice(1))
-	.join(' ');
+// Handle pubDate as either Date object or ISO string (Sanity returns strings)
+const dateObj = pubDate instanceof Date ? pubDate : new Date(pubDate);
+
+// Use seoDescription if provided, otherwise fall back to title-based description
+const desc = description || `${title} - PromptMarketing Blog`;
 ---
 
 <Schema
@@ -27,12 +27,12 @@ const formattedAuthor = author
 		'@context': 'https://schema.org',
 		'@type': 'BlogPosting',
 		headline: title,
-		description: description,
-		image: image ? [`${siteUrl}${image}`] : undefined,
-		datePublished: pubDate.toISOString(),
+		description: desc,
+		image: image ? [image.startsWith('http') ? image : `${siteUrl}${image}`] : undefined,
+		datePublished: dateObj.toISOString(),
 		author: {
 			'@type': 'Person',
-			name: formattedAuthor
+			name: author
 		},
 		publisher: {
 			'@type': 'Organization',
