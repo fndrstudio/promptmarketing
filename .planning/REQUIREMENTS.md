@@ -31,10 +31,10 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### CMS Integration
 
-- [ ] **CMS-01**: Integrate Sanity headless CMS for blog content
-- [ ] **CMS-02**: Configure Sanity schema for blog posts (title, author, date, content, image)
-- [ ] **CMS-03**: Connect Astro to Sanity for dynamic blog rendering
-- [ ] **CMS-04**: Enable client self-service blog management
+- [x] **CMS-01**: Integrate Sanity headless CMS for blog content
+- [x] **CMS-02**: Configure Sanity schema for blog posts (title, author, date, content, image)
+- [x] **CMS-03**: Connect Astro to Sanity for dynamic blog rendering
+- [x] **CMS-04**: Enable client self-service blog management
 
 ## v2 Requirements
 
@@ -73,10 +73,10 @@ Which phases cover which requirements. Updated by create-roadmap.
 | SEO-01 | 4 | Complete |
 | SEO-02 | 4 | Complete |
 | SEO-03 | 4 | Complete |
-| CMS-01 | 5 | Pending |
-| CMS-02 | 5 | Pending |
-| CMS-03 | 5 | Pending |
-| CMS-04 | 5 | Pending |
+| CMS-01 | 5 | Complete |
+| CMS-02 | 5 | Complete |
+| CMS-03 | 5 | Complete |
+| CMS-04 | 5 | Complete |
 
 **Coverage:**
 - v1 requirements: 17 total
@@ -85,4 +85,4 @@ Which phases cover which requirements. Updated by create-roadmap.
 
 ---
 *Requirements defined: 2026-01-22*
-*Last updated: 2026-02-09 after Phase 4 completion*
+*Last updated: 2026-02-23 after Phase 5 completion — all v1 requirements complete*

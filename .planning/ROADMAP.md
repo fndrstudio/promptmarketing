@@ -97,10 +97,10 @@ Plans:
 
 ---
 
-### Phase 5: Sanity CMS Integration
+### Phase 5: Sanity CMS Integration ✓
+**Status:** Complete (2026-02-23)
 **Goal:** Enable client self-service blog management through Sanity headless CMS
 **Requirements:** CMS-01, CMS-02, CMS-03, CMS-04
-**Plans:** 3 plans
 
 | ID | Requirement | Success Criteria |
 |----|-------------|------------------|
@@ -117,9 +117,9 @@ Plans:
 - Sanity Studio deployment configuration
 
 Plans:
-- [ ] 05-01-PLAN.md — Sanity foundation (packages, config, schema, client utilities)
-- [ ] 05-02-PLAN.md — Astro blog integration (rewrite pages, Portable Text, cleanup markdown)
-- [ ] 05-03-PLAN.md — Studio deployment + sample content + verification
+- [x] 05-01-PLAN.md — Sanity foundation (packages, config, schema, client utilities)
+- [x] 05-02-PLAN.md — Astro blog integration (rewrite pages, Portable Text, cleanup markdown)
+- [x] 05-03-PLAN.md — Studio deployment + sample content + verification
 
 ---
 
@@ -140,10 +140,10 @@ Plans:
 | SEO-01 | 4 | Complete |
 | SEO-02 | 4 | Complete |
 | SEO-03 | 4 | Complete |
-| CMS-01 | 5 | Pending |
-| CMS-02 | 5 | Pending |
-| CMS-03 | 5 | Pending |
-| CMS-04 | 5 | Pending |
+| CMS-01 | 5 | Complete |
+| CMS-02 | 5 | Complete |
+| CMS-03 | 5 | Complete |
+| CMS-04 | 5 | Complete |
 
 **Coverage Summary:**
 - Phase 1: 6 requirements (Foundation)
@@ -173,4 +173,4 @@ Phase 2 ──> Phase 3 (Content/Pages)
 ---
 
 *Roadmap created: 2026-01-22*
-*Last updated: 2026-02-23 (Phase 5 replanned)*
+*Last updated: 2026-02-23 (Phase 5 complete — all phases done)*
