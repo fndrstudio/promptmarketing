@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A marketing website for PromptMarketing, an executing consultancy that helps brands become machine-readable and trusted by AI systems through "Relevance Engineering" (GEO). Built on an Astro template, customized with a "Scientific Forest" aesthetic, dark forest green palette with gold accents, tight serif headlines, and modern sans-serif body text.
+A marketing website for PromptMarketing, an executing consultancy that helps brands become machine-readable and trusted by AI systems through "Relevance Engineering" (GEO). Built on Astro with a "Scientific Forest" aesthetic, dark forest green palette with gold accents, tight serif headlines, modern sans-serif body text, comprehensive Schema.org structured data, and Sanity CMS-powered blog.
 
 ## Core Value
 
@@ -12,64 +12,63 @@ A marketing website for PromptMarketing, an executing consultancy that helps bra
 
 ### Validated
 
-- ✓ Astro 5 static site with 100/100 PageSpeed ,  existing
-- ✓ Responsive design (mobile, tablet, desktop) ,  existing
-- ✓ Light/dark mode support ,  existing
-- ✓ SEO component with meta tags and Open Graph ,  existing
-- ✓ Blog with Markdown content collections ,  existing
-- ✓ Modular block-based page composition ,  existing
-- ✓ Google Analytics integration ready ,  existing
-- ✓ Sitemap generation ,  existing
-- ✓ Netlify deployment configured ,  existing
+- ✓ Astro 5 static site with 100/100 PageSpeed — existing
+- ✓ Responsive design (mobile, tablet, desktop) — existing
+- ✓ Light/dark mode support — existing
+- ✓ SEO component with meta tags and Open Graph — existing
+- ✓ Modular block-based page composition — existing
+- ✓ Google Analytics integration ready — existing
+- ✓ Sitemap generation — existing
+- ✓ Forest green color palette with gold accents — v1
+- ✓ Playfair Display (headings) + Nunito (body) typography — v1
+- ✓ PromptMarketing logo and favicon — v1
+- ✓ Template promotional content removed — v1
+- ✓ Site config updated (title, description, URLs) — v1
+- ✓ Consultancy navigation (About Us, How We Work, Portfolio, Blog) — v1
+- ✓ Homepage with "Scientific Forest" messaging and "Priming vs Proving" framework — v1
+- ✓ All page copy in PromptMarketing voice — v1
+- ✓ About page with Amsterdam Clubhouse and team sections — v1
+- ✓ llms.txt for AI agent discoverability — v1
+- ✓ Schema.org markup (Organization, WebSite, Service, BlogPosting) — v1
+- ✓ Canonical URLs for production domain — v1
+- ✓ Sanity CMS for blog content — v1
+- ✓ Blog post schema with Portable Text — v1
+- ✓ Astro-Sanity dynamic blog rendering — v1
+- ✓ Client self-service blog management via Sanity Studio — v1
 
 ### Active
 
-<!-- Current scope: Transform template into PromptMarketing brand -->
-
-**Branding & Visual Identity**
-- [ ] Update color palette: forest green primary, lighter forest green secondary, gold accent
-- [ ] Replace fonts: tight chic serif for H1/headings, modern rounded sans-serif for body
-- [ ] Update logo and favicon with PromptMarketing mark
-- [ ] Remove all template promotional content and links
-
-**Content & Pages**
-- [ ] Update site config (title, description, URLs) in `src/config/config.ts`
-- [ ] Restructure navigation around three pillars: Prompt Intelligence, Relevance Engineering, Agentic Commerce
-- [ ] Rewrite homepage with "Scientific Forest" messaging and "Priming vs Proving" framework
-- [ ] Update all page copy to reflect PromptMarketing voice (scientific, radically honest, Dutch pragmatism)
-- [ ] Create/update About page showing Amsterdam Clubhouse and "Gang of Super Specialists"
-
-**Technical SEO & Machine Readability**
-- [ ] Add llms.txt file at root for AI agent discoverability
-- [ ] Implement comprehensive Schema.org markup (Organization, Service, Article)
-- [ ] Update canonical URLs and site configuration for production domain
-
-**CMS Integration**
-- [ ] Integrate Sanity headless CMS for blog content
-- [ ] Configure Sanity schema for blog posts (title, author, date, content, image)
-- [ ] Connect Astro to Sanity for dynamic blog rendering
-- [ ] Enable client self-service blog management
+(None — next milestone not yet defined)
 
 ### Out of Scope
 
-- Custom animations beyond existing template (Lottie, parallax) ,  keep what works, don't add complexity
-- Multi-language support ,  English only for v1
-- E-commerce functionality ,  this is a lead-gen site, not transactional
-- Custom dashboard/login areas ,  static marketing site only
-- PromptWatch API integration ,  future enhancement, not v1
+- Custom animations beyond existing template (Lottie, parallax) — keep what works, don't add complexity
+- Multi-language support — English only for v1
+- E-commerce functionality — this is a lead-gen site, not transactional
+- Custom dashboard/login areas — static marketing site only
+- PromptWatch API integration — future enhancement
 
 ## Context
 
-**Tech Stack:** Astro 5.16 + Tailwind CSS 4 + TypeScript
+**Current State:** v1 shipped (2026-02-23)
+- ~23,000 LOC across Astro/TypeScript/CSS/JSON
+- 5 blog posts in Sanity CMS
+- Sanity Studio deployed at promptmarketing-blog.sanity.studio
+- Auto-rebuild pipeline: Sanity webhook → Vercel deploy hook
+- Production: promptmarketing.com (Vercel)
+
+**Tech Stack:** Astro 5.16 + Tailwind CSS 4 + TypeScript + Sanity v5
 - Component structure: `src/components/blocks/` (sections), `src/components/ui/` (primitives)
 - Styling via `src/styles/global.css` with Tailwind @theme customization
-- Fonts in `public/fonts/`, currently Clash-Display and Clash-Grotesk
+- Fonts: Playfair Display (headings), Nunito (body) in `public/fonts/`
+- CMS: Sanity project pbui2f8s, dataset production
+- Blog: Sanity → GROQ → Astro pages with PortableText rendering
 
 **Design Direction:** "The Scientific Forest"
 - Dark, technical, expensive-feeling aesthetic
 - Serif typography for strategic narrative (authority)
 - Sans-serif for technical content (precision)
-- No "SaaS blue" ,  differentiated positioning
+- No "SaaS blue" — differentiated positioning
 
 **Client:** PromptMarketing
 - Amsterdam-based "Clubhouse" office
@@ -84,20 +83,27 @@ A marketing website for PromptMarketing, an executing consultancy that helps bra
 
 ## Constraints
 
-- **Tech Stack**: Astro + Tailwind + TypeScript (existing), add Sanity CMS
+- **Tech Stack**: Astro + Tailwind + TypeScript + Sanity CMS
 - **Performance**: Must maintain 100/100 PageSpeed scores
-- **Deployment**: Netlify (already configured)
-- **Timeline**: MVP customization before extensive feature work
-- **Content**: Client will manage blog via Sanity; static pages managed in code
+- **Deployment**: Vercel (web), Sanity (CMS studio)
+- **Content**: Client manages blog via Sanity Studio; static pages managed in code
 
 ## Key Decisions
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Gold accent instead of Electric Lime | More premium/authoritative feel aligned with "expensive, engineered" positioning | ,  Pending |
-| Sanity CMS for blog only | Client needs self-service for blog; static pages don't change frequently | ,  Pending |
-| Keep existing template animations | Avoid scope creep; template animations work well | ,  Pending |
-| Dark mode as primary | "Scientific Forest" aesthetic requires dark base | ,  Pending |
+| Gold accent instead of Electric Lime | More premium/authoritative feel aligned with "expensive, engineered" positioning | ✓ Good |
+| Sanity CMS for blog only | Client needs self-service for blog; static pages don't change frequently | ✓ Good |
+| Keep existing template animations | Avoid scope creep; template animations work well | ✓ Good |
+| Dark mode as primary | "Scientific Forest" aesthetic requires dark base | ✓ Good |
+| Consultancy nav structure | About Us, How We Work, Portfolio, Blog (no dropdowns) | ✓ Good |
+| Four-pillar service structure | Intelligence/Optimization/Commerce/Advertising | ✓ Good |
+| Production domain promptmarketing.com | Not .ai — simpler, more professional | ✓ Good |
+| Organization schema (not ProfessionalService) | ProfessionalService deprecated in Schema.org | ✓ Good |
+| Entity linking via @id | Cross-schema references between Organization, WebSite, Service | ✓ Good |
+| Simple author string in blog schema | No Sanity reference type needed for small team | ✓ Good |
+| Vercel deploy hook + Sanity webhook | Automatic rebuilds on content publish without manual intervention | ✓ Good |
+| scheduledPublishing removed | Not available in sanity v5.11.0 — basic publish works | ⚠️ Revisit |
 
 ---
-*Last updated: 2026-01-22 after initialization*
+*Last updated: 2026-02-23 after v1 milestone*

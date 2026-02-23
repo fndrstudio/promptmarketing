@@ -1,11 +1,17 @@
-# Requirements: PromptMarketing Website
+# Requirements Archive: v1 Initial Release
+
+**Archived:** 2026-02-23
+**Status:** SHIPPED
+
+This is the archived requirements specification for v1.
+For current requirements, see `.planning/REQUIREMENTS.md` (created for next milestone).
+
+---
 
 **Defined:** 2026-01-22
 **Core Value:** The site must function as proof-of-concept for Relevance Engineering, it should look like it was built to be understood by AI, with perfect Schema.org implementation and machine-readable architecture.
 
 ## v1 Requirements
-
-Requirements for initial release. Each maps to roadmap phases.
 
 ### Branding & Visual Identity
 
@@ -36,15 +42,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **CMS-03**: Connect Astro to Sanity for dynamic blog rendering
 - [x] **CMS-04**: Enable client self-service blog management
 
-## v2 Requirements
-
-Deferred to future release. Tracked but not in current roadmap.
-
-(None ,  all requirements included in v1)
-
 ## Out of Scope
-
-Explicitly excluded. Documented to prevent scope creep.
 
 | Feature | Reason |
 |---------|--------|
@@ -55,8 +53,6 @@ Explicitly excluded. Documented to prevent scope creep.
 | PromptWatch API integration | Future enhancement, not v1 |
 
 ## Traceability
-
-Which phases cover which requirements. Updated by create-roadmap.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
@@ -80,9 +76,17 @@ Which phases cover which requirements. Updated by create-roadmap.
 
 **Coverage:**
 - v1 requirements: 17 total
-- Mapped to phases: 17 ✓
-- Unmapped: 0
+- Shipped: 17 (100%)
+- Adjusted: 0
+- Dropped: 0
 
 ---
-*Requirements defined: 2026-01-22*
-*Last updated: 2026-02-23 after Phase 5 completion — all v1 requirements complete*
+
+## Milestone Summary
+
+**Shipped:** 17 of 17 v1 requirements
+**Adjusted:** None — all requirements shipped as originally defined
+**Dropped:** None
+
+---
+*Archived: 2026-02-23 as part of v1 milestone completion*
