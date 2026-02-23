@@ -8,8 +8,8 @@
 |-------|-------|
 | **Milestone** | v1 |
 | **Current Phase** | 5 |
-| **Phase Status** | In progress |
-| **Blockers** | SANITY_API_TOKEN env var needed for live data; Plan 03 (Studio deployment) remaining |
+| **Phase Status** | Complete |
+| **Blockers** | None |
 
 ## Progress
 
@@ -18,7 +18,7 @@ Phase 1: ████████████████████ 100% (3/3 
 Phase 2: ████████████████████ 100% (2/2 plans)
 Phase 3: ████████████████████ 100% (4/4 plans)
 Phase 4: ████████████████████ 100% (3/3 plans)
-Phase 5: ██████████░░░░░░░░░░  67% (2/3 plans)
+Phase 5: ████████████████████ 100% (3/3 plans)
 ```
 
 ### Completed Phases
@@ -77,10 +77,10 @@ All 3 requirements verified:
 **Plans:**
 - 05-01-PLAN.md: Sanity packages + config + blog schema + client utilities (complete)
 - 05-02-PLAN.md: Blog page integration (complete)
-- 05-03-PLAN.md: Studio deployment (pending)
+- 05-03-PLAN.md: Studio deployment + sample content + webhook pipeline (complete)
 
 ### Upcoming Plans
-- 05-03: Deploy Sanity Studio at /admin
+None — all phases complete.
 
 ## Session Notes
 
@@ -119,6 +119,14 @@ All 3 requirements verified:
   - Added basePath prop to PostCards for reusability
   - Created placeholder case study content
 - Plan 03-04: Updated homepage 4-pillar structure and cleaned up footer
+
+### 2026-02-23 - Phase 5 Plan 03 Complete (Phase 5 Complete)
+- Deployed Sanity Studio at https://promptmarketing-blog.sanity.studio/
+- Seeded 5 blog posts total (3 by agent, 2 by orchestrator post-checkpoint)
+- Configured Vercel deploy hook (sanity-publish) + Sanity webhook for automatic rebuilds
+- Updated sanity.cli.ts with studioAppId for repeatable future deploys
+- Created scripts/seed-sanity.mjs for programmatic content seeding
+- CMS-04 requirement satisfied — client can manage and publish blog content
 
 ### 2026-02-23 - Phase 5 Plan 02 Complete
 - Rewrote blog listing and post pages to fetch from Sanity via GROQ
@@ -187,6 +195,8 @@ All 3 requirements verified:
 | React as peer dep only | react/react-dom/@astrojs/react installed for sanity v5 but NOT added to Astro integrations | 2026-02-23 |
 | seoDescription in blog schema | Added to satisfy BlogPostingSchema description requirement for Google rich results | 2026-02-23 |
 | GROQ queries as string constants | Export raw strings from queries.ts, not functions, for type-safe reuse | 2026-02-23 |
+| Studio hostname promptmarketing-blog | promptmarketing was taken globally in Sanity-hosted studio namespace; -blog suffix used as fallback | 2026-02-23 |
+| Vercel deploy hook for auto-rebuild | sanity-publish hook on main branch; Sanity webhook fires on blogPost create/update/delete | 2026-02-23 |
 
 ## Quick Reference
 
@@ -206,10 +216,10 @@ All 3 requirements verified:
 - Concerns: `.planning/codebase/CONCERNS.md`
 
 **Last Session:** 2026-02-23
-**Stopped at:** Completed 05-02-PLAN.md (blog Sanity integration)
+**Stopped at:** Completed 05-03-PLAN.md (Sanity Studio deployment, sample content, webhook pipeline)
 **Resume file:** None
 
-**Next Action:** Execute 05-03-PLAN.md (Sanity Studio deployment at /admin)
+**Next Action:** All 5 phases complete. Project ready for client handoff.
 
 ---
 
