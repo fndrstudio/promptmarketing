@@ -1,0 +1,81 @@
+---
+// Four Pillars Grid
+// ------------
+// Description: A compact grid showing the 4 service pillars with a CTA button.
+
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+// - UI
+import Header from '../../ui/Header.astro'
+import DecorationBorder from '../../ui/DecorationBorder.astro'
+import Link from '../../ui/Link.astro'
+import Button from '../../ui/Button.astro'
+
+// Content
+// - Data
+import featuresData from '../../../data/json-files/featuresData.json'
+
+// - Props
+type Props = {
+	classes?: string
+}
+const { classes = '' } = Astro.props
+---
+
+<Section decorationBorder="top bottom" classes={classes}>
+	<Row decorationBorder="top bottom" decorationBorderStyle="dashed" style="transparent">
+		<Col span="12" style="transparent">
+			<Header
+				title="Our Four Pillars of Service"
+				headingLevel="h2"
+				titleClasses="bg-white dark:bg-neutral-950 text-2xl! lg:text-2xl! lg:leading-9! font-bold!"
+			/>
+		</Col>
+	</Row>
+
+	<Row
+		decorationBorder="top bottom"
+		decorationBorderStyle="dashed"
+		style="transparent"
+		mobileGapY="0"
+	>
+		{
+			featuresData.map((pillar: any, index: number) => (
+				<Col span="3" spanTablet="6" spanMobile="12" style="transparent">
+					<div class="relative flex h-full flex-col justify-between bg-white/80 px-6 py-6 lg:min-h-[28rem] lg:px-6 lg:py-8 dark:bg-neutral-950/80">
+						<p class="h5 mb-0 font-bold">{String(index + 1).padStart(2, '0')}</p>
+						<div>
+							<p class="mb-2 text-sm font-medium tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
+								{pillar.subtitle}
+							</p>
+							<h2 class="mb-2! text-base! font-semibold lg:text-4xl!">
+								{pillar.title.replace('Prompt ', '')}
+							</h2>
+							<p class="mb-4 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+								{pillar.description}
+							</p>
+							<Link link="/how-we-work" size="sm">
+								Learn more
+							</Link>
+						</div>
+						<DecorationBorder
+							type={`top bottom right ${index === featuresData.length - 1 ? 'left' : ''}`}
+							style="solid"
+						/>
+					</div>
+				</Col>
+			))
+		}
+	</Row>
+
+	<Row decorationBorder="bottom" decorationBorderStyle="dashed" style="transparent">
+		<Col span="12" style="transparent" align="center">
+			<div class="bg-white/80 py-8 lg:py-12 dark:bg-neutral-950/80">
+				<Button link="/how-we-work" style="primary">Explore Our Methodology</Button>
+			</div>
+		</Col>
+	</Row>
+</Section>

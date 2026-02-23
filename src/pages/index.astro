@@ -10,11 +10,13 @@ import Layout from '../layouts/Layout.astro'
 // - SEO Schemas
 import OrganizationSchema from '../components/seo/OrganizationSchema.astro'
 import WebSiteSchema from '../components/seo/WebSiteSchema.astro'
+import FAQPageSchema from '../components/seo/FAQPageSchema.astro'
+import ServiceSchema from '../components/seo/ServiceSchema.astro'
 
 // - Blocks
 import Hero from '../components/blocks/hero/CenteredHeroCTA.astro'
 import Brand from '../components/blocks/brand/Marquee.astro'
-import Features from '../components/blocks/features/StickyBasicFeatures.astro'
+import Features from '../components/blocks/features/FourPillarsGrid.astro'
 import ScrollSpySteps from '../components/blocks/onboarding/Steps.astro'
 import TestimonialMasonry from '../components/blocks/testimonials/TestimonialMasonry.astro'
 import Faq from '../components/blocks/faq/StickyFaq.astro'
@@ -25,7 +27,7 @@ import CTA from '../components/blocks/cta/CTAPrimary.astro'
 const SEO = {
 	title: 'PromptMarketing | Search Marketing for Generative AI',
 	description:
-		'We ensure your brand is not just indexed, but understood, preferred, and selected by the Generative AI ecosystem. Relevance Engineering for the AI-first economy.'
+		'We ensure your brand is not just indexed, but understood, preferred, and selected by the Generative AI ecosystem. Relevance Engineering for the AI-first economy'
 }
 // - Hero data
 const heroData = {
@@ -50,6 +52,22 @@ const faqData = {
 	title: 'Common Questions',
 	subtitle: 'About Relevance Engineering'
 }
+// - FAQ schema data
+const faqSchemaItems = [
+	{ question: 'How is this different from traditional SEO?', answer: 'Traditional SEO ranks pages for human clicks. PromptMarketing optimises for LLM synthesis, ensuring AI models recommend your brand as the "chosen" entity in conversational answers.' },
+	{ question: 'What is a "Selection Rate"?', answer: 'This is our primary KPI. It quantifies how often AI systems choose your brand as the recommended solution when answering category-specific queries.' },
+	{ question: 'Can you help with the "Zero-Click" problem?', answer: "Yes. We target AEO (Answer Engine Optimisation) to ensure that even when a user doesn't click, your brand is the cited authority providing the answer." },
+	{ question: 'What is an LLM?', answer: 'Large Language Model, aka AI Chatbot (ChatGPT, Gemini, Google AI Mode, Perplexity, Claude et al.)' },
+	{ question: 'What is Prompt Tracking?', answer: 'Visibility sampling in LLMs.' },
+	{ question: 'What is AEO?', answer: 'Answer Engine Optimisation; target zero-click answer boxes, citations & AI Overviews.' },
+	{ question: 'What is GEO?', answer: 'Generative Engine Optimisation; get mentions in Generative Experiences.' },
+	{ question: 'What is AI Search?', answer: 'Umbrella term for AEO / GEO.' },
+	{ question: 'What is Agentic Commerce?', answer: 'Get your product, service and brand chosen & purchased by agents.' },
+	{ question: 'What is MCP?', answer: 'Model Context Protocol; the infrastructure for the Agentic Web.' },
+	{ question: 'What is ACP?', answer: "Agentic Commerce Protocol by OpenAI; UCP is Google's variant." },
+	{ question: 'What is GEA?', answer: 'Generative Engine Advertising; sponsored placements in generative experiences.' },
+	{ question: 'What is Prompt Marketing?', answer: 'Prompt Marketing: the new discipline of marketing in the AI Search era.' }
+]
 // - CTA data
 const ctaData = {
 	title: 'Ready to Dominate the New Search Era?',
@@ -62,6 +80,11 @@ const ctaData = {
 <Layout title={SEO.title} description={SEO.description}>
 	<OrganizationSchema />
 	<WebSiteSchema />
+	<FAQPageSchema items={faqSchemaItems} />
+	<ServiceSchema name="Prompt Intelligence" description="Measurement & research: competitive visibility analysis, AI Selection Rate tracking, and LLM brand sentiment analysis." />
+	<ServiceSchema name="Prompt Optimisation" description="Relevance engineering: SXO & semantic architecture, entity optimisation, and content authority signals for machine trust." />
+	<ServiceSchema name="Prompt Commerce" description="Prepare for agentic transactions: AI agent optimisation, data provenance, and agentic protocol setup for ACP, UCP, and MCP." />
+	<ServiceSchema name="Prompt Advertising" description="Amplify AI presence: generative engine advertising, AI advertising insights, and campaign management with intent signals." />
 	<Hero
 		title={heroData.title}
 		subtitle={heroData.subtitle}

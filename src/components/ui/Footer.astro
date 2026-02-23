@@ -58,7 +58,7 @@ const { logo, footerAbout, footerColumns, copyright } = await getFooterNavigatio
 					<div>
 						{
 							footerAbout?.aboutText && (
-								<h2 class="footer__about h5">{footerAbout.aboutText}</h2>
+								<p class="footer__about h5">{footerAbout.aboutText}</p>
 							)
 						}
 					</div>
@@ -73,7 +73,7 @@ const { logo, footerAbout, footerColumns, copyright } = await getFooterNavigatio
 									<ul class="footer__links">
 										{column.links?.map((link) => (
 											<li>
-												<a href={link.href}>{link.label}</a>
+												<a href={link.href} {...(link.href.startsWith('http') ? { rel: 'noopener noreferrer', target: '_blank' } : {})}>{link.label}</a>
 											</li>
 										))}
 									</ul>

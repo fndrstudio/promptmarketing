@@ -1,0 +1,31 @@
+---
+// FAQPageSchema.astro
+// Renders FAQPage JSON-LD for pages with FAQ sections
+import { Schema } from 'astro-seo-schema'
+
+interface FAQItem {
+	question: string
+	answer: string
+}
+
+interface Props {
+	items: FAQItem[]
+}
+
+const { items } = Astro.props
+---
+
+<Schema
+	item={{
+		'@context': 'https://schema.org',
+		'@type': 'FAQPage',
+		mainEntity: items.map((item) => ({
+			'@type': 'Question',
+			name: item.question,
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: item.answer
+			}
+		}))
+	}}
+/>
