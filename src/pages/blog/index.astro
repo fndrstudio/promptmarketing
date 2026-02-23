@@ -1,0 +1,46 @@
+---
+// Blog Page
+// ------------
+// Description: The blog listing page — fetches posts from Sanity CMS
+
+// Components
+import Layout from '../../layouts/Layout.astro'
+import Hero from '../../components/blocks/hero/SimpleHeroBasic.astro'
+import PostCards from '../../components/blocks/blog/PostCards.astro'
+
+// Sanity
+import { sanityClient } from '../../lib/sanity/client'
+import { getAllPostsQuery } from '../../lib/sanity/queries'
+import { urlFor } from '../../lib/sanity/image'
+
+// Fetch posts from Sanity (already ordered by pubDate desc in GROQ)
+const posts = await sanityClient.fetch(getAllPostsQuery)
+
+// Transform Sanity data to match PostCards expected format
+const transformedPosts = posts.map((post: any) => ({
+  id: post.slug.current,
+  data: {
+    title: post.title,
+    pubDate: post.pubDate,
+    author: post.author,
+    description: post.seoDescription || '',
+    thumbnail: post.featuredImage ? urlFor(post.featuredImage).width(800).url() : ''
+  }
+}))
+
+// SEO
+const SEO = {
+  title: 'PromptMarketing | Blog',
+  description:
+    'Read the latest insights on Relevance Engineering, AI-readiness, and how brands can become machine-trustworthy in the age of agentic commerce.'
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+  <Hero
+    subtitle="Insights & Ideas"
+    title="Fresh perspectives from the team"
+    text="Stay up to date with the latest articles, resources, and practical tips. Our blog covers AI Search, innovation in LLMs, Agentic Commerce and everything in between."
+  />
+  <PostCards data={transformedPosts} />
+</Layout>

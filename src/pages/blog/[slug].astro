@@ -1,0 +1,103 @@
+---
+// Blog Post Page
+// ------------
+// Description: Individual blog post fetching content from Sanity CMS
+
+// Layout
+import Layout from '../../layouts/Layout.astro'
+
+// SEO
+import BlogPostingSchema from '../../components/seo/BlogPostingSchema.astro'
+
+// Blocks
+import Hero from '../../components/blocks/hero/SimpleHeroBasic.astro'
+import CTAPrimary from '../../components/blocks/cta/CTAPrimary.astro'
+import PortableTextRenderer from '../../components/blocks/blog/PortableTextRenderer.astro'
+
+// UI
+import Section from '../../components/ui/Section.astro'
+import Row from '../../components/ui/Row.astro'
+import Col from '../../components/ui/Col.astro'
+
+// Sanity
+import { sanityClient } from '../../lib/sanity/client'
+import { getAllPostsQuery, getPostBySlugQuery } from '../../lib/sanity/queries'
+import { urlFor } from '../../lib/sanity/image'
+
+export async function getStaticPaths() {
+  const posts = await sanityClient.fetch(getAllPostsQuery)
+  return posts.map((post: any) => ({
+    params: { slug: post.slug.current },
+    props: { slug: post.slug.current }
+  }))
+}
+
+const { slug } = Astro.props
+const post = await sanityClient.fetch(getPostBySlugQuery, { slug })
+
+// Format date for display
+const formattedDate = post?.pubDate
+  ? new Date(post.pubDate).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    })
+  : ''
+
+// CTA content
+const CTA = {
+  title: 'Launch your next big idea today',
+  text: 'Join creators, teams, and startups already turning their ideas into reality. Get started in minutes and see how simple launching can be when everything works together seamlessly.',
+  buttonText: 'Try it for free!',
+  buttonLink: '/contact'
+}
+
+const featuredImageUrl = post?.featuredImage ? urlFor(post.featuredImage).width(1920).height(1080).url() : null
+---
+
+<Layout title={post?.title || 'Blog Post'} description={post?.seoDescription || ''}>
+  <BlogPostingSchema
+    title={post?.title || ''}
+    description={post?.seoDescription}
+    pubDate={post?.pubDate}
+    author={post?.author || ''}
+    image={featuredImageUrl || undefined}
+  />
+  <Hero
+    subtitle={`By ${post?.author || ''}, ${formattedDate}`}
+    title={post?.title || ''}
+    titleWidth="max-w-full"
+  />
+  {
+    featuredImageUrl && (
+      <Section>
+        <Row>
+          <Col span="12">
+            <div class="parallax h-96 w-full lg:h-[680px]">
+              <img
+                class="h-[calc(100%+50px)] w-full object-cover will-change-transform"
+                src={featuredImageUrl}
+                alt={post?.title || ''}
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </Col>
+        </Row>
+      </Section>
+    )
+  }
+  <Section>
+    <Row style="semitransparent">
+      <Col style="transparent" span="12" classes="basic-text no-scroll-animation">
+        {post?.content && <PortableTextRenderer content={post.content} />}
+      </Col>
+    </Row>
+  </Section>
+  <CTAPrimary
+    title={CTA.title}
+    text={CTA.text}
+    buttonText={CTA.buttonText}
+    buttonLink={CTA.buttonLink}
+  />
+</Layout>
