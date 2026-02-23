@@ -3,7 +3,7 @@ import partytown from "@astrojs/partytown";
 import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
 import sitemap from "@astrojs/sitemap";
-import markdoc from "@astrojs/markdoc";
+import sanity from "@sanity/astro";
 import vercel from "@astrojs/vercel";
 
 // https://astro.build/config
@@ -17,7 +17,12 @@ export default defineConfig({
         forward: ["dataLayer.push"],
       },
     }),
-    markdoc(),
+    sanity({
+      projectId: 'pbui2f8s',
+      dataset: 'production',
+      useCdn: false,
+      studioBasePath: '/admin',
+    }),
   ],
   vite: {
     plugins: [tailwindcss()],
