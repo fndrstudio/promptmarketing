@@ -36,11 +36,12 @@ async function findOrCreateOrg(company: string): Promise<number> {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name: company }),
   })
-  const data = await res.json()
-  if (!data?.success) {
-    throw new Error(data?.error || 'Failed to create organization')
+  if (!res.ok) {
+    const text = await res.text()
+    throw new Error(`Failed to create organization: ${res.status} ${text}`)
   }
-  return data.data.id
+  const data = await res.json()
+  return data.data?.id ?? data.id
 }
 
 async function createPerson(
@@ -59,11 +60,12 @@ async function createPerson(
       ...(orgId && { org_id: orgId }),
     }),
   })
-  const data = await res.json()
-  if (!data?.success) {
-    throw new Error(data?.error || 'Failed to create person')
+  if (!res.ok) {
+    const text = await res.text()
+    throw new Error(`Failed to create person: ${res.status} ${text}`)
   }
-  return data.data.id
+  const data = await res.json()
+  return data.data?.id ?? data.id
 }
 
 async function updatePerson(
@@ -98,11 +100,12 @@ async function createLead(personId: number, name: string): Promise<string> {
       }),
     }),
   })
-  const data = await res.json()
-  if (!data?.success) {
-    throw new Error(data?.error || 'Failed to create lead')
+  if (!res.ok) {
+    const text = await res.text()
+    throw new Error(`Failed to create lead: ${res.status} ${text}`)
   }
-  return data.data.id
+  const data = await res.json()
+  return data.data?.id ?? data.id
 }
 
 async function createNote(leadId: string, message: string, name: string): Promise<void> {
@@ -116,9 +119,9 @@ async function createNote(leadId: string, message: string, name: string): Promis
       pinned_to_lead_flag: 1,
     }),
   })
-  const data = await res.json()
-  if (!data?.success) {
-    throw new Error(data?.error || 'Failed to create note')
+  if (!res.ok) {
+    const text = await res.text()
+    throw new Error(`Failed to create note: ${res.status} ${text}`)
   }
 }
 
@@ -176,7 +179,8 @@ export const POST: APIRoute = async ({ request }) => {
       { status: 200, headers: { 'Content-Type': 'application/json' } }
     )
   } catch (error) {
-    console.error('Contact form error:', error)
+    const message = error instanceof Error ? error.message : String(error)
+    console.error('Contact form error:', message, error)
     return new Response(
       JSON.stringify({ success: false, message: 'Something went wrong. Please try again.' }),
       { status: 500, headers: { 'Content-Type': 'application/json' } }

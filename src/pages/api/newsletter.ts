@@ -30,11 +30,12 @@ async function createPerson(email: string): Promise<number> {
       emails: [{ value: email, primary: true, label: 'work' }],
     }),
   })
-  const data = await res.json()
-  if (!data?.success) {
-    throw new Error(data?.error || 'Failed to create person')
+  if (!res.ok) {
+    const text = await res.text()
+    throw new Error(`Failed to create person: ${res.status} ${text}`)
   }
-  return data.data.id
+  const data = await res.json()
+  return data.data?.id ?? data.id
 }
 
 async function createLead(personId: number): Promise<void> {
@@ -49,9 +50,9 @@ async function createLead(personId: number): Promise<void> {
       }),
     }),
   })
-  const data = await res.json()
-  if (!data?.success) {
-    throw new Error(data?.error || 'Failed to create lead')
+  if (!res.ok) {
+    const text = await res.text()
+    throw new Error(`Failed to create lead: ${res.status} ${text}`)
   }
 }
 
@@ -87,7 +88,8 @@ export const POST: APIRoute = async ({ request }) => {
       { status: 200, headers: { 'Content-Type': 'application/json' } }
     )
   } catch (error) {
-    console.error('Newsletter signup error:', error)
+    const message = error instanceof Error ? error.message : String(error)
+    console.error('Newsletter signup error:', message, error)
     return new Response(
       JSON.stringify({ success: false, message: 'Something went wrong. Please try again.' }),
       { status: 500, headers: { 'Content-Type': 'application/json' } }
