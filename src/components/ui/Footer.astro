@@ -91,9 +91,6 @@ const { logo, footerAbout, footerColumns, copyright } = await getFooterNavigatio
 							<h3 class="footer__col-title h4">Newsletter</h3>
 							<p>Get AI search insights delivered to your inbox</p>
 							<form id="newsletter-form" class="mt-4">
-								<input type="hidden" name="access_key" value="40c969ec-7a42-4a10-b33a-04b57824250e" />
-								<input type="hidden" name="subject" value="New Newsletter Subscription" />
-								<input type="hidden" name="from_name" value="Prompt Marketing Newsletter" />
 								<input
 									type="email"
 									name="email"
@@ -205,12 +202,13 @@ const { logo, footerAbout, footerColumns, copyright } = await getFooterNavigatio
 		button.disabled = true;
 		result.classList.add('hidden');
 
-		const formData = new FormData(form);
+		const email = form.querySelector<HTMLInputElement>('input[name="email"]')?.value;
 
 		try {
-			const response = await fetch('https://api.web3forms.com/submit', {
+			const response = await fetch('/api/newsletter', {
 				method: 'POST',
-				body: formData
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ email })
 			});
 
 			const data = await response.json();
