@@ -21,18 +21,10 @@ import Col from '../../components/ui/Col.astro'
 
 // Sanity
 import { sanityClient } from '../../lib/sanity/client'
-import { getAllPostsQuery, getPostBySlugQuery } from '../../lib/sanity/queries'
+import { getPostBySlugQuery } from '../../lib/sanity/queries'
 import { urlFor } from '../../lib/sanity/image'
 
-export async function getStaticPaths() {
-  const posts = await sanityClient.fetch(getAllPostsQuery)
-  return posts.map((post: any) => ({
-    params: { slug: post.slug.current },
-    props: { slug: post.slug.current }
-  }))
-}
-
-const { slug } = Astro.props
+const { slug } = Astro.params
 const post = await sanityClient.fetch(getPostBySlugQuery, { slug })
 
 // Format date for display
